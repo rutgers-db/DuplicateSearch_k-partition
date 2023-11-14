@@ -1,0 +1,20 @@
+# data
+*.txt
+index
+zonemap
+py_script
+compatWindows
+CompatWindows
+indexFile
+dataset
+10k_CompatWindows
+template
+*.bin
+*.o
+buildCompatWindows
+buildLargeNumWindows
+searchDuplicate
+test*
+.nfs*
+pile_*
+.vscode
