@@ -3,18 +3,21 @@
 #include <iostream>
 #include <random>
 #include <unordered_map>
+#include <map>
 #include <assert.h>
 #include "IO.hpp"
 #include "cw.hpp"
-// #include "segTree.hpp"
+#include "update.hpp"
+#include "segTree.hpp"
 
 using namespace std;
 
 const int tokenNum = 50257;
 
-const int INTERVAL_LIMIT = -1;
+const int INTERVAL_LIMIT = 0;
 const int p = 998244353;
 const int k = 10;
+const double threshold = 0.7;
 const int m = p / k * k;
 
 // mt19937 mt_rand(time(0));
@@ -44,7 +47,7 @@ void partition(int doc_id, vector<int> &doc, vector<pair<int, int>> &seg, vector
     }
 
     assert(doc[pos[ret.second]] >= 0 && doc[pos[ret.second]] < tokenNum);
-    cws[doc[pos[ret.second]]].emplace_back(doc_id, l, pos[ret.second], r);
+    cws[doc[pos[ret.second]]].emplace_back(doc_id, pos[l], pos[ret.second], pos[r]);
     partition(doc_id, doc, seg, pos, n, l, ret.second - 1, cws);
     partition(doc_id, doc, seg, pos, n, ret.second + 1, r, cws);
 }
@@ -88,7 +91,6 @@ void buildCW(vector<vector<int>> &docs, vector<vector<vector<CW>>> &cws, pair<in
             int n = pos[pid].size();
             if (seg.size() < 2 * n) {
                 seg.resize(2 * n);
-                // cout << "seg size: " << seg.size() << endl;
             }
             for (int i = 0; i < n; i++) {
                 seg[n + i].first = hval[pos[pid][i]];
@@ -145,6 +147,86 @@ void groupbyTid(unordered_map<int, vector<CW>> &tidToCW, vector<int> &signature,
     }
 }
 
+void generateUpdates(unordered_map<int, vector<CW>> &tidToCW, unordered_map<int, vector<Update>> &tidToUpdates) {
+    for (auto item: tidToCW) {
+        int tid = item.first;
+        vector<CW>& cws = item.second;
+        for (auto cw: cws) {
+            if (cw.c == -1) {
+                tidToUpdates[tid].emplace_back(cw.l, cw.l, cw.r, 0, 1);
+                tidToUpdates[tid].emplace_back(cw.r + 1, cw.l, cw.r, 0, -1);
+            }
+            else {
+                tidToUpdates[tid].emplace_back(cw.l, cw.c, cw.r, 1, 1);
+                tidToUpdates[tid].emplace_back(cw.c + 1, cw.c, cw.r, 1, -1);
+            }
+        }
+        sort(tidToUpdates[tid].begin(), tidToUpdates[tid].end());
+    }
+}
+
+void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>> &tidToUpdates, double threshold, unordered_map<int, vector<tuple<int, int, int, int>>> &results) {
+    SegmentTree segtree;
+    for (auto item: tidToUpdates) {
+        int tid = item.first;
+        vector<Update>& updates = item.second;
+
+        map<int, int> discret; 
+        vector<int> rev;
+        rev.push_back(0);
+        for (auto update: updates) {
+            // printf("%d %d %d\n", update.t, update.l, update.r);
+            discret.insert(make_pair(update.l, 0));
+            discret.insert(make_pair(update.r, 0));
+        }
+        int cnt = 0;
+        for (auto &it: discret) {
+            it.second = ++cnt;
+            rev.push_back(it.first);
+        }        
+
+        segtree.init(cnt);
+        segtree.build(1, 1, cnt);
+
+        for (int i = 0; i < updates.size(); i++) {
+            Update update = updates[i];
+            if (i > 0 && updates[i].t != updates[i - 1].t) {
+                vector<pair<int, int>> Rranges;
+                segtree.query(1, 1, cnt, k * threshold, Rranges);
+                for (auto Rrange: Rranges) {
+                    results[tid].emplace_back(make_tuple(updates[i - 1].t, updates[i].t - 1, rev[Rrange.first], rev[Rrange.second]));
+                }
+                // printf("%d\n", Rranges.size());
+            }
+            if (update.type == 0) {
+                segtree.update(1, 1, cnt, discret[update.l], discret[update.r], update.value * threshold);
+            }
+            else {
+                segtree.update(1, 1, cnt, discret[update.l], discret[update.r], update.value);
+            }
+            
+            if (i == updates.size() - 1) {
+                vector<pair<int, int>> Rranges;
+                segtree.query(1, 1, cnt, k * threshold, Rranges);
+                for (auto Rrange: Rranges) {
+                    results[tid].emplace_back(make_tuple(updates[i].t, docs[tid].size(), rev[Rrange.first], rev[Rrange.second]));
+                }
+                // printf("%d\n", Rranges.size());
+            }
+        }
+    }
+}
+
+void statistics(unordered_map<int, vector<tuple<int, int, int, int>>> &results) {
+    cout << "results text amount: " << results.size() << endl;
+    for (auto result: results) {
+        cout << "tid: " << result.first << endl;
+        for (auto tu: result.second) {
+            cout << "[" << get<0>(tu) << ", " << get<1>(tu) << "] * [" << get<2>(tu) << ", " << get<3>(tu) << "]" << endl;
+        }
+    }
+}
+
 int main() {
     string scr_dir = "/research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/";
     string src_file = "/research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin";
@@ -158,12 +240,24 @@ int main() {
     vector<vector<vector<CW>>> cws(k, vector<vector<CW>>(tokenNum + 1)); //cws[partition][token][]
     buildCW(docs, cws, hf);
     sortCW(cws);
+
+    cout << "generate done" << endl;
     
-    // vector<int> querySeq, signature(k);
-    // getQuerySeq(docs, querySeq);
-    // getSignature(querySeq, signature, hf);
-    
-    // unordered_map<int, vector<CW>> tidToCW;
-    // groupbyTid(tidToCW, signature, cws);
+    vector<int> querySeq, signature(k);
+    getQuerySeq(docs, querySeq);
+    getSignature(querySeq, signature, hf);
+
+    unordered_map<int, vector<CW>> tidToCW;
+    groupbyTid(tidToCW, signature, cws);
+
+    unordered_map<int, vector<Update>> tidToUpdates;
+    generateUpdates(tidToCW, tidToUpdates);
+
+
+    unordered_map<int, vector<tuple<int, int, int, int>>> results;
+    nearDupSearch(docs, tidToUpdates, threshold, results);
+
+    statistics(results);
+
     return 0;
 }
