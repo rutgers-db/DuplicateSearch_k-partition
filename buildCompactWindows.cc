@@ -16,12 +16,13 @@ const int tokenNum = 50257;
 
 const int INTERVAL_LIMIT = 0;
 const int p = 998244353;
-const int k = 10;
-const double threshold = 0.7;
+const int k = 2;
+const double eps = 1e-10;
+const double threshold = 0.8 - eps;
 const int m = p / k * k;
 
-// mt19937 mt_rand(time(0));
-mt19937 mt_rand(0);
+mt19937 mt_rand(time(0));
+// mt19937 mt_rand(0);
 
 pair<int, int> generateHF() {
     return make_pair(mt_rand() % p, mt_rand() % p);
@@ -32,9 +33,9 @@ int eval(pair<int, int> hf, int x) {
 }
 
 void partition(int doc_id, vector<int> &doc, vector<pair<int, int>> &seg, vector<int> &pos, int n, int l, int r, vector<vector<CW>> &cws) {
-    if (l + INTERVAL_LIMIT >= r)
+    if (l + INTERVAL_LIMIT > r)
         return;
-
+    // printf("[%d, %d] out of %d\n", l, r, pos.size());
     pair<int, int> ret(numeric_limits<int>::max(), -1);
     int a = l, b = r;
     for (a += n, b += n; a <= b; ++a /= 2, --b /= 2) {
@@ -46,8 +47,9 @@ void partition(int doc_id, vector<int> &doc, vector<pair<int, int>> &seg, vector
                 ret = seg[b];
     }
 
-    assert(doc[pos[ret.second]] >= 0 && doc[pos[ret.second]] < tokenNum);
-    cws[doc[pos[ret.second]]].emplace_back(doc_id, pos[l], pos[ret.second], pos[r]);
+    a = (l == 0) ? 0 : pos[l - 1] + 1;
+    b = (r == pos.size() - 1) ? doc.size() - 1 : pos[r + 1] - 1;
+    cws[doc[pos[ret.second]]].emplace_back(doc_id, a, pos[ret.second], b);
     partition(doc_id, doc, seg, pos, n, l, ret.second - 1, cws);
     partition(doc_id, doc, seg, pos, n, ret.second + 1, r, cws);
 }
@@ -65,7 +67,7 @@ void emptyCW(int doc_id, vector<int> &pos, vector<CW> &ecws, int doc_size) {
             ecws.emplace_back(doc_id, pos[i - 1] + 1, -1, pos[i] - 1);
         }
     }
-    if (pos.size() < doc_size - 1) {
+    if (pos[pos.size() - 1] < doc_size - 1) {
         ecws.emplace_back(doc_id, pos[pos.size() - 1] + 1, -1, doc_size - 1);
     }
 }
@@ -89,20 +91,22 @@ void buildCW(vector<vector<int>> &docs, vector<vector<vector<CW>>> &cws, pair<in
 
         for (int pid = 0; pid < k; pid++) {
             int n = pos[pid].size();
-            if (seg.size() < 2 * n) {
-                seg.resize(2 * n);
+            if (n > 0) {
+                if (seg.size() < 2 * n) {
+                    seg.resize(2 * n);
+                }
+                for (int i = 0; i < n; i++) {
+                    seg[n + i].first = hval[pos[pid][i]];
+                    seg[n + i].second = i;
+                }
+                for (int i = n - 1; i; i--) {
+                    if (seg[2 * i].first < seg[2 * i + 1].first)
+                        seg[i] = seg[2 * i];
+                    else
+                        seg[i] = seg[2 * i + 1];
+                }
+                partition(doc_id, doc, seg, pos[pid], n, 0, n - 1, cws[pid]);
             }
-            for (int i = 0; i < n; i++) {
-                seg[n + i].first = hval[pos[pid][i]];
-                seg[n + i].second = i;
-            }
-            for (int i = n - 1; i; i--) {
-                if (seg[2 * i].first < seg[2 * i + 1].first)
-                    seg[i] = seg[2 * i];
-                else
-                    seg[i] = seg[2 * i + 1];
-            }
-            partition(doc_id, doc, seg, pos[pid], n, 0, n - 1, cws[pid]);
             emptyCW(doc_id, pos[pid], cws[pid][tokenNum], doc.size());
         }
     }
@@ -113,9 +117,13 @@ void buildCW(vector<vector<int>> &docs, vector<vector<vector<CW>>> &cws, pair<in
 void sortCW(vector<vector<vector<CW>>> &cws) {
     int total_cws_amount = 0;
     for (int pid = 0; pid < k; pid++) {
+        // printf("pid: %d\n", pid);
         for (int tid = 0; tid <= tokenNum; tid++) {
             sort(cws[pid][tid].begin(), cws[pid][tid].end());
             total_cws_amount += cws[pid][tid].size();
+            // for (auto cws: cws[pid][tid]) {
+            //     cws.display();
+            // }
         }
     }
     cout << "cws amount: " << total_cws_amount << endl;
@@ -232,8 +240,12 @@ int main() {
     string src_file = "/research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin";
     
     vector<vector<int>> docs;
+    // docs.push_back(vector<int>());
+    // for (int i = 0; i < 4; i++)
+    //     docs[0].push_back(i);
     loadBin(src_file, docs);
     int doc_num = docs.size();
+    printf("docnum: %d\n", doc_num);
 
     pair<int, int> hf = generateHF();
 
