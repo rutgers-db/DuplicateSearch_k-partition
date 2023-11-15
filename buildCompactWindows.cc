@@ -4,6 +4,7 @@
 #include <random>
 #include <unordered_map>
 #include <map>
+#include <chrono>
 #include <assert.h>
 #include "IO.hpp"
 #include "cw.hpp"
@@ -227,47 +228,63 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>>
 
 void statistics(unordered_map<int, vector<tuple<int, int, int, int>>> &results) {
     cout << "results text amount: " << results.size() << endl;
-    for (auto result: results) {
-        cout << "tid: " << result.first << endl;
-        for (auto tu: result.second) {
-            cout << "[" << get<0>(tu) << ", " << get<1>(tu) << "] * [" << get<2>(tu) << ", " << get<3>(tu) << "]" << endl;
-        }
-    }
+    // for (auto result: results) {
+    //     cout << "tid: " << result.first << endl;
+    //     for (auto tu: result.second) {
+    //         cout << "[" << get<0>(tu) << ", " << get<1>(tu) << "] * [" << get<2>(tu) << ", " << get<3>(tu) << "]" << endl;
+    //     }
+    // }
+}
+
+std::chrono::_V2::system_clock::time_point timer;
+
+void timerStart() {
+    timer = chrono::high_resolution_clock::now();
+}
+
+double timerCheck() {
+    auto stop = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::microseconds>(stop - timer);
+    return duration.count() / 1000000.0;
 }
 
 int main() {
     string scr_dir = "/research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/";
     string src_file = "/research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin";
     
+    timerStart();
     vector<vector<int>> docs;
-    // docs.push_back(vector<int>());
-    // for (int i = 0; i < 4; i++)
-    //     docs[0].push_back(i);
     loadBin(src_file, docs);
     int doc_num = docs.size();
-    printf("docnum: %d\n", doc_num);
+    cout << "Doc number: " << doc_num << endl;
+    cout << "Load Time: " << timerCheck() << endl;
 
+
+    timerStart();
     pair<int, int> hf = generateHF();
-
     vector<vector<vector<CW>>> cws(k, vector<vector<CW>>(tokenNum + 1)); //cws[partition][token][]
     buildCW(docs, cws, hf);
-    sortCW(cws);
+    cout << "CW Generation Time: " << timerCheck() << endl;
 
-    cout << "generate done" << endl;
+    timerStart();
+    sortCW(cws);
+    cout << "CW Sorting Time: " << timerCheck() << endl;
     
     vector<int> querySeq, signature(k);
     getQuerySeq(docs, querySeq);
     getSignature(querySeq, signature, hf);
 
+    timerStart();
     unordered_map<int, vector<CW>> tidToCW;
     groupbyTid(tidToCW, signature, cws);
 
     unordered_map<int, vector<Update>> tidToUpdates;
     generateUpdates(tidToCW, tidToUpdates);
 
-
     unordered_map<int, vector<tuple<int, int, int, int>>> results;
     nearDupSearch(docs, tidToUpdates, threshold, results);
+
+    cout << "Query Time: " << timerCheck() << endl;
 
     statistics(results);
 

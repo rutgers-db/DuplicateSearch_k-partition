@@ -11,14 +11,14 @@ void loadBin(const string &binFileName, vector<vector<int>> &docs) {
         return;
     }
     int size;
-    int limit = 10, num = 0;
+    // int limit = 10, num = 0;
     while (ifs.read((char *)&size, sizeof(int))) {
         vector<int> vec(size);
         ifs.read((char *)&vec[0], sizeof(int) * size);
         docs.emplace_back(vec);
-        printf("Binary File %s Read, whose has %d texts\n", binFileName.c_str(), size);
-        if (++num == limit)
-            break;
+        // printf("Binary File %s Read, whose has %d texts\n", binFileName.c_str(), size);
+        // if (++num == limit)
+        //     break;
     }
     ifs.close();
 }
