@@ -15,11 +15,11 @@ using namespace std;
 
 const int tokenNum = 50257;
 
-const int INTERVAL_LIMIT = 0;
+const int INTERVAL_LIMIT = 50;
 const int p = 998244353;
-const int k = 2;
+const int k = 32;
 const double eps = 1e-10;
-const double threshold = 0.8 - eps;
+const double threshold = 0.5 - eps;
 const int m = p / k * k;
 
 mt19937 mt_rand(time(0));
