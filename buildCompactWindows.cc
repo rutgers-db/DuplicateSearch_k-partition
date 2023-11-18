@@ -19,7 +19,7 @@ const int INTERVAL_LIMIT = 50;
 const int p = 998244353;
 const int k = 32;
 const double eps = 1e-10;
-const double threshold = 0.5 - eps;
+const double threshold = 0.5;
 const int m = p / k * k;
 
 mt19937 mt_rand(time(0));
@@ -87,7 +87,7 @@ void buildCW(vector<vector<int>> &docs, vector<vector<vector<CW>>> &cws, pair<in
         }
         for (int i = 0; i < doc.size(); i++) {
             hval[i] = eval(hf, doc[i]);
-            pos[hval[i] / (m / k)].push_back(i);
+            pos[hval[i] / (m / k)].emplace_back(i);
         }
 
         for (int pid = 0; pid < k; pid++) {
@@ -151,7 +151,7 @@ void getSignature(vector<int> &seq, vector<int> &signature, pair<int, int> hf) {
 void groupbyTid(unordered_map<int, vector<CW>> &tidToCW, vector<int> &signature, vector<vector<vector<CW>>> &cws) {
     for (int pid = 0; pid < k; pid++) {
         for (auto cw: cws[pid][signature[pid]]) {
-            tidToCW[cw.T].push_back(cw);
+            tidToCW[cw.T].emplace_back(cw);
         }
     }
 }
@@ -182,7 +182,7 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>>
 
         map<int, int> discret; 
         vector<int> rev;
-        rev.push_back(0);
+        rev.emplace_back(0);
         for (auto update: updates) {
             // printf("%d %d %d\n", update.t, update.l, update.r);
             discret.insert(make_pair(update.l, 0));
@@ -191,7 +191,7 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>>
         int cnt = 0;
         for (auto &it: discret) {
             it.second = ++cnt;
-            rev.push_back(it.first);
+            rev.emplace_back(it.first);
         }        
 
         segtree.init(cnt);
@@ -201,7 +201,7 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>>
             Update update = updates[i];
             if (i > 0 && updates[i].t != updates[i - 1].t) {
                 vector<pair<int, int>> Rranges;
-                segtree.query(1, 1, cnt, k * threshold, Rranges);
+                segtree.query(1, 1, cnt, k * threshold - eps, Rranges);
                 for (auto Rrange: Rranges) {
                     results[tid].emplace_back(make_tuple(updates[i - 1].t, updates[i].t - 1, rev[Rrange.first], rev[Rrange.second]));
                 }
@@ -216,7 +216,7 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>>
             
             if (i == updates.size() - 1) {
                 vector<pair<int, int>> Rranges;
-                segtree.query(1, 1, cnt, k * threshold, Rranges);
+                segtree.query(1, 1, cnt, k * threshold - eps, Rranges);
                 for (auto Rrange: Rranges) {
                     results[tid].emplace_back(make_tuple(updates[i].t, docs[tid].size(), rev[Rrange.first], rev[Rrange.second]));
                 }
@@ -269,6 +269,9 @@ int main() {
     timerStart();
     sortCW(cws);
     cout << "CW Sorting Time: " << timerCheck() << endl;
+
+    saveCW("./cws.data", cws);
+    loadCW("./cws.data", cws);
     
     vector<int> querySeq, signature(k);
     getQuerySeq(docs, querySeq);
