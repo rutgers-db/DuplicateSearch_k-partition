@@ -9,27 +9,51 @@ using namespace std;
 void loadBin(const string &binFileName, vector<vector<int>> &docs) {
     ifstream ifs(binFileName, ios::binary);
     if (!ifs) {
-        cout << "error open bin file" << endl;
-        return;
+        cout << "Error open bin file" << endl;
+        throw "Error open bin file";
     }
     int size;
-    // int limit = 10, num = 0;
     while (ifs.read((char *)&size, sizeof(int))) {
         vector<int> vec(size);
         ifs.read((char *)&vec[0], sizeof(int) * size);
         docs.emplace_back(vec);
-        // printf("Binary File %s Read, whose has %d texts\n", binFileName.c_str(), size);
-        // if (++num == limit)
-        //     break;
     }
     ifs.close();
+    cout << "From Binary File " << binFileName << " read " << docs.size() << " documents" << endl;    
+}
+
+void loadBin(const string &binFileName, vector<vector<int>> &docs, int docnumLimit, int lengthLimit) {
+    ifstream ifs(binFileName, ios::binary);
+    if (!ifs) {
+        cout << "Error open bin file" << endl;
+        throw "Error open bin file";
+    }
+    int size;
+    int tokenNum = 0;
+    vector<int> vec(lengthLimit);
+    while (ifs.read((char *)&size, sizeof(int))) {
+        ifs.read((char *)&vec[tokenNum], sizeof(int) * min(size, lengthLimit - tokenNum));
+        tokenNum += min(size, lengthLimit - tokenNum);
+        if (tokenNum == lengthLimit) {
+            docs.emplace_back(vec);
+            tokenNum = 0;
+        }
+        if (docs.size() == docnumLimit)
+            break;
+    }
+    ifs.close();
+
+    if (docs.size() < docnumLimit) {
+        cout << "No enough documents" << endl;
+        throw "No enough documents";
+    }
 }
 
 void loadCW(const string &binFileName, vector<vector<vector<CW>>> &cws) {
     ifstream ifs(binFileName, ios::binary);
     if (!ifs) {
-        cout << "error open bin file" << endl;
-        return;
+        cout << "Error open bin file" << endl;
+        throw "Error open bin file";
     }
     int par_num, token_num, cw_num;
     ifs.read((char *)&par_num, sizeof(int));
@@ -49,8 +73,8 @@ void loadCW(const string &binFileName, vector<vector<vector<CW>>> &cws) {
 void saveCW(const string &binFileName, vector<vector<vector<CW>>> &cws) {
     ofstream ofs(binFileName, ios::binary);
     if (!ofs) {
-        cout << "error open bin file" << endl;
-        return;
+        cout << "Error open bin file" << endl;
+        throw "Error open bin file";
     }
     int par_num = cws.size(), token_num = cws[0].size() - 1, cw_num;
     ofs.write((char*)&par_num, sizeof(int));

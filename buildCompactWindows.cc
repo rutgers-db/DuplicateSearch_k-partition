@@ -6,6 +6,7 @@
 #include <map>
 #include <chrono>
 #include <assert.h>
+#include <unistd.h>
 #include "IO.hpp"
 #include "cw.hpp"
 #include "update.hpp"
@@ -13,17 +14,22 @@
 
 using namespace std;
 
-const int tokenNum = 50257;
 
-const int INTERVAL_LIMIT = 50;
+int doc_num;
+int doc_length;
+int INTERVAL_LIMIT = 0;
+int k = 64;
+double threshold = 0;
+string src_file;
+
+const int tokenNum = 50257;
 const int p = 998244353;
-const int k = 32;
 const double eps = 1e-10;
-const double threshold = 0.5;
 const int m = p / k * k;
 
-mt19937 mt_rand(time(0));
-// mt19937 mt_rand(0);
+
+// mt19937 mt_rand(time(0));
+mt19937 mt_rand(0);
 
 pair<int, int> generateHF() {
     return make_pair(mt_rand() % p, mt_rand() % p);
@@ -36,7 +42,6 @@ int eval(pair<int, int> hf, int x) {
 void partition(int doc_id, vector<int> &doc, vector<pair<int, int>> &seg, vector<int> &pos, int n, int l, int r, vector<vector<CW>> &cws) {
     if (l + INTERVAL_LIMIT > r)
         return;
-    // printf("[%d, %d] out of %d\n", l, r, pos.size());
     pair<int, int> ret(numeric_limits<int>::max(), -1);
     int a = l, b = r;
     for (a += n, b += n; a <= b; ++a /= 2, --b /= 2) {
@@ -115,19 +120,28 @@ void buildCW(vector<vector<int>> &docs, vector<vector<vector<CW>>> &cws, pair<in
 }
 
 
-void sortCW(vector<vector<vector<CW>>> &cws) {
+void statistics(vector<vector<vector<CW>>> &cws) {
     int total_cws_amount = 0;
+    int nonempty_amount = 0;
+    int empty_amount = 0;
     for (int pid = 0; pid < k; pid++) {
-        // printf("pid: %d\n", pid);
+        for (int tid = 0; tid < tokenNum; tid++) {
+            nonempty_amount += cws[pid][tid].size();
+        }
+        empty_amount += cws[pid][tokenNum].size();
+    }
+    total_cws_amount = empty_amount + nonempty_amount;
+    cout << "cws amount: " << total_cws_amount << endl;
+    cout << "empty amount: " << empty_amount << endl;
+    cout << "nonempty amount: " << nonempty_amount << endl;
+}
+
+void sortCW(vector<vector<vector<CW>>> &cws) {
+    for (int pid = 0; pid < k; pid++) {
         for (int tid = 0; tid <= tokenNum; tid++) {
             sort(cws[pid][tid].begin(), cws[pid][tid].end());
-            total_cws_amount += cws[pid][tid].size();
-            // for (auto cws: cws[pid][tid]) {
-            //     cws.display();
-            // }
         }
     }
-    cout << "cws amount: " << total_cws_amount << endl;
 }
 
 void getQuerySeq(vector<vector<int>> &docs, vector<int> &querySeq) {
@@ -184,7 +198,6 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>>
         vector<int> rev;
         rev.emplace_back(0);
         for (auto update: updates) {
-            // printf("%d %d %d\n", update.t, update.l, update.r);
             discret.insert(make_pair(update.l, 0));
             discret.insert(make_pair(update.r, 0));
         }
@@ -248,30 +261,72 @@ double timerCheck() {
     return duration.count() / 1000000.0;
 }
 
-int main() {
-    string scr_dir = "/research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/";
-    string src_file = "/research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin";
-    
+int main(int argc, char *argv[]) {
+    int opt;
+    while ((opt = getopt(argc, argv, "f:n:k:l:L:t:")) != EOF) {
+        switch (opt) {
+            case 'f':
+                src_file = optarg;
+                break;
+            case 'n':
+                doc_num = stoi(optarg);
+                break;
+            case 'k':
+                k = atoi(optarg);
+                break;
+            case 'l':
+                doc_length = stoi(optarg);
+                break;
+            case 'L':
+                INTERVAL_LIMIT = stoi(optarg);
+                break;
+            case 't':
+                threshold = stof(optarg);
+            case '?':
+                cout << opterr << endl;
+                cout << "Usage: program -f bin_file_path -n doc_num -k k -l doc_length [-L interval_limit] [-t threshold]" << endl;
+                break;
+        }
+    }
+    cout << "Parameters Summary: " << endl;
+    cout << "bin_file_path  : " << src_file << endl;
+    cout << "doc_num        : " << doc_num << endl;
+    cout << "k              : " << k << endl;
+    cout << "doc_length     : " << doc_length << endl;
+    cout << "interval_limit : " << INTERVAL_LIMIT << endl;
+    cout << "threshold      : " << threshold << endl;
+    cout << "------------------------------" << endl;
+
+    // Load documents
     timerStart();
     vector<vector<int>> docs;
-    loadBin(src_file, docs);
-    int doc_num = docs.size();
-    cout << "Doc number: " << doc_num << endl;
+    loadBin(src_file, docs, doc_num, doc_length);
     cout << "Load Time: " << timerCheck() << endl;
 
-
+    // Generate Comapct Windows
     timerStart();
     pair<int, int> hf = generateHF();
     vector<vector<vector<CW>>> cws(k, vector<vector<CW>>(tokenNum + 1)); //cws[partition][token][]
     buildCW(docs, cws, hf);
     cout << "CW Generation Time: " << timerCheck() << endl;
 
-    timerStart();
-    sortCW(cws);
-    cout << "CW Sorting Time: " << timerCheck() << endl;
+    statistics(cws);
 
-    saveCW("./cws.data", cws);
-    loadCW("./cws.data", cws);
+    return 0;
+
+
+    // Sort Compact Windows
+    // timerStart();
+    // sortCW(cws);
+    // cout << "CW Sorting Time: " << timerCheck() << endl;
+
+
+    // timerStart();
+    // saveCW("./cws.data", cws);
+    // cout << "Save CW Time: " << timerCheck() << endl;
+    // timerStart();
+    // loadCW("./cws.data", cws);
+    // cout << "Load CW Time: " << timerCheck() << endl;
     
     vector<int> querySeq, signature(k);
     getQuerySeq(docs, querySeq);
