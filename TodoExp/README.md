@@ -19,10 +19,11 @@
 ### Experiment Setup
 - Each figure's experiment is conducted on a single document per parameter set.
 - Document performance is averaged over 100 or more documents.
-- Document lengths (n) are set to 128, 256, 512 tokens.
+- Document lengths (n) are set to 100, 1000, 10000, and 100000 tokens.
   - If a document exceeds the set length, only the first n tokens are considered.
+  - Concate the document if its length is less than n
 - Histogram Representation:
-  - Each histogram has two columns: one for the baseline and the other for our method.
+  - Each histogram has two columns: one for the baseline (Allign) and the other for our method.
   - Y-axis: Measurement (e.g., time in seconds for generation time).
   - X-axis: Variable being tested (k or n).
 
@@ -62,10 +63,10 @@
 ### Experiment Setup
 - Each figure's experiment is conducted on a single document, consistent with the previous section.
 - Document performance is averaged over multiple runs.
-- Histogram Representation:
-  - Each histogram has two columns: one for the baseline and the other for our method.
+- Dot-Line Representation:
+  - Each plot has four lines: one for the baseline (Allign + IntervalScan), improved baseline (Allign + ImprovedIntervalScan), and the other for our two methods (OPH + ImprovedIntervalScan) and (OPH + ImprovedIntervalScanLongest)
   - Y-axis: Query Latency (e.g., time in seconds).
-  - X-axis: Variable being tested (k, θ, m(collided cw number), or number of found results).
+  - X-axis: Variable being tested (k, θ, m(collided cw number), or the number of found results).
 
 ### Figures Configuration
 1. **Dataset: PAN11**
@@ -101,25 +102,28 @@
   - Similarity threshold (θ) = 0.8.
 
 ### Experiment Setup
-- Document Sample Size: Experiments are conducted on multiple documents (100, 1000, 10000).
+- Document Sample Size: Experiments are conducted on multiple documents
 - Histogram Representation:
-  - For Index Time and Index Size: Each histogram has two columns, one for the baseline and the other for our method.
-  - For Query Time: Each histogram has four columns - Baseline with filter, Baseline without filter, Our method with filter, Our method without filter.
+  - For Index Time and Index Size: Each histogram has two columns, one for the baseline (Allign) and the other for our methods (OPH)
+  - For Query Time: Each histogram has four columns - Baseline with filter, Baseline without filter, Our method with filter, Our method without filter. (Both Report longest results)
   - Y-axis: Depending on the output (e.g., time in seconds for Index and Query Time, size in GB for Index Size).
-  - X-axis: Document sample size (100, 1000, 10000).
+  - X-axis: $k$ and $theta$
 
 ### Figures Configuration
-1. **Dataset: PAN11**
-   - Figure 1: Index Time Comparison
-   - Figure 2: Index Size Comparison
-   - Figure 3: Query Time Comparison
+1. **Dataset: PAN11** 
+   - Figure 1: Index Time Comparison (vary $k$)
+   - Figure 2: Index Size Comparison (vary $k$)
+   - Figure 3: Query Time Comparison (vary $theta$)
+   - Figure 3: Query Time Comparison (vary $k$)
 2. **Dataset: OpenWebText**
    - Figure 4: Index Time Comparison
    - Figure 5: Index Size Comparison
    - Figure 6: Query Time Comparison
+   - Figure 6: Query Time Comparison
 3. **Dataset: The Pile**
    - Figure 7: Index Time Comparison
    - Figure 8: Index Size Comparison
+   - Figure 9: Query Time Comparison
    - Figure 9: Query Time Comparison
 
 ### Additional Notes
@@ -146,7 +150,7 @@
 - Histogram Representation:
   - Each histogram has 3 columns, representing different numbers of bins (k): 32, 64, and 128.
   - Y-axis: Depending on the output (e.g., time in seconds for Index and Query Time, size in GB for Index Size).
-  - X-axis: Document sample size (10,000, 100,000, 1,000,000).
+  - X-axis: Document sample size (10K, 100K, 1M, 10M).
 - All experiments are conducted with the filter enabled to emphasize the method's efficiency in handling large datasets.
 
 ### Figures Configuration
@@ -154,6 +158,7 @@
    - Figure 1: Index Time Scalability
    - Figure 2: Index Size Scalability
    - Figure 3: Query Time Scalability
+   - Figure 3: Query Time Scalability (lines to represent different $\theta$)
 2. **Dataset: OpenWebText**
    - Figure 4: Index Time Scalability
    - Figure 5: Index Size Scalability
