@@ -311,7 +311,8 @@ int main(int argc, char *argv[]) {
     cout << "CW Generation Time: " << timerCheck() << endl;
 
     statistics(cws);
-
+    
+    cout << endl;
     return 0;
 
 
