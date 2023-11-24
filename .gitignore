@@ -1,5 +1,4 @@
 # data
-*.txt
 index
 zonemap
 py_script
@@ -18,4 +17,4 @@ test*
 .nfs*
 pile_*
 .vscode
-a.out
+*.out

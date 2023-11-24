@@ -337,8 +337,8 @@ int main(int argc, char *argv[])
 
     statistics(cws);
 
-    // cout << endl;
-    // return 0;
+    cout << endl;
+    return 0;
 
     // Sort Compact Windows
     // timerStart();

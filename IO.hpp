@@ -33,13 +33,14 @@ void loadBin(const string &binFileName, vector<vector<int>> &docs, int docnumLim
     vector<int> vec(lengthLimit);
     while (ifs.read((char *)&size, sizeof(int))) {
         ifs.read((char *)&vec[tokenNum], sizeof(int) * min(size, lengthLimit - tokenNum));
+        ifs.seekg(sizeof(int) * (size - min(size, lengthLimit - tokenNum)), ios::cur);
         tokenNum += min(size, lengthLimit - tokenNum);
         if (tokenNum == lengthLimit) {
             docs.emplace_back(vec);
             tokenNum = 0;
         }
         if (docs.size() == docnumLimit)
-            break;
+           break;
     }
     ifs.close();
 

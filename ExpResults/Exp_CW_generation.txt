@@ -1,0 +1,504 @@
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.001623
+CW Generation Time: 0.020647
+cws amount: 20655
+empty amount: 10655
+nonempty amount: 10000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.000766
+CW Generation Time: 0.036841
+cws amount: 22561
+empty amount: 12561
+nonempty amount: 10000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.001341
+CW Generation Time: 0.063387
+cws amount: 25907
+empty amount: 15907
+nonempty amount: 10000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.001151
+CW Generation Time: 0.033156
+cws amount: 193414
+empty amount: 93414
+nonempty amount: 100000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.001104
+CW Generation Time: 0.053872
+cws amount: 198267
+empty amount: 98267
+nonempty amount: 100000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.001023
+CW Generation Time: 0.078414
+cws amount: 202893
+empty amount: 102893
+nonempty amount: 100000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.006947
+CW Generation Time: 0.227707
+cws amount: 1923695
+empty amount: 923695
+nonempty amount: 1000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.00479
+CW Generation Time: 0.237523
+cws amount: 1957592
+empty amount: 957592
+nonempty amount: 1000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.006307
+CW Generation Time: 0.232214
+cws amount: 1975185
+empty amount: 975185
+nonempty amount: 1000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.04932
+CW Generation Time: 1.872
+cws amount: 19220480
+empty amount: 9220480
+nonempty amount: 10000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.056573
+CW Generation Time: 1.75818
+cws amount: 19542413
+empty amount: 9542413
+nonempty amount: 10000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.040371
+CW Generation Time: 1.63711
+cws amount: 19688085
+empty amount: 9688085
+nonempty amount: 10000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.001294
+CW Generation Time: 0.023472
+cws amount: 20505
+empty amount: 10505
+nonempty amount: 10000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.000627
+CW Generation Time: 0.02359
+cws amount: 22418
+empty amount: 12418
+nonempty amount: 10000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.000614
+CW Generation Time: 0.045874
+cws amount: 25757
+empty amount: 15757
+nonempty amount: 10000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.000997
+CW Generation Time: 0.026567
+cws amount: 190985
+empty amount: 90985
+nonempty amount: 100000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.001246
+CW Generation Time: 0.049756
+cws amount: 195581
+empty amount: 95581
+nonempty amount: 100000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.00111
+CW Generation Time: 0.087997
+cws amount: 200201
+empty amount: 100201
+nonempty amount: 100000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.003833
+CW Generation Time: 0.155464
+cws amount: 1881336
+empty amount: 881336
+nonempty amount: 1000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.005105
+CW Generation Time: 0.17268
+cws amount: 1912267
+empty amount: 912267
+nonempty amount: 1000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.006579
+CW Generation Time: 0.20083
+cws amount: 1929400
+empty amount: 929400
+nonempty amount: 1000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.053817
+CW Generation Time: 1.5652
+cws amount: 18544965
+empty amount: 8544965
+nonempty amount: 10000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.033587
+CW Generation Time: 1.5583
+cws amount: 18830472
+empty amount: 8830472
+nonempty amount: 10000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.037084
+CW Generation Time: 1.39612
+cws amount: 18967126
+empty amount: 8967126
+nonempty amount: 10000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.001104
+CW Generation Time: 0.013443
+cws amount: 19789
+empty amount: 9789
+nonempty amount: 10000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.000697
+CW Generation Time: 0.025591
+cws amount: 21679
+empty amount: 11679
+nonempty amount: 10000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.001522
+CW Generation Time: 0.068764
+cws amount: 24995
+empty amount: 14995
+nonempty amount: 10000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 16
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.000973
+CW Generation Time: 0.025762
+cws amount: 187046
+empty amount: 87046
+nonempty amount: 100000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 32
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.00122
+CW Generation Time: 0.038275
+cws amount: 192031
+empty amount: 92031
+nonempty amount: 100000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 64
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.001823
+CW Generation Time: 0.060753
+cws amount: 196603
+empty amount: 96603
+nonempty amount: 100000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 16
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.003141
+CW Generation Time: 0.144681
+cws amount: 1882352
+empty amount: 882352
+nonempty amount: 1000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 32
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.003477
+CW Generation Time: 0.171569
+cws amount: 1919807
+empty amount: 919807
+nonempty amount: 1000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 64
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.004879
+CW Generation Time: 0.253178
+cws amount: 1937542
+empty amount: 937542
+nonempty amount: 1000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.027418
+CW Generation Time: 1.59417
+cws amount: 18931212
+empty amount: 8931212
+nonempty amount: 10000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.04725
+CW Generation Time: 1.85469
+cws amount: 19292734
+empty amount: 9292734
+nonempty amount: 10000000
+
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+------------------------------
+Load Time: 0.030356
+CW Generation Time: 1.63515
+cws amount: 19438676
+empty amount: 9438676
+nonempty amount: 10000000
+
