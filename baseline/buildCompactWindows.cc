@@ -14,11 +14,14 @@
 
 using namespace std;
 
+ofstream ofs;
+
 int doc_num;
-int doc_length;
+int doc_length = 0;
 int INTERVAL_LIMIT = 0;
 int k = 64;
 double threshold = 0;
+int queryNum = 0;
 string src_file;
 
 const int tokenNum = 50257;
@@ -28,6 +31,20 @@ const int m = p / k * k;
 
 // mt19937 mt_rand(time(0));
 mt19937 mt_rand(0);
+
+std::chrono::_V2::system_clock::time_point timer;
+
+void timerStart()
+{
+    timer = chrono::high_resolution_clock::now();
+}
+
+double timerCheck()
+{
+    auto stop = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::microseconds>(stop - timer);
+    return duration.count() / 1000000.0;
+}
 
 vector<pair<int, int>> generateHF()
 {
@@ -115,8 +132,8 @@ void buildCW(vector<vector<int>> &docs, vector<vector<vector<CW>>> &cws, const v
 
 void statistics(vector<vector<vector<CW>>> &cws)
 {
-    int total_cws_amount = 0;
-    int nonempty_amount = 0;
+    long long total_cws_amount = 0;
+    long long nonempty_amount = 0;
     for (int pid = 0; pid < k; pid++)
     {
         for (int tid = 0; tid < tokenNum; tid++)
@@ -126,6 +143,7 @@ void statistics(vector<vector<vector<CW>>> &cws)
     }
     total_cws_amount = nonempty_amount;
     cout << "cws amount: " << total_cws_amount << endl;
+    ofs << total_cws_amount << endl;
 }
 
 void sortCW(vector<vector<vector<CW>>> &cws)
@@ -139,23 +157,24 @@ void sortCW(vector<vector<vector<CW>>> &cws)
     }
 }
 
-void getQuerySeq(vector<vector<int>> &docs, vector<int> &querySeq)
-{
-    querySeq.assign(docs[0].begin(), docs[0].end());
+void getQuerySeqs(vector<vector<int>> &querySeqs) {
+    loadSamples(src_file, querySeqs, doc_num, queryNum);
 }
 
-void getSignature(vector<int> &seq, vector<int> &signature, const vector<pair<int, int>> &hf)
+void getSignatures(vector<vector<int>> &seqs, vector<vector<int>> &signatures, const vector<pair<int, int>> &hf)
 {
-    vector<int> minimal(k, numeric_limits<int>::max());
-    for (int hid = 0; hid < k; hid++)
-    {
-        for (int i = 0; i < seq.size(); i++)
+    for (int did = 0; did < queryNum; did++) {
+        vector<int> minimal(k, numeric_limits<int>::max());
+        for (int hid = 0; hid < k; hid++)
         {
-            int v = eval(hf[hid], seq[i]);
-            if (v < minimal[hid])
+            for (int i = 0; i < seqs[did].size(); i++)
             {
-                minimal[hid] = v;
-                signature[hid] = seq[i];
+                int v = eval(hf[hid], seqs[did][i]);
+                if (v < minimal[hid])
+                {
+                    minimal[hid] = v;
+                    signatures[did][hid] = seqs[did][i];
+                }
             }
         }
     }
@@ -199,10 +218,13 @@ void generateUpdates(unordered_map<int, vector<CW>> &tidToCW, unordered_map<int,
 void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>> &tidToUpdates, double threshold, unordered_map<int, vector<tuple<int, int, int, int>>> &results)
 {
     SegmentTree segtree;
+    ofs << tidToUpdates.size() << endl; //
     for (auto item : tidToUpdates)
     {
+        timerStart(); //
         int tid = item.first;
         vector<Update> &updates = item.second;
+        ofs << updates.size() / 2 << endl; //
 
         map<int, int> discret;
         vector<int> rev;
@@ -255,62 +277,61 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>>
                 // printf("%d\n", Rranges.size());
             }
         }
+        ofs << results[tid].size() << endl; //
+        ofs << timerCheck() << endl; //
     }
 }
 
-void statistics(unordered_map<int, vector<tuple<int, int, int, int>>> &results)
+void statistics(unordered_map<int, vector<CW>> &tidToCW, unordered_map<int, vector<tuple<int, int, int, int>>> &results)
 {
-    cout << "results text amount: " << results.size() << endl;
-    // for (auto result: results) {
-    //     cout << "tid: " << result.first << endl;
-    //     for (auto tu: result.second) {
-    //         cout << "[" << get<0>(tu) << ", " << get<1>(tu) << "] * [" << get<2>(tu) << ", " << get<3>(tu) << "]" << endl;
-    //     }
-    // }
+    int collided_cws_amount = 0;
+    for (auto cws: tidToCW) {
+        ofs << cws.second.size() << " ";
+        collided_cws_amount += cws.second.size();
+    }
+    // cout << "collided cws amount: " << collided_cws_amount << endl;
+    // cout << "results text amount: " << results.size() << endl;
+    int results_cws_amount = 0;
+    for (auto result: results) {
+        results_cws_amount += result.second.size();
+        // cout << "tid: " << result.first << endl;
+        // for (auto tu: result.second) {
+        //     cout << "[" << get<0>(tu) << ", " << get<1>(tu) << "] * [" << get<2>(tu) << ", " << get<3>(tu) << "]" << endl;
+        // }
+    }
+    // cout << "results cws amount: " << results_cws_amount << endl;
 }
 
-std::chrono::_V2::system_clock::time_point timer;
-
-void timerStart()
-{
-    timer = chrono::high_resolution_clock::now();
-}
-
-double timerCheck()
-{
-    auto stop = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::microseconds>(stop - timer);
-    return duration.count() / 1000000.0;
-}
-
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     int opt;
-    while ((opt = getopt(argc, argv, "f:n:k:l:L:t:")) != EOF)
-    {
-        switch (opt)
-        {
-        case 'f':
-            src_file = optarg;
-            break;
-        case 'n':
-            doc_num = stoi(optarg);
-            break;
-        case 'k':
-            k = atoi(optarg);
-            break;
-        case 'l':
-            doc_length = stoi(optarg);
-            break;
-        case 'L':
-            INTERVAL_LIMIT = stoi(optarg);
-            break;
-        case 't':
-            threshold = stof(optarg);
-        case '?':
-            cout << opterr << endl;
-            cout << "Usage: program -f bin_file_path -n doc_num -k k -l doc_length [-L interval_limit] [-t threshold]" << endl;
-            break;
+    while ((opt = getopt(argc, argv, "f:n:k:l:t:q:")) != EOF) {
+        switch (opt) {
+            case 'f':
+                src_file = optarg;
+                break;
+            case 'n':
+                doc_num = stoi(optarg);
+                break;
+            case 'k':
+                k = atoi(optarg);
+                break;
+            case 'l':
+                doc_length = stoi(optarg);
+                break;
+            case 'L':
+                INTERVAL_LIMIT = stoi(optarg);
+                break;
+            case 't':
+                threshold = stof(optarg);
+                break;
+            case 'q':
+                queryNum = stoi(optarg);
+                break;
+            case '?':
+                cout << optarg << endl;
+                cout << opterr << endl;
+                cout << "Usage: program -f bin_file_path -n doc_num -k k [-l doc_length] [-L interval_limit] -t threshold -q query_num" << endl;
+                break;
         }
     }
     cout << "Parameters Summary: " << endl;
@@ -320,55 +341,51 @@ int main(int argc, char *argv[])
     cout << "doc_length     : " << doc_length << endl;
     cout << "interval_limit : " << INTERVAL_LIMIT << endl;
     cout << "threshold      : " << threshold << endl;
+    cout << "query_num      : " << queryNum << endl;
     cout << "------------------------------" << endl;
+
+
+    cout << src_file.substr(src_file.rfind('/') + 1, src_file.rfind('.') - src_file.rfind('/') - 1) << endl;
+    char out_file[100];
+    sprintf(out_file, "ExpResults/KMINS_%s_n%d_l%d_k%d_t%.1lf_q%d.txt", src_file.substr(src_file.rfind('/') + 1, src_file.rfind('.') - src_file.rfind('/') - 1).c_str(), doc_num, doc_length ,k, threshold, queryNum);
+    ofs.open(out_file, std::ofstream::out);
 
     // Load documents
     timerStart();
     vector<vector<int>> docs;
-    loadBin(src_file, docs, doc_num, doc_length);
+    if (doc_length == 0)
+        loadBin(src_file, docs, doc_num);
+    else
+        loadBin(src_file, docs, doc_num, doc_length);
     cout << "Load Time: " << timerCheck() << endl;
 
     // Generate Comapct Windows
     timerStart();
     vector<pair<int, int>> hf = generateHF();
-    vector<vector<vector<CW>>> cws(k, vector<vector<CW>>(tokenNum)); // cws[ith hash function][token][]
+    vector<vector<vector<CW>>> cws(k, vector<vector<CW>>(tokenNum + 1)); //cws[partition][token][]
     buildCW(docs, cws, hf);
     cout << "CW Generation Time: " << timerCheck() << endl;
+    ofs << timerCheck() << endl;
 
     statistics(cws);
 
+    if (queryNum == 0)
+        return 0;
+    // Prepare Query Sequences    
+    vector<vector<int>> querySeqs, signatures(queryNum, vector<int>(k));
+    getQuerySeqs(querySeqs);
+    getSignatures(querySeqs, signatures, hf);
+    
+    // Do Query
+    for (int i = 0; i < queryNum; i++) {
+        unordered_map<int, vector<CW>> tidToCW;
+        groupbyTid(tidToCW, signatures[i], cws);
+        unordered_map<int, vector<Update>> tidToUpdates;
+        generateUpdates(tidToCW, tidToUpdates);
+        unordered_map<int, vector<tuple<int, int, int, int>>> results;
+        nearDupSearch(docs, tidToUpdates, threshold, results);
+        // statistics(tidToCW, results);
+    }
     cout << endl;
-    return 0;
-
-    // Sort Compact Windows
-    // timerStart();
-    // sortCW(cws);
-    // cout << "CW Sorting Time: " << timerCheck() << endl;
-
-    // timerStart();
-    // saveCW("./cws.data", cws);
-    // cout << "Save CW Time: " << timerCheck() << endl;
-    // timerStart();
-    // loadCW("./cws.data", cws);
-    // cout << "Load CW Time: " << timerCheck() << endl;
-
-    vector<int> querySeq, signature(k);
-    getQuerySeq(docs, querySeq);
-    getSignature(querySeq, signature, hf);
-
-    timerStart();
-    unordered_map<int, vector<CW>> tidToCW;
-    groupbyTid(tidToCW, signature, cws);
-
-    unordered_map<int, vector<Update>> tidToUpdates;
-    generateUpdates(tidToCW, tidToUpdates);
-
-    unordered_map<int, vector<tuple<int, int, int, int>>> results;
-    nearDupSearch(docs, tidToUpdates, threshold, results);
-
-    cout << "Query Time: " << timerCheck() << endl;
-
-    statistics(results);
-
     return 0;
 }

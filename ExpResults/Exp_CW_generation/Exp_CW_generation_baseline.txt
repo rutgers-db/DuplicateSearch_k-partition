@@ -1,0 +1,840 @@
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.001049
+CW Generation Time: 0.023715
+cws amount: 160000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.001401
+CW Generation Time: 0.052352
+cws amount: 320000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.000919
+CW Generation Time: 0.108231
+cws amount: 640000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 128
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.001086
+CW Generation Time: 0.228568
+cws amount: 1280000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 256
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.001707
+CW Generation Time: 0.491285
+cws amount: 2560000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.001283
+CW Generation Time: 0.159632
+cws amount: 1600000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.001334
+CW Generation Time: 0.343473
+cws amount: 3200000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.001189
+CW Generation Time: 0.725974
+cws amount: 6400000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 128
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.001595
+CW Generation Time: 1.58951
+cws amount: 12800000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 256
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.002063
+CW Generation Time: 4.38061
+cws amount: 25600000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.00343
+CW Generation Time: 1.73743
+cws amount: 16000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.003309
+CW Generation Time: 2.90731
+cws amount: 32000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.004125
+CW Generation Time: 5.79385
+cws amount: 64000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 128
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.003435
+CW Generation Time: 11.6256
+cws amount: 128000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 256
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.003731
+CW Generation Time: 27.7788
+cws amount: 256000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.028405
+CW Generation Time: 11.2089
+cws amount: 160000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.025655
+CW Generation Time: 24.5561
+cws amount: 320000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.025767
+CW Generation Time: 51.0505
+cws amount: 640000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 128
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.0258
+CW Generation Time: 104.213
+cws amount: 1280000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100
+k              : 256
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100 documents
+Load Time: 0.039497
+CW Generation Time: 203.123
+cws amount: 2560000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.000972
+CW Generation Time: 0.037685
+cws amount: 160000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.001017
+CW Generation Time: 0.06811
+cws amount: 320000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.001089
+CW Generation Time: 0.127433
+cws amount: 640000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 128
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.00114
+CW Generation Time: 0.251734
+cws amount: 1280000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 256
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.00132
+CW Generation Time: 0.524323
+cws amount: 2560000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.001078
+CW Generation Time: 0.173506
+cws amount: 1600000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.001089
+CW Generation Time: 0.355082
+cws amount: 3200000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.001785
+CW Generation Time: 0.750675
+cws amount: 6400000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 128
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.001615
+CW Generation Time: 1.58459
+cws amount: 12800000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 256
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.002508
+CW Generation Time: 3.26859
+cws amount: 25600000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.004664
+CW Generation Time: 1.67915
+cws amount: 16000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.005372
+CW Generation Time: 3.40031
+cws amount: 32000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.00556
+CW Generation Time: 5.80447
+cws amount: 64000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 128
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.005219
+CW Generation Time: 12.514
+cws amount: 128000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 256
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.005154
+CW Generation Time: 22.7218
+cws amount: 256000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.039223
+CW Generation Time: 10.904
+cws amount: 160000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.033842
+CW Generation Time: 22.5308
+cws amount: 320000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.031324
+CW Generation Time: 45.7952
+cws amount: 640000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 128
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.02891
+CW Generation Time: 84.6038
+cws amount: 1280000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin
+doc_num        : 100
+k              : 256
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+pile_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/pile_gpt2.bin read 100 documents
+Load Time: 0.028244
+CW Generation Time: 172.605
+cws amount: 2560000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.000793
+CW Generation Time: 0.031221
+cws amount: 160000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.000885
+CW Generation Time: 0.063985
+cws amount: 320000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.000827
+CW Generation Time: 0.146985
+cws amount: 640000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 128
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.001457
+CW Generation Time: 0.309076
+cws amount: 1280000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 256
+doc_length     : 100
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.001695
+CW Generation Time: 0.689126
+cws amount: 2560000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 16
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.000959
+CW Generation Time: 0.207867
+cws amount: 1600000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 32
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.00133
+CW Generation Time: 0.481901
+cws amount: 3200000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 64
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.001115
+CW Generation Time: 1.00565
+cws amount: 6400000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 128
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.001713
+CW Generation Time: 2.14466
+cws amount: 12800000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 256
+doc_length     : 1000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.001914
+CW Generation Time: 3.73785
+cws amount: 25600000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 16
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.004269
+CW Generation Time: 1.9021
+cws amount: 16000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 32
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.00782
+CW Generation Time: 4.66082
+cws amount: 32000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 64
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.004112
+CW Generation Time: 7.22087
+cws amount: 64000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 128
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.00342
+CW Generation Time: 15.2729
+cws amount: 128000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 256
+doc_length     : 10000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.004543
+CW Generation Time: 29.4852
+cws amount: 256000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 16
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.031619
+CW Generation Time: 13.6474
+cws amount: 160000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 32
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.031312
+CW Generation Time: 21.3692
+cws amount: 320000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 64
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.032355
+CW Generation Time: 42.7051
+cws amount: 640000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 128
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.030134
+CW Generation Time: 94.4472
+cws amount: 1280000000
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin
+doc_num        : 100
+k              : 256
+doc_length     : 100000
+interval_limit : 0
+threshold      : 0
+query_num      : 0
+------------------------------
+PAN11_external_source
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 100 documents
+Load Time: 0.03089
+CW Generation Time: 180.255
+cws amount: 2560000000
