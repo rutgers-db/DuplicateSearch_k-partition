@@ -84,25 +84,19 @@ void partition(int doc_id, vector<int> &doc, vector<pair<int, int>> &seg, const 
 
 void buildCW(vector<vector<int>> &docs, vector<vector<vector<CW>>> &cws, const vector<pair<int, int>> &hf)
 {
-    vector<pair<int, int>> seg;
-    vector<int> hval;
+    int maxlength = 0;
+    for (auto doc: docs) {
+        maxlength = max(maxlength, int(doc.size()));
+    }
+    vector<vector<int>> pos(k);
+    vector<pair<int, int>> seg(maxlength * 2);
+    vector<int> hval(maxlength);
 
     for (int doc_id = 0; doc_id < docs.size(); doc_id++)
     {
         vector<int> &doc = docs[doc_id];
-        if (hval.size() < doc.size())
-        {
-            hval.resize(doc.size());
-        }
 
         int n = doc.size();
-        if (n > 0)
-        {
-            if (seg.size() < 2 * n)
-            {
-                seg.resize(2 * n);
-            }
-        }
 
         for (int hid = 0; hid < k; hid++)
         {

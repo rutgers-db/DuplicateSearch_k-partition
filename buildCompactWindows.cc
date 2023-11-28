@@ -93,14 +93,15 @@ void emptyCW(int doc_id, vector<int> &pos, vector<CW> &ecws, int doc_size) {
 }
 
 void buildCW(vector<vector<int>> &docs, vector<vector<vector<CW>>> &cws, pair<int, int> hf) {
+    int maxlength = 0;
+    for (auto doc: docs) {
+        maxlength = max(maxlength, int(doc.size()));
+    }
     vector<vector<int>> pos(k);
-    vector<pair<int, int>> seg;
-    vector<int> hval;
+    vector<pair<int, int>> seg(maxlength * 2);
+    vector<int> hval(maxlength);
     for (int doc_id = 0; doc_id < docs.size(); doc_id++) {
         vector<int>& doc = docs[doc_id];
-        if (hval.size() < doc.size()) {
-            hval.resize(doc.size());
-        }
         for (int pid = 0; pid < k; pid++) {
             pos[pid].clear();
         }
@@ -112,9 +113,6 @@ void buildCW(vector<vector<int>> &docs, vector<vector<vector<CW>>> &cws, pair<in
         for (int pid = 0; pid < k; pid++) {
             int n = pos[pid].size();
             if (n > 0) {
-                if (seg.size() < 2 * n) {
-                    seg.resize(2 * n);
-                }
                 for (int i = 0; i < n; i++) {
                     seg[n + i].first = hval[pos[pid][i]];
                     seg[n + i].second = i;
