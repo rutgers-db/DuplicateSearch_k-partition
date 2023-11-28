@@ -38,10 +38,10 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             tmp = [k]
             file_name = getfile('OPH', dataset, k, l)
             with open(file_name, 'r') as f:
-                tmp.append(float(f.readline().strip()))
+                tmp.append(float(f.readline().strip()) / 100)
             file_name = getfile('KMINS', dataset, k, l)
             with open(file_name, 'r') as f:
-                tmp.append(float(f.readline().strip()))
+                tmp.append(float(f.readline().strip()) / 100)
             data.append(tmp)
         g.set(output='"' + f'Figures/{dataset}_t_vs_k_l{l}.eps' + '"')
         df = pd.DataFrame(data)
@@ -60,11 +60,11 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             file_name = getfile('OPH', dataset, k, l)
             with open(file_name, 'r') as f:
                 f.readline()
-                tmp.append(int(f.readline().strip()))
+                tmp.append(int(f.readline().strip()) / 100)
             file_name = getfile('KMINS', dataset, k, l)
             with open(file_name, 'r') as f:
                 f.readline()
-                tmp.append(int(f.readline().strip()))
+                tmp.append(int(f.readline().strip()) / 100)
             data.append(tmp)
         g.set(output='"' + f'Figures/{dataset}_ncws_vs_k_l{l}.eps' + '"')
         df = pd.DataFrame(data)
@@ -82,10 +82,10 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             tmp = [l]
             file_name = getfile('OPH', dataset, k, l)
             with open(file_name, 'r') as f:
-                tmp.append(float(f.readline().strip()))
+                tmp.append(float(f.readline().strip()) / 100)
             file_name = getfile('KMINS', dataset, k, l)
             with open(file_name, 'r') as f:
-                tmp.append(float(f.readline().strip()))
+                tmp.append(float(f.readline().strip()) / 100)
             data.append(tmp)
         g.set(output='"' + f'Figures/{dataset}_t_vs_l_k{k}.eps' + '"')
         df = pd.DataFrame(data)
@@ -102,11 +102,11 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             file_name = getfile('OPH', dataset, k, l)
             with open(file_name, 'r') as f:
                 f.readline()
-                tmp.append(int(f.readline().strip()))
+                tmp.append(int(f.readline().strip()) / 100)
             file_name = getfile('KMINS', dataset, k, l)
             with open(file_name, 'r') as f:
                 f.readline()
-                tmp.append(int(f.readline().strip()))
+                tmp.append(int(f.readline().strip()) / 100)
             data.append(tmp)
         g.set(output='"' + f'Figures/{dataset}_ncws_vs_l_k{k}.eps' + '"')
         df = pd.DataFrame(data)

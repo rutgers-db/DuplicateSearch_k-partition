@@ -55,9 +55,9 @@
 - **Output**: 
   - Query Latency (Time).
 - **Variables**: 
-  - Number of bins (k).
-  - Similarity threshold (θ).
-  - Number of collided compact windows (m).
+  - Number of bins (k). n = 10000 theta = 0.8 k = 16, 32, 64, 128, 256
+  - Similarity threshold (θ). n = 10000 k = 64 theta = 0.5 0.6 0.7 0.8 0.9 1 q = 1000  
+  - Number of collided compact windows (m).  10^7点
   - Number of found results.
 
 ### Experiment Setup
