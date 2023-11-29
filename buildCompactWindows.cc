@@ -209,7 +209,6 @@ void generateUpdates(unordered_map<int, vector<CW>> &tidToCW, unordered_map<int,
 
 void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>> &tidToUpdates, double threshold, unordered_map<int, vector<tuple<int, int, int, int>>> &results) {
     SegmentTree segtree;
-    ofs << tidToUpdates.size() << endl; //
     for (auto item: tidToUpdates) {
         timerStart(); //
         int tid = item.first;

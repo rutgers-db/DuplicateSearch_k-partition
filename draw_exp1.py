@@ -43,7 +43,7 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             with open(file_name, 'r') as f:
                 tmp.append(float(f.readline().strip()) / 100)
             data.append(tmp)
-        g.set(output='"' + f'Figures/{dataset}_t_vs_k_l{l}.eps' + '"')
+        g.set(output='"' + f'Figures/EXP1/{dataset}_t_vs_k_l{l}.eps' + '"')
         df = pd.DataFrame(data)
         # print(f'l={l}')
         # print(df)
@@ -66,7 +66,7 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
                 f.readline()
                 tmp.append(int(f.readline().strip()) / 100)
             data.append(tmp)
-        g.set(output='"' + f'Figures/{dataset}_ncws_vs_k_l{l}.eps' + '"')
+        g.set(output='"' + f'Figures/EXP1/{dataset}_ncws_vs_k_l{l}.eps' + '"')
         df = pd.DataFrame(data)
         # print(f'l={l}')
         # print(df)
@@ -87,7 +87,7 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             with open(file_name, 'r') as f:
                 tmp.append(float(f.readline().strip()) / 100)
             data.append(tmp)
-        g.set(output='"' + f'Figures/{dataset}_t_vs_l_k{k}.eps' + '"')
+        g.set(output='"' + f'Figures/EXP1/{dataset}_t_vs_l_k{k}.eps' + '"')
         df = pd.DataFrame(data)
         g.plot_data(df, 'using 3:xtic(2) title "OPH" lt -1 fs pattern 8', 'using 4 title "KMINS" lt -1 fs pattern 4')
 
@@ -108,6 +108,6 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
                 f.readline()
                 tmp.append(int(f.readline().strip()) / 100)
             data.append(tmp)
-        g.set(output='"' + f'Figures/{dataset}_ncws_vs_l_k{k}.eps' + '"')
+        g.set(output='"' + f'Figures/EXP1/{dataset}_ncws_vs_l_k{k}.eps' + '"')
         df = pd.DataFrame(data)
         g.plot_data(df, 'using 3:xtic(2) title "OPH" lt -1 fs pattern 8', 'using 4 title "KMINS" lt -1 fs pattern 4')
