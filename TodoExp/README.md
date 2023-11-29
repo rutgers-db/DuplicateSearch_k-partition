@@ -88,8 +88,8 @@
 ## 3. Comparison with Baseline
 
 ### Overview
-- Total of 9 figures.
-- Breakdown: 3 datasets × 3 types of output (Index Time, Index Size, Query Time).
+- Total of 12 figures.
+- Breakdown: 3 datasets × 4 types of output (Index Time, Index Size, Query Time(Vary theta and k)).
 
 ### Experiment Details
 - **Datasets**: PAN11, OpenWebText, The Pile.
@@ -114,17 +114,17 @@
    - Figure 1: Index Time Comparison (vary $k$)
    - Figure 2: Index Size Comparison (vary $k$)
    - Figure 3: Query Time Comparison (vary $theta$)
-   - Figure 3: Query Time Comparison (vary $k$)
+   - Figure 4: Query Time Comparison (vary $k$)
 2. **Dataset: OpenWebText**
-   - Figure 4: Index Time Comparison
-   - Figure 5: Index Size Comparison
-   - Figure 6: Query Time Comparison
-   - Figure 6: Query Time Comparison
+   - Figure 5: Index Time Comparison
+   - Figure 6: Index Size Comparison
+   - Figure 7: Query Time Comparison
+   - Figure 8: Query Time Comparison
 3. **Dataset: The Pile**
-   - Figure 7: Index Time Comparison
-   - Figure 8: Index Size Comparison
-   - Figure 9: Query Time Comparison
-   - Figure 9: Query Time Comparison
+   - Figure 9: Index Time Comparison
+   - Figure 10: Index Size Comparison
+   - Figure 11: Query Time Comparison
+   - Figure 12: Query Time Comparison
 
 ### Additional Notes
 - Ensure consistency in the experimental setup across all datasets to facilitate direct comparison.
@@ -133,8 +133,8 @@
 ## 4. Scalability
 
 ### Overview
-- Total of 9 figures.
-- Breakdown: 3 datasets × 3 types of output (Index Time, Index Size, Query Time).
+- Total of 12 figures.
+- Breakdown: 3 datasets × 4 types of output (Index Time, Index Size, Query Time(when $\theta$ is 0.7 or 0.9)).
 
 ### Experiment Details
 - **Datasets**:PAN11 (maybe excluded due to its 1GB small size) OpenWebText, The Pile 
@@ -158,15 +158,17 @@
    - Figure 1: Index Time Scalability
    - Figure 2: Index Size Scalability
    - Figure 3: Query Time Scalability
-   - Figure 3: Query Time Scalability (lines to represent different $\theta$)
+   - Figure 4: Query Time Scalability (lines to represent different $\theta$)
 2. **Dataset: OpenWebText**
-   - Figure 4: Index Time Scalability
-   - Figure 5: Index Size Scalability
-   - Figure 6: Query Time Scalability
+   - Figure 5: Index Time Scalability
+   - Figure 6: Index Size Scalability
+   - Figure 7: Query Time Scalability
+   - Figure 7: Query Time Scalability
 3. **Dataset: The Pile**
-   - Figure 7: Index Time Scalability
-   - Figure 8: Index Size Scalability
-   - Figure 9: Query Time Scalability   
+   - Figure 9: Index Time Scalability
+   - Figure 10: Index Size Scalability
+   - Figure 11: Query Time Scalability   
+   - Figure 12: Query Time Scalability   
 
 ### Additional Notes
 - The scalability tests are crucial for demonstrating the algorithm's performance on large datasets.
