@@ -18,10 +18,10 @@ do
                 while(( $loop>0 ))
                 do
                     let loop--
-                    echo ./a.out -f ${dataset[i]} -n ${n} -k ${k} -l ${len}
-                    echo ./base.out -f ${dataset[i]} -n ${n} -k ${k} -l ${len}
-                    ./a.out -f ${dataset[i]} -n ${n} -k ${k} -l ${len} >> ExpResults/Exp_CW_generation.txt
-                    ./base.out -f ${dataset[i]} -n ${n} -k ${k} -l ${len} >> ExpResults/Exp_CW_generation_baseline.txt
+                    echo ./OPH -f ${dataset[i]} -n ${n} -k ${k} -l ${len}
+                    echo ./KMINS -f ${dataset[i]} -n ${n} -k ${k} -l ${len}
+                    ./OPH -f ${dataset[i]} -n ${n} -k ${k} -l ${len} >> ExpResults/Exp_CW_generation.txt
+                    ./KMINS -f ${dataset[i]} -n ${n} -k ${k} -l ${len} >> ExpResults/Exp_CW_generation_baseline.txt
                 done
             done
         done

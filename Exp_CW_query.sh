@@ -20,10 +20,12 @@ do
                 while(( $loop>0 ))
                 do
                     let loop--
-                    echo ./a.out -f ${dataset[i]} -n ${n} -k ${k} -l ${l} -t ${theta} -q ${queryNum}
-                    echo ./base.out -f ${dataset[i]} -n ${n} -k ${k} -l ${l} -t ${theta} -q ${queryNum}
-                    ./a.out -f ${dataset[i]} -n ${n} -k ${k} -l ${l} -t ${theta} -q ${queryNum} >> ExpResults/Exp_CW_query.txt
-                    ./base.out -f ${dataset[i]} -n ${n} -k ${k} -l ${l} -t ${theta} -q ${queryNum} >> ExpResults/Exp_CW_query_baseline.txt
+                    echo ./OPH_longest -f ${dataset[i]} -n ${n} -k ${k} -l ${l} -t ${theta} -q ${queryNum}
+                    # echo ./OPH -f ${dataset[i]} -n ${n} -k ${k} -l ${l} -t ${theta} -q ${queryNum}
+                    # echo ./KMINS -f ${dataset[i]} -n ${n} -k ${k} -l ${l} -t ${theta} -q ${queryNum}
+                    ./OPH_longest -f ${dataset[i]} -n ${n} -k ${k} -l ${l} -t ${theta} -q ${queryNum}
+                    # ./OPH -f ${dataset[i]} -n ${n} -k ${k} -l ${l} -t ${theta} -q ${queryNum} >> ExpResults/Exp_CW_query.txt
+                    # ./KMINS -f ${dataset[i]} -n ${n} -k ${k} -l ${l} -t ${theta} -q ${queryNum} >> ExpResults/Exp_CW_query_baseline.txt
                 done
             done
         done

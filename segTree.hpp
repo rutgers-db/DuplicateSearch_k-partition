@@ -72,6 +72,22 @@ public:
         query(node << 1 | 1, mid + 1, R, val, ranges);
     }
 
+    int queryLongest(int node, int L, int R, double val) {
+        if (minv[node] > val) {
+            return R;
+        }
+        if (maxv[node] < val) {
+            return -1;
+        }
+        push_down(node);
+        int mid = (L + R) >> 1;
+        int ret = queryLongest(node << 1 | 1, mid + 1, R, val);
+        if (ret == -1)
+            return queryLongest(node << 1, L, mid, val);
+        else
+            return ret;
+    }
+
     void update(int node, int L, int R, int LL, int RR, double val) {
         if (LL <= L && R <= RR) {
             tag[node] += val;
