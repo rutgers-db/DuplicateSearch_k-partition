@@ -235,7 +235,8 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>>
             Update update = updates[i];
             if (i > 0 && updates[i].t != updates[i - 1].t) {
                 int Rlongest = segtree.queryLongest(1, 1, cnt, k * threshold - eps);
-                results[tid].emplace_back(make_tuple(updates[i - 1].t, rev[Rlongest]));
+                if (Rlongest != -1)
+                    results[tid].emplace_back(make_tuple(updates[i - 1].t, rev[Rlongest]));
             }
             if (update.type == 0) {
                 segtree.update(1, 1, cnt, discret[update.l], discret[update.r], update.value * threshold);
@@ -246,7 +247,8 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>>
             
             if (i == updates.size() - 1) {
                 int Rlongest = segtree.queryLongest(1, 1, cnt, k * threshold - eps);
-                results[tid].emplace_back(make_tuple(updates[i - 1].t, rev[Rlongest]));
+                if (Rlongest != -1)
+                    results[tid].emplace_back(make_tuple(updates[i - 1].t, rev[Rlongest]));
             }
         }
         ofs << results[tid].size() << endl; //

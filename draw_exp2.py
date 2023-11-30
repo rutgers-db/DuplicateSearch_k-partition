@@ -21,6 +21,9 @@ g.set(key='height -0.3')
 
 def getfile(method, dataset, k, theta):
     for file_name in os.listdir('ExpResults/Exp_CW_query/'):
+        if 'longest' not in method:
+            if 'longest' in file_name:
+                continue
         if method in file_name and dataset in file_name and \
            ('k'+str(k)+'_' in file_name or 'k'+str(k)+'.' in file_name) and \
            ('t'+str(theta)+'_' in file_name or 't'+str(theta)+'.' in file_name):
@@ -36,6 +39,25 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
         for k in ktics:
             tmp = [k]
             file_name = getfile('OPH', dataset, k, theta)
+            with open(file_name, 'r') as f:
+                f.readline()
+                f.readline()
+                f.readline()
+                f.readline()
+                sumnum = 0
+                sumtime = 0
+                while True:
+                    collided = f.readline()
+                    if collided == '':
+                        break
+                    collided = int(collided)
+                    results = int(f.readline())
+                    querytime = float(f.readline())
+                    sumtime += querytime
+                    sumnum += 1
+                tmp.append(sumtime / sumnum)
+                
+            file_name = getfile('OPH_longest', dataset, k, theta)
             with open(file_name, 'r') as f:
                 f.readline()
                 f.readline()
@@ -74,7 +96,7 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             data.append(tmp)
         g.set(output='"' + f'Figures/EXP2/{dataset}_querytime_vs_k_theta{theta}.eps' + '"')
         df = pd.DataFrame(data)
-        g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 7', 'using 4 with lp title "KMINS" lc rgb "black" lt 2 dt 2 lw 7')
+        g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 7', 'using 4 with lp title "OPHlongest" lc rgb "black" lt 2 dt 2 lw 7', 'using 5 with lp title "KMINS" lc rgb "black" lt 3 dt 3 lw 7')
 
 # Query Time vs theta
 for dataset in 'openwebtext', 'PAN11', 'pile':
@@ -83,6 +105,25 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
         for theta in thetatics:
             tmp = [theta]
             file_name = getfile('OPH', dataset, k, theta)
+            with open(file_name, 'r') as f:
+                f.readline()
+                f.readline()
+                f.readline()
+                f.readline()
+                sumnum = 0
+                sumtime = 0
+                while True:
+                    collided = f.readline()
+                    if collided == '':
+                        break
+                    collided = int(collided)
+                    results = int(f.readline())
+                    querytime = float(f.readline())
+                    sumtime += querytime
+                    sumnum += 1
+                tmp.append(sumtime / sumnum)
+                
+            file_name = getfile('OPH_longest', dataset, k, theta)
             with open(file_name, 'r') as f:
                 f.readline()
                 f.readline()
@@ -121,13 +162,14 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             data.append(tmp)
         g.set(output='"' + f'Figures/EXP2/{dataset}_querytime_vs_theta_k{k}.eps' + '"')
         df = pd.DataFrame(data)
-        g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 7', 'using 4 with lp title "KMINS" lc rgb "black" lt 2 dt 2 lw 7')
-        
+        g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 7', 'using 4 with lp title "OPHlongest" lc rgb "black" lt 2 dt 2 lw 7', 'using 5 with lp title "KMINS" lc rgb "black" lt 3 dt 3 lw 7')
+           
 # Query time vs m, n = 10
 for dataset in 'openwebtext', 'PAN11', 'pile':
     for theta in thetatics:
         for k in ktics:
             dataOPH = {}
+            dataOPH_longest = {}
             dataKMINS = {}
             file_name = getfile('OPH', dataset, k, theta)
             with open(file_name, 'r') as f:
@@ -148,6 +190,26 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
                         dataOPH[collided].append(querytime)
                     else:
                         dataOPH[collided] = [querytime]
+            
+            file_name = getfile('OPH_longest', dataset, k, theta)
+            with open(file_name, 'r') as f:
+                f.readline()
+                f.readline()
+                f.readline()
+                f.readline()
+                sumnum = 0
+                sumtime = 0
+                while True:
+                    collided = f.readline()
+                    if collided == '':
+                        break
+                    collided = int(collided)
+                    results = int(f.readline())
+                    querytime = float(f.readline())
+                    if collided in dataOPH_longest:
+                        dataOPH_longest[collided].append(querytime)
+                    else:
+                        dataOPH_longest[collided] = [querytime]
                 
             file_name = getfile('KMINS', dataset, k, theta)
             with open(file_name, 'r') as f:
@@ -173,16 +235,24 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             dataOPH = tmp
             
             tmp = []
+            for key in sorted(dataOPH_longest.keys()):
+                tmp.append([key, sum(dataOPH_longest[key])/len(dataOPH_longest[key])])
+            dataOPH_longest = tmp
+            
+            tmp = []
             for key in sorted(dataKMINS.keys()):
                 tmp.append([key, sum(dataKMINS[key])/len(dataKMINS[key])])
             dataKMINS = tmp
             
             data = []
-            for i in range(max(len(dataOPH), len(dataKMINS))):
+            for i in range(max(len(dataOPH), len(dataOPH_longest), len(dataKMINS))):
                 tmp = []
                 if i < len(dataOPH):
                     tmp.append(dataOPH[i][0])
                     tmp.append(dataOPH[i][1])
+                if i < len(dataOPH_longest):
+                    tmp.append(dataOPH_longest[i][0])
+                    tmp.append(dataOPH_longest[i][1])
                 if i < len(dataKMINS):
                     tmp.append(dataKMINS[i][0])
                     tmp.append(dataKMINS[i][1])
@@ -190,7 +260,7 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             
             g.set(output='"' + f'Figures/EXP2/{dataset}_querytime_vs_m_k{k}_theta{theta}.eps' + '"')
             df = pd.DataFrame(data)
-            g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 1', 'using 5:xtic(4) with lp title "KMINS" lc rgb "red" lt 2 dt 2 lw 1')
+            g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 1', 'using 5:xtic(4) with lp title "OPHlongest" lc rgb "red" lt 2 dt 2 lw 1', 'using 7:xtic(6) with lp title "KMINS" lc rgb "blue" lt 3 dt 3 lw 1')
 
 # Query time vs results, n = 10
 for dataset in 'openwebtext', 'PAN11', 'pile':
@@ -198,6 +268,7 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
         for k in ktics:
             dataOPH = {}
             dataKMINS = {}
+            dataOPH_longest = {}
             file_name = getfile('OPH', dataset, k, theta)
             with open(file_name, 'r') as f:
                 f.readline()
@@ -217,6 +288,26 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
                         dataOPH[results].append(querytime)
                     else:
                         dataOPH[results] = [querytime]
+                        
+            file_name = getfile('OPH_longest', dataset, k, theta)
+            with open(file_name, 'r') as f:
+                f.readline()
+                f.readline()
+                f.readline()
+                f.readline()
+                sumnum = 0
+                sumtime = 0
+                while True:
+                    collided = f.readline()
+                    if collided == '':
+                        break
+                    collided = int(collided)
+                    results = int(f.readline())
+                    querytime = float(f.readline())
+                    if results in dataOPH_longest:
+                        dataOPH_longest[results].append(querytime)
+                    else:
+                        dataOPH_longest[results] = [querytime]
                 
             file_name = getfile('KMINS', dataset, k, theta)
             with open(file_name, 'r') as f:
@@ -243,11 +334,28 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             dataOPH = tmp
             
             tmp = []
+            for key in sorted(dataOPH_longest.keys()):
+                tmp.append([key, sum(dataOPH_longest[key])/len(dataOPH_longest[key])])
+            dataOPH_longest = tmp
+            
+            tmp = []
             for key in sorted(dataKMINS.keys()):
                 tmp.append([key, sum(dataKMINS[key])/len(dataKMINS[key])])
             dataKMINS = tmp
             
             data = []
+            for i in range(max(len(dataOPH), len(dataOPH_longest), len(dataKMINS))):
+                tmp = []
+                if i < len(dataOPH):
+                    tmp.append(dataOPH[i][0])
+                    tmp.append(dataOPH[i][1])
+                if i < len(dataOPH_longest):
+                    tmp.append(dataOPH_longest[i][0])
+                    tmp.append(dataOPH_longest[i][1])
+                if i < len(dataKMINS):
+                    tmp.append(dataKMINS[i][0])
+                    tmp.append(dataKMINS[i][1])
+                data.append(tmp)
             for i in range(max(len(dataOPH), len(dataKMINS))):
                 tmp = []
                 if i < len(dataOPH):
@@ -260,4 +368,4 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             
             g.set(output='"' + f'Figures/EXP2/{dataset}_querytime_vs_res_k{k}_theta{theta}.eps' + '"')
             df = pd.DataFrame(data)
-            g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 1', 'using 5:xtic(4) with lp title "KMINS" lc rgb "red" lt 2 dt 2 lw 1')
+            g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 1', 'using 5:xtic(4) with lp title "OPHlongest" lc rgb "red" lt 2 dt 2 lw 1', 'using 7:xtic(6) with lp title "KMINS" lc rgb "blue" lt 3 dt 3 lw 1')
