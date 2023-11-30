@@ -239,12 +239,6 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<CW>> &ti
             else {
                 segtree.update(1, 1, cnt, discret[update.l], discret[update.r], update.value);
             }
-            
-            if (i == updates.size() - 1) {
-                int Rlongest = segtree.queryLongest(1, 1, cnt, k * threshold - eps);
-                if (Rlongest != -1)
-                    results[tid].emplace_back(make_tuple(updates[i - 1].t, rev[Rlongest]));
-            }
         }
         ofs << results[tid].size() << endl; //
         ofs << timerCheck() << endl; //

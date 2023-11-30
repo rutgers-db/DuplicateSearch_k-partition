@@ -205,6 +205,8 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<CW>> &ti
                 updates.emplace_back(cw.c + 1, cw.c, cw.r, 1, -1);
             }
         }
+        sort(updates.begin(), updates.end());
+
         ofs << updates.size() / 2 << endl; //
 
         map<int, int> discret;
@@ -245,17 +247,6 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<CW>> &ti
             else
             {
                 segtree.update(1, 1, cnt, discret[update.l], discret[update.r], update.value);
-            }
-
-            if (i == updates.size() - 1)
-            {
-                vector<pair<int, int>> Rranges;
-                segtree.query(1, 1, cnt, k * threshold - eps, Rranges);
-                for (auto Rrange : Rranges)
-                {
-                    results[tid].emplace_back(make_tuple(updates[i].t, docs[tid].size(), rev[Rrange.first], rev[Rrange.second]));
-                }
-                // printf("%d\n", Rranges.size());
             }
         }
         ofs << results[tid].size() << endl; //
