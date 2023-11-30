@@ -189,30 +189,25 @@ void groupbyTid(unordered_map<int, vector<CW>> &tidToCW, vector<int> &signature,
     }
 }
 
-void generateUpdates(unordered_map<int, vector<CW>> &tidToCW, unordered_map<int, vector<Update>> &tidToUpdates) {
-    for (auto item: tidToCW) {
-        int tid = item.first;
-        vector<CW>& cws = item.second;
-        for (auto cw: cws) {
-            if (cw.c == -1) {
-                tidToUpdates[tid].emplace_back(cw.l, cw.l, cw.r, 0, 1);
-                tidToUpdates[tid].emplace_back(cw.r + 1, cw.l, cw.r, 0, -1);
-            }
-            else {
-                tidToUpdates[tid].emplace_back(cw.l, cw.c, cw.r, 1, 1);
-                tidToUpdates[tid].emplace_back(cw.c + 1, cw.c, cw.r, 1, -1);
-            }
-        }
-        sort(tidToUpdates[tid].begin(), tidToUpdates[tid].end());
-    }
-}
-
-void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<Update>> &tidToUpdates, double threshold, unordered_map<int, vector<tuple<int, int, int, int>>> &results) {
+void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<CW>> &tidToCW, double threshold, unordered_map<int, vector<tuple<int, int, int, int>>> &results) {
     SegmentTree segtree;
-    for (auto item: tidToUpdates) {
+    for (auto item: tidToCW) {
         timerStart(); //
         int tid = item.first;
-        vector<Update>& updates = item.second;
+        vector<CW>& cws = item.second;
+        vector<Update> updates;
+        for (auto cw: cws) {
+            if (cw.c == -1) {
+                updates.emplace_back(cw.l, cw.l, cw.r, 0, 1);
+                updates.emplace_back(cw.r + 1, cw.l, cw.r, 0, -1);
+            }
+            else {
+                updates.emplace_back(cw.l, cw.c, cw.r, 1, 1);
+                updates.emplace_back(cw.c + 1, cw.c, cw.r, 1, -1);
+            }
+        }
+        sort(updates.begin(), updates.end());
+
         ofs << updates.size() / 2 << endl; //
 
         map<int, int> discret; 
@@ -359,10 +354,8 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < queryNum; i++) {
         unordered_map<int, vector<CW>> tidToCW;
         groupbyTid(tidToCW, signatures[i], cws);
-        unordered_map<int, vector<Update>> tidToUpdates;
-        generateUpdates(tidToCW, tidToUpdates);
         unordered_map<int, vector<tuple<int, int, int, int>>> results;
-        nearDupSearch(docs, tidToUpdates, threshold, results);
+        nearDupSearch(docs, tidToCW, threshold, results);
         // statistics(tidToCW, results);
     }
     cout << endl;
