@@ -260,7 +260,7 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             
             g.set(output='"' + f'Figures/EXP2/{dataset}_querytime_vs_m_k{k}_theta{theta}.eps' + '"')
             df = pd.DataFrame(data)
-            g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 1', 'using 5:xtic(4) with lp title "OPHlongest" lc rgb "red" lt 2 dt 2 lw 1', 'using 7:xtic(6) with lp title "KMINS" lc rgb "blue" lt 3 dt 3 lw 1')
+            g.plot_data(df, 'using 2:3 with lp title "OPH" lc rgb "black" lt -1 dt 1 lw 1', 'using 4:5 with lp title "OPHlongest" lc rgb "red" lt -1 dt 1 lw 1', 'using 6:7 with lp title "KMINS" lc rgb "blue" lt -1 dt 1 lw 1')
 
 # Query time vs results, n = 10
 for dataset in 'openwebtext', 'PAN11', 'pile':
@@ -356,16 +356,7 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
                     tmp.append(dataKMINS[i][0])
                     tmp.append(dataKMINS[i][1])
                 data.append(tmp)
-            for i in range(max(len(dataOPH), len(dataKMINS))):
-                tmp = []
-                if i < len(dataOPH):
-                    tmp.append(dataOPH[i][0])
-                    tmp.append(dataOPH[i][1])
-                if i < len(dataKMINS):
-                    tmp.append(dataKMINS[i][0])
-                    tmp.append(dataKMINS[i][1])
-                data.append(tmp)
             
             g.set(output='"' + f'Figures/EXP2/{dataset}_querytime_vs_res_k{k}_theta{theta}.eps' + '"')
             df = pd.DataFrame(data)
-            g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 1', 'using 5:xtic(4) with lp title "OPHlongest" lc rgb "red" lt 2 dt 2 lw 1', 'using 7:xtic(6) with lp title "KMINS" lc rgb "blue" lt 3 dt 3 lw 1')
+            g.plot_data(df, 'using 2:3 with lp title "OPH" lc rgb "black" lt -1 dt 1 lw 1', 'using 4:5 with lp title "OPHlongest" lc rgb "red" lt -1 dt 1 lw 1', 'using 6:7 with lp title "KMINS" lc rgb "blue" lt -1 dt 1 lw 1')
