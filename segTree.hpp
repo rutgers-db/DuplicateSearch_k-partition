@@ -3,7 +3,7 @@
 using namespace std;
 
 class SegmentTree {
-    vector<double> tag, minv, maxv;
+    vector<float> tag, minv, maxv;
     int size;
 public:
 
@@ -55,7 +55,7 @@ public:
         }
     }
 
-    void query(int node, int L, int R, double val, vector<pair<int, int>> &ranges) {
+    void query(int node, int L, int R, float val, vector<pair<int, int>> &ranges) {
         if (minv[node] > val) {
             ranges.emplace_back(L, R);
             return;
@@ -72,7 +72,7 @@ public:
         query(node << 1 | 1, mid + 1, R, val, ranges);
     }
 
-    int queryLongest(int node, int L, int R, double val) {
+    int queryLongest(int node, int L, int R, float val) {
         if (minv[node] > val) {
             return R;
         }
@@ -88,7 +88,7 @@ public:
             return ret;
     }
 
-    void update(int node, int L, int R, int LL, int RR, double val) {
+    void update(int node, int L, int R, int LL, int RR, float val) {
         if (LL <= L && R <= RR) {
             tag[node] += val;
             minv[node] += val;

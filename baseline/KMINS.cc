@@ -20,13 +20,13 @@ int doc_num;
 int doc_length = 0;
 int INTERVAL_LIMIT = 0;
 int k = 64;
-double threshold = 0;
+float threshold = 0;
 int queryNum = 0;
 string src_file;
 
 const int tokenNum = 50257;
 const int p = 998244353;
-const double eps = 1e-10;
+const float eps = 1e-6;
 const int m = p / k * k;
 
 // mt19937 mt_rand(time(0));
@@ -186,7 +186,7 @@ void groupbyTid(unordered_map<int, vector<CW>> &tidToCW, vector<int> &signature,
     }
 }
 
-void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<CW>> &tidToCW, double threshold, unordered_map<int, vector<tuple<int, int, int, int>>> &results)
+void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<CW>> &tidToCW, float threshold, unordered_map<int, vector<tuple<int, int, int, int>>> &results)
 {
     SegmentTree segtree;
     for (auto item : tidToCW)
@@ -196,14 +196,8 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<CW>> &ti
         vector<CW>& cws = item.second;
         vector<Update> updates;
         for (auto cw: cws) {
-            if (cw.c == -1) {
-                updates.emplace_back(cw.l, cw.l, cw.r, 0, 1);
-                updates.emplace_back(cw.r + 1, cw.l, cw.r, 0, -1);
-            }
-            else {
-                updates.emplace_back(cw.l, cw.c, cw.r, 1, 1);
-                updates.emplace_back(cw.c + 1, cw.c, cw.r, 1, -1);
-            }
+            updates.emplace_back(cw.l, cw.c, cw.r, 1, 1.0);
+            updates.emplace_back(cw.c + 1, cw.c, cw.r, 1, -1.0);
         }
         sort(updates.begin(), updates.end());
 
@@ -227,27 +221,26 @@ void nearDupSearch(vector<vector<int>> &docs, unordered_map<int, vector<CW>> &ti
         segtree.init(cnt);
         segtree.build(1, 1, cnt);
 
+        float update_cnt = 0;
         for (int i = 0; i < updates.size(); i++)
         {
             Update update = updates[i];
             if (i > 0 && updates[i].t != updates[i - 1].t)
-            {
-                vector<pair<int, int>> Rranges;
-                segtree.query(1, 1, cnt, k * threshold - eps, Rranges);
-                for (auto Rrange : Rranges)
-                {
-                    results[tid].emplace_back(make_tuple(updates[i - 1].t, updates[i].t - 1, rev[Rrange.first], rev[Rrange.second]));
+            {   
+                if(update_cnt > k * threshold - eps){
+                    vector<pair<int, int>> Rranges;
+                    segtree.query(1, 1, cnt, k * threshold - eps, Rranges);
+                    for (auto Rrange : Rranges)
+                    {
+                        results[tid].emplace_back(make_tuple(updates[i - 1].t, updates[i].t - 1, rev[Rrange.first], rev[Rrange.second]));
+                    }
+                    // printf("%d\n", Rranges.size());
                 }
-                // printf("%d\n", Rranges.size());
             }
-            if (update.type == 0)
-            {
-                segtree.update(1, 1, cnt, discret[update.l], discret[update.r], update.value * threshold);
-            }
-            else
-            {
-                segtree.update(1, 1, cnt, discret[update.l], discret[update.r], update.value);
-            }
+            
+            segtree.update(1, 1, cnt, discret[update.l], discret[update.r], update.value);
+            update_cnt = update_cnt + update.value;
+            
         }
         ofs << results[tid].size() << endl; //
         ofs << timerCheck() << endl; //
@@ -319,7 +312,7 @@ int main(int argc, char *argv[]) {
 
     cout << src_file.substr(src_file.rfind('/') + 1, src_file.rfind('.') - src_file.rfind('/') - 1) << endl;
     char out_file[100];
-    sprintf(out_file, "ExpResults/KMINS_%s_n%d_l%d_k%d_t%.1lf_q%d.txt", src_file.substr(src_file.rfind('/') + 1, src_file.rfind('.') - src_file.rfind('/') - 1).c_str(), doc_num, doc_length ,k, threshold, queryNum);
+    sprintf(out_file, "ExpResults/KMINS_%s_n%d_l%d_k%d_t%.1f_q%d.txt", src_file.substr(src_file.rfind('/') + 1, src_file.rfind('.') - src_file.rfind('/') - 1).c_str(), doc_num, doc_length ,k, threshold, queryNum);
     ofs.open(out_file, std::ofstream::out);
 
     // Load documents
