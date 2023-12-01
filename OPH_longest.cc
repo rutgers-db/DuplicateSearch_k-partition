@@ -58,12 +58,13 @@ void partition(int doc_id, vector<int> &doc, vector<pair<int, int>> &seg, vector
         return;
     pair<int, int> ret(numeric_limits<int>::max(), numeric_limits<int>::max());
     int a = l, b = r;
-    for (a += n, b += n; a <= b; ++a /= 2, --b /= 2 ) {
+    for (a += n, b += n; a <= b; ++a /= 2, --b /= 2)
+    {
         if (a % 2 == 1)
-            if (seg[a].first <= ret.first && seg[a].second <= ret.second)
+            if (seg[a].first < ret.first)
                 ret = seg[a];
         if (b % 2 == 0)
-            if (seg[b].first <= ret.first && seg[b].second <= ret.second)
+            if (seg[b].first < ret.first)
                 ret = seg[b];
     }
 
