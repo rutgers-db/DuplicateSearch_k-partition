@@ -60,10 +60,7 @@ public:
             ranges.emplace_back(L, R);
             return;
         }
-        if (maxv[node] < val) {
-            return;
-        }
-        if (L == R) {
+        if (maxv[node] <= val) {
             return;
         }
         push_down(node);
@@ -72,20 +69,19 @@ public:
         query(node << 1 | 1, mid + 1, R, val, ranges);
     }
 
-    int queryLongest(int node, int L, int R, float val) {
+    void queryLongest(int node, int L, int R, float val, int &res) {
         if (minv[node] > val) {
-            return R;
+            res = R;
+            return;
         }
-        if (maxv[node] < val) {
-            return -1;
+        if (maxv[node] <= val) {
+            return;
         }
         push_down(node);
         int mid = (L + R) >> 1;
-        int ret = queryLongest(node << 1 | 1, mid + 1, R, val);
-        if (ret == -1)
-            return queryLongest(node << 1, L, mid, val);
-        else
-            return ret;
+        queryLongest(node << 1 | 1, mid + 1, R, val, res);
+        if (res < mid + 1)
+            queryLongest(node << 1, L, mid, val, res);
     }
 
     void update(int node, int L, int R, int LL, int RR, float val) {

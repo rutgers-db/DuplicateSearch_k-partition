@@ -27,7 +27,7 @@ def getfile(method, dataset, k, theta):
         if method in file_name and dataset in file_name and \
            ('k'+str(k)+'_' in file_name or 'k'+str(k)+'.' in file_name) and \
            ('t'+str(theta)+'_' in file_name or 't'+str(theta)+'.' in file_name):
-            return 'ExpResults/' + file_name
+            return 'ExpResults/test/' + file_name
         
 n = 10
 ktics = [16, 32, 64, 128, 256]
@@ -186,7 +186,8 @@ for dataset in 'openwebtext', 'PAN11', 'pile':
             for key in sorted(dataOPH_longest.keys()):
                 tmp.append([key, sum(dataOPH_longest[key])/len(dataOPH_longest[key])])
             dataOPH_longest = tmp
-            
+            print(len(dataOPH))
+            print(len(dataOPH_longest))
             data = []
             for i in range(max(len(dataOPH), len(dataOPH_longest))):
                 tmp = []
