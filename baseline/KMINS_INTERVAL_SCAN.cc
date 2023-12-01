@@ -193,6 +193,7 @@ void InnerScan(vector<CW> &cws, unordered_set<int> &ids, double threshold, vecto
         updates.emplace_back(cws[id].c, 0, 0, id, 1);
         updates.emplace_back(cws[id].r + 1, 0, 0, id, -1);
     }
+    sort(updates.begin(), updates.end());
     int cnt = 0;
     for (int i = 0; i < updates.size(); i++) {
         Update& update = updates[i];
@@ -260,10 +261,10 @@ void statistics(unordered_map<int, vector<CW>> &tidToCW, unordered_map<int, vect
     int results_cws_amount = 0;
     for (auto result: results) {
         results_cws_amount += result.second.size();
-        // cout << "tid: " << result.first << endl;
-        // for (auto tu: result.second) {
-        //     cout << "[" << get<0>(tu) << ", " << get<1>(tu) << "] * [" << get<2>(tu) << ", " << get<3>(tu) << "]" << endl;
-        // }
+        cout << "tid: " << result.first << endl;
+        for (auto tu: result.second) {
+            cout << "[" << get<0>(tu) << ", " << get<1>(tu) << "] * [" << get<2>(tu) << ", " << get<3>(tu) << "]" << endl;
+        }
     }
     // cout << "results cws amount: " << results_cws_amount << endl;
 }
@@ -348,6 +349,7 @@ int main(int argc, char *argv[]) {
         groupbyTid(tidToCW, signatures[i], cws);
         unordered_map<int, vector<tuple<int, int, int, int>>> results;
         nearDupSearch(docs, tidToCW, threshold, results);
+        // statistics(tidToCW, results);
     }
     cout << endl;
     return 0;

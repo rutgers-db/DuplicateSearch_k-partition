@@ -259,10 +259,10 @@ void statistics(unordered_map<int, vector<CW>> &tidToCW, unordered_map<int, vect
     int results_cws_amount = 0;
     for (auto result: results) {
         results_cws_amount += result.second.size();
-        // cout << "tid: " << result.first << endl;
-        // for (auto tu: result.second) {
-        //     cout << "[" << get<0>(tu) << ", " << get<1>(tu) << "] * [" << get<2>(tu) << ", " << get<3>(tu) << "]" << endl;
-        // }
+        cout << "tid: " << result.first << endl;
+        for (auto tu: result.second) {
+            cout << "[" << get<0>(tu) << ", " << get<1>(tu) << "] * [" << get<2>(tu) << ", " << get<3>(tu) << "]" << endl;
+        }
     }
     // cout << "results cws amount: " << results_cws_amount << endl;
 }
