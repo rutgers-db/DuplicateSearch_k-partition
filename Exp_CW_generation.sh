@@ -20,8 +20,8 @@ do
                     let loop--
                     echo ./OPH -f ${dataset[i]} -n ${n} -k ${k} -l ${len}
                     echo ./KMINS -f ${dataset[i]} -n ${n} -k ${k} -l ${len}
-                    ./OPH -f ${dataset[i]} -n ${n} -k ${k} -l ${len} >> ExpResults/Exp_CW_generation.txt
-                    ./KMINS -f ${dataset[i]} -n ${n} -k ${k} -l ${len} >> ExpResults/Exp_CW_generation_baseline.txt
+                    ./OPH -f ${dataset[i]} -n ${n} -k ${k} -l ${len}
+                    ./KMINS -f ${dataset[i]} -n ${n} -k ${k} -l ${len}
                 done
             done
         done
