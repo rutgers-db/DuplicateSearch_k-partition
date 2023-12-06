@@ -78,7 +78,7 @@ void loadSamples(const string &binFileName, vector<vector<int>> &docs, int sampl
     cout << "From Binary File " << binFileName << " read " << docs.size() << " documents" << endl;
 }
 
-void loadCW(const string &binFileName, vector<vector<vector<CW>>> &cws) {
+void loadCW(const string &binFileName, vector<vector<vector<CW>>> &cws, pair<int, int> &hf) {
     ifstream ifs(binFileName, ios::binary);
     if (!ifs) {
         cout << "Error open bin file" << endl;
@@ -87,11 +87,19 @@ void loadCW(const string &binFileName, vector<vector<vector<CW>>> &cws) {
     int par_num, token_num, cw_num;
     ifs.read((char *)&par_num, sizeof(int));
     ifs.read((char *)&token_num, sizeof(int));
+    int tmp;
+    ifs.read((char *)&tmp, sizeof(int));
+    if (tmp != 1) {
+        cout << "Must open OPH Index File" << endl;
+        throw "Must open OPH Index File";
+    }
+    ifs.read((char*)&hf, sizeof(pair<int, int>));
     cws.resize(par_num);
     for (int pid = 0; pid < par_num; pid++) {
         for (int tid = 0; tid < token_num; tid++) {
             cws[pid].resize(token_num + 1);
             ifs.read((char *)&cw_num, sizeof(int));
+            cws[pid][tid].resize(cw_num);
             for (int i = 0; i < cw_num; i++) {
                 ifs.read((char *)&cws[pid][tid][i], sizeof(CW));
             }
@@ -99,7 +107,7 @@ void loadCW(const string &binFileName, vector<vector<vector<CW>>> &cws) {
     }
 }
 
-void saveCW(const string &binFileName, vector<vector<vector<CW>>> &cws) {
+void saveCW(const string &binFileName, vector<vector<vector<CW>>> &cws, pair<int, int> &hf) {
     ofstream ofs(binFileName, ios::binary);
     if (!ofs) {
         cout << "Error open bin file" << endl;
@@ -108,8 +116,11 @@ void saveCW(const string &binFileName, vector<vector<vector<CW>>> &cws) {
     int par_num = cws.size(), token_num = cws[0].size() - 1, cw_num;
     ofs.write((char*)&par_num, sizeof(int));
     ofs.write((char*)&token_num, sizeof(int));
+    int tmp = 1;
+    ofs.write((char*)&tmp, sizeof(int));
+    ofs.write((char*)&hf, sizeof(pair<int, int>));
     for (int pid = 0; pid < par_num; pid++) {
-        for (int tid = 0; tid < token_num; tid++) {
+        for (int tid = 0; tid <= token_num; tid++) {
             cw_num = cws[pid][tid].size();
             ofs.write((char *)&cw_num, sizeof(int));
             for (int i = 0; i < cw_num; i++) {
