@@ -43,10 +43,6 @@ double timerCheck() {
     return duration.count() / 1000000.0;
 }
 
-pair<int, int> generateHF() {
-    return make_pair(mt_rand() % p, mt_rand() % p);
-}
-
 int eval(pair<int, int> hf, int x) {
     return (1LL * x * hf.first + hf.second) % p % m;
 }
@@ -79,7 +75,6 @@ void sortCW(vector<vector<vector<CW>>> &cws) {
 }
 
 void getQuerySeqs(vector<vector<int>> &querySeqs) {
-    cout << queryNum << endl;
     loadSamples(query_file, querySeqs, 0, queryNum);
 }
 
@@ -156,7 +151,6 @@ void nearDupSearch(unordered_map<int, vector<CW>> &tidToCW, float threshold, uno
                     for (auto Rrange: Rranges) {
                         results[tid].emplace_back(make_tuple(updates[i - 1].t, updates[i].t - 1, rev[Rrange.first], rev[Rrange.second]));
                     }
-                    // printf("%d\n", Rranges.size());
                 }
             }
             segtree.update(1, 1, cnt, discret[update.l], discret[update.r], update.value);
