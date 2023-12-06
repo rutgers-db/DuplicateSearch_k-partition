@@ -3,6 +3,7 @@
 #include <iostream>
 #include <random>
 #include <unordered_map>
+#include <unordered_set>
 #include <map>
 #include <chrono>
 #include <assert.h>
@@ -21,6 +22,7 @@ string index_file;
 string query_file;
 string out_file;
 ofstream ofs;
+int method = 0;
 
 const int tokenNum = 50257;
 const int p = 998244353;
@@ -160,9 +162,71 @@ void nearDupSearch(unordered_map<int, vector<CW>> &tidToCW, float threshold, uno
     }
 }
 
+void InnerScan(vector<CW> &cws, unordered_set<int> &ids, double threshold, vector<pair<int, int>> &Rranges) {
+    vector<Update> updates;
+    for (auto id: ids) {
+        updates.emplace_back(cws[id].c, 0, 0, id, 1);
+        updates.emplace_back(cws[id].r + 1, 0, 0, id, -1);
+    }
+    sort(updates.begin(), updates.end());
+    int cnt = 0;
+    for (int i = 0; i < updates.size(); i++) {
+        Update& update = updates[i];
+        if (i > 0 && updates[i].t != updates[i - 1].t) {
+            if (cnt > k * threshold - eps) {
+                Rranges.emplace_back(make_pair(updates[i - 1].t, updates[i].t - 1));
+            }
+        }
+        cnt += update.value;
+    }
+}
+
+
+void OutterScan(unordered_map<int, vector<CW>> &tidToCW, double threshold, unordered_map<int, vector<tuple<int, int, int, int>>> &results)
+{
+    SegmentTree segtree;
+    for (auto item : tidToCW)
+    {
+        timerStart(); //
+        int tid = item.first;
+        vector<CW>& cws = item.second;
+        vector<Update> updates;
+        for (int i = 0; i < cws.size(); i++) {
+            CW& cw = cws[i];
+            updates.emplace_back(cw.l, 0, 0, i, 1);
+            updates.emplace_back(cw.c + 1, 0, 0, i, -1); //cw.type == cw.id
+        }
+        sort(updates.begin(), updates.end());
+
+        ofs << updates.size() / 2 << endl; //
+        
+        unordered_set<int> ids;
+        for (int i = 0; i < updates.size(); i++) {
+            Update& update = updates[i];
+            if (i > 0 && updates[i].t != updates[i - 1].t) {
+                if (ids.size() > k * threshold - eps) {
+                    vector<pair<int, int>> Rranges;
+                    InnerScan(cws, ids, threshold, Rranges);
+                    for (auto Rrange: Rranges) {
+                        results[tid].emplace_back(make_tuple(updates[i - 1].t, updates[i].t - 1, Rrange.first, Rrange.second));
+                    }
+                }
+            }
+            if (update.value == 1) {
+                ids.insert(update.type);
+            }
+            else {
+                ids.erase(update.type);
+            }
+        }
+        ofs << results[tid].size() << endl; //
+        ofs << timerCheck() << endl; //
+    }
+}
+
 int main(int argc, char *argv[]) {
     int opt;
-    while ((opt = getopt(argc, argv, "f:i:t:q:o:")) != EOF) {
+    while ((opt = getopt(argc, argv, "f:i:t:q:m:o:")) != EOF) {
         switch (opt) {
             case 'f':
                 query_file = optarg;
@@ -175,13 +239,17 @@ int main(int argc, char *argv[]) {
             case 'q':
                 queryNum = stoi(optarg);
                 break;
+            case 'm':
+                method = stoi(optarg);
+                break;
             case 'o':
                 out_file = optarg;
                 break;
             case '?':
                 cout << optarg << endl;
                 cout << opterr << endl;
-                cout << "Usage: program -f query_file_path -i index_file_path -t threshold -q query_num" << endl;
+                cout << "Usage: program -f query_file_path -i index_file_path -t threshold -q query_num -m method -o out_file" << endl;
+                cout << "Method: 0 Segtree, 1 Interval scan" << endl;
                 break;
         }
     }
@@ -218,7 +286,10 @@ int main(int argc, char *argv[]) {
         unordered_map<int, vector<CW>> tidToCW;
         groupbyTid(tidToCW, signatures[i], cws);
         unordered_map<int, vector<tuple<int, int, int, int>>> results;
-        nearDupSearch(tidToCW, threshold, results);
+        if (method == 0)
+            nearDupSearch(tidToCW, threshold, results);
+        else
+            OutterScan(tidToCW, threshold, results);
     }
     cout << endl;
     return 0;
