@@ -182,7 +182,7 @@ int main(int argc, char *argv[]) {
             case '?':
                 cout << optarg << endl;
                 cout << opterr << endl;
-                cout << "Usage: program -f query_file_path -i index_file_path -t threshold -q query_num" << endl;
+                cout << "Usage: program -f query_file_path -i index_file_path -t threshold -q query_num -o out_file" << endl;
                 break;
         }
     }
