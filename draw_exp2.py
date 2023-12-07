@@ -11,7 +11,7 @@ g.set(style='fill solid border')
 g.set(style='fill pattern')
 g.set(boxwidth='1')
 g.unset('mytics')
-g.set(yrange='[0:0.9]')
+# g.set(yrange='[0:0.9]')
 # g.set(logscale='y')
 # g.set(format='y "10^{%L}"')
 g.set(xtics='font "Times-Roman,25"')
@@ -19,8 +19,8 @@ g.set(key='autotitle columnheader')
 g.set(key='top horizontal center')
 g.set(key='height -0.3')
 
-Exp_path = 'ExpResults/EXP2/'
-Out_path = 'Figures/EXP2F/'
+Exp_path = 'EXPNEW/EXP2/'
+Out_path = 'Figures/EXP2N/'
 
 def getfile(method, dataset, k, theta):
     for file_name in os.listdir(Exp_path):
@@ -108,17 +108,13 @@ def t_vs_theta(datasets, ktics, thetatics):
                 tmp.append(get_avg_t(file_name))
                 file_name = getfile('KMINS', dataset, k, theta)
                 tmp.append(get_avg_t(file_name))
-                if k <= 32 or k == 64 and dataset == 'openwebtext':
-                    file_name = getfile('SCAN', dataset, k, theta)
-                    tmp.append(get_avg_t(file_name))
+                file_name = getfile('SCAN', dataset, k, theta)
+                tmp.append(get_avg_t(file_name))
                 data.append(tmp)
                 
             g.set(output='"' + f'{Out_path}{dataset}_querytime_vs_theta_k{k}.eps' + '"')
             df = pd.DataFrame(data)
-            if k <= 32 or k == 64 and dataset == 'openwebtext':
-                g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 5', 'using 4 with lp title "OPHlongest" lc rgb "black" lt 2 dt 2 lw 5', 'using 5 with lp title "KMINS" lc rgb "black" lt 3 dt 3 lw 5', 'using 6 with lp title "KMINSintervalscan" lc rgb "black" lt 4 dt 4 lw 5')
-            else:
-                g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 5', 'using 4 with lp title "OPHlongest" lc rgb "black" lt 2 dt 2 lw 5', 'using 5 with lp title "KMINS" lc rgb "black" lt 3 dt 3 lw 5')
+            g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 5', 'using 4 with lp title "OPHlongest" lc rgb "black" lt 2 dt 2 lw 5', 'using 5 with lp title "KMINS" lc rgb "black" lt 3 dt 3 lw 5', 'using 6 with lp title "KMINSintervalscan" lc rgb "black" lt 4 dt 4 lw 5')
             
 def get_t_vs_m_data(file_name):
     data = {}
@@ -158,6 +154,21 @@ def merge(*args):
     data = []
     maxlen = 0
     
+    for item in args:
+        maxlen = max(maxlen, len(item))
+    
+    for i in range(maxlen):
+        tmp = []
+        for item in args:
+            if i < len(item):
+                tmp.append(item[i][0])
+                tmp.append(item[i][1])
+            else:
+                tmp.append(data[-1][0])
+                tmp.append(data[-1][0])
+        data.append(tmp)
+        
+    return data
            
 # Query time vs m, n = 10
 def t_vs_m(datasets, ktics, thetatics):
@@ -175,7 +186,7 @@ def t_vs_m(datasets, ktics, thetatics):
                 
                 g.set(output='"' + f'{Out_path}{dataset}_querytime_vs_m_k{k}_theta{theta}.eps' + '"')
                 df = pd.DataFrame(data)
-                g.plot_data(df, 'using 2:3 with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 1', 'using 4:5 with lp title "OPHlongest" lc rgb "black" lt 2 dt 2 lw 1', 'using 6:7 with lp title "KMINS" lc rgb "black" lt 3 dt 3 lw 1')
+                g.plot_data(df, 'using 2:3 with lp title "OPH" smooth bezier lc rgb "black" lt 1 dt 1 lw 3', 'using 4:5 with lp title "OPHlongest" smooth bezier lc rgb "black" lt 2 dt 2 lw 3', 'using 6:7 with lp title "KMINS" smooth bezier lc rgb "black" lt 3 dt 3 lw 3')
 
 # Query time vs results, n = 10
 def t_vs_res(datasets, ktics, thetatics):
@@ -196,9 +207,10 @@ def t_vs_res(datasets, ktics, thetatics):
                 # g.plot_data(df, 'using 2:3 with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 3', 'using 4:5 with lp title "OPHlongest" lc rgb "black" lt 2 dt 2 lw 3', 'using 6:7 with lp title "KMINS" lc rgb "black" lt 3 dt 3 lw 3')
             
 if __name__ == '__main__':
-    ktics = [16, 32, 64, 128, 256]
+    ktics = [64]
     thetatics = [0.5, 0.6, 0.7, 0.8, 0.9, 1]
-    t_vs_k(datasets=['openwebtext', 'PAN11', 'pile'], ktics=ktics, thetatics=thetatics)
+    # t_vs_k(datasets=['openwebtext', 'PAN11', 'pile'], ktics=ktics, thetatics=thetatics)
     t_vs_theta(datasets=['openwebtext', 'PAN11', 'pile'], ktics=ktics, thetatics=thetatics)
+    g.unset('yrange')
     # t_vs_m(datasets=['openwebtext', 'PAN11', 'pile'], ktics=ktics, thetatics=thetatics)
     # t_vs_res(datasets=['openwebtext', 'PAN11', 'pile'], ktics=ktics, thetatics=thetatics)

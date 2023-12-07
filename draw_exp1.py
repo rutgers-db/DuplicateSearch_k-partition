@@ -30,8 +30,8 @@ def getfile(method, dataset, k, l):
 
 # generation time vs k
 def t_vs_k(datasets, ktics, ltics, n):
-    g.set(x2label='offset -12.5 "Generation Time (s)" font "Times-Roman, 25"')
-    g.set(xlabel='"k"')
+    g.set(x2label='offset -12.5 "Generation Time (s)" font "Times-Roman, 30"')
+    g.set(xlabel='"k, # of Hash Functions or Bins" font "Times-Roman, 30"')
     for dataset in datasets:
         for l in ltics:
             data = []
@@ -50,8 +50,8 @@ def t_vs_k(datasets, ktics, ltics, n):
 
 # number of compact windows vs k
 def ncws_vs_k(datasets, ktics, ltics, n):
-    g.set(x2label='offset -12.5 "Number of Compact Windows" font "Times-Roman, 25"')
-    g.set(xlabel='"k"')
+    g.set(x2label='offset -12.5 "Number of Compact Windows" font "Times-Roman, 30"')
+    g.set(xlabel='"k, # of Hash Functions or Bins" font "Times-Roman, 30"')
     for dataset in datasets:
         for l in ltics:
             data = []
@@ -72,8 +72,8 @@ def ncws_vs_k(datasets, ktics, ltics, n):
 
 # generation time vs l
 def t_vs_l(datasets, ktics, ltics, n):
-    g.set(x2label='offset -12.5 "Generation Time (s)" font "Times-Roman, 25"')
-    g.set(xlabel='"l"')
+    g.set(x2label='offset -12.5 "Generation Time (s)" font "Times-Roman, 30"')
+    g.set(xlabel='"n, # Length of Sequence" font "Times-Roman, 30"')
     for dataset in datasets:
         for k in ktics:
             data = []
@@ -92,8 +92,8 @@ def t_vs_l(datasets, ktics, ltics, n):
 
 # number of compact windows vs l
 def ncws_vs_l(datasets, ktics, ltics, n):
-    g.set(x2label='offset -12.5 "Number of Compact Windows" font "Times-Roman, 25"')
-    g.set(xlabel='"l"')
+    g.set(x2label='offset -12.5 "Number of Compact Windows" font "Times-Roman, 30"')
+    g.set(xlabel='"n, # Length of Sequence" font "Times-Roman, 30"')
     for dataset in datasets:
         for k in ktics:
             data = []

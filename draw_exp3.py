@@ -158,29 +158,20 @@ def merge(*args):
     data = []
     maxlen = 0
     
-    max_x = 0
     for item in args:
-        for x in item:
-            max_x = max(max_x, x[0])
+        maxlen = max(maxlen, len(item))
     
-    num = 10
-
-    data = [[[] for item in args] for i in range(num)]
-    
-    cur = 0
-    for item in args:
-        for x in item:
-            data[int(x[0] // (max_x / num))][cur].append(x[1])
-        cur += 1
-    
-    for group in range(num):
-        for cur in range(len(args)):
-            if (len(data[group][cur]) == 0):
-                data[group][cur] = 0
+    for i in range(maxlen):
+        tmp = []
+        for item in args:
+            if i < len(item):
+                tmp.append(item[i][0])
+                tmp.append(item[i][1])
             else:
-                data[group][cur] = sum(data[group][cur]) / len(data[group][cur])
-    print(data)
-    
+                tmp.append(data[-1][0])
+                tmp.append(data[-1][0])
+        data.append(tmp)
+        
     return data
 
     
