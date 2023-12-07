@@ -5,10 +5,11 @@
 - dataset: PAN11_external_source
 
 - parameters:
-    - a. n=10, l=100000
-    - b. n=100, l=10000
-    - c. n=1000, l=1000
+    - a. n=100, k=16 32 64 128 256, 
 
 ## Query
 
 - dataset: PAN11_external_suspicious
+
+- parameters:
+    -a. qn=100, theta=0.5 0.6 0.7 0.8 0.9 1.0
