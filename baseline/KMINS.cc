@@ -92,12 +92,20 @@ void getSignatures(vector<vector<int>> &seqs, vector<vector<int>> &signatures, c
 
 void groupbyTid(unordered_map<int, vector<CW>> &tidToCW, vector<int> &signature, vector<vector<vector<CW>>> &cws)
 {
+    unordered_map<int, int> cnt;
+    for (int pid = 0; pid < k; pid++) {
+        for (auto cw : cws[pid][signature[pid]]) {
+            cnt[cw.T] += 1;
+        }
+    }
     for (int pid = 0; pid < k; pid++)
     {
         for (auto cw : cws[pid][signature[pid]])
         {
             // Here maybe we can first record how many elements should be used first and then put them together.
-            tidToCW[cw.T].emplace_back(cw);
+            if (cnt[cw.T] > k * threshold - eps) {
+                tidToCW[cw.T].emplace_back(cw);
+            }
         }
     }
 }
@@ -282,6 +290,7 @@ int main(int argc, char *argv[]) {
     getSignatures(querySeqs, signatures, hf);
     
     // Do Query
+    int results_amount = 0;
     for (int i = 0; i < queryNum; i++) {
         unordered_map<int, vector<CW>> tidToCW;
         groupbyTid(tidToCW, signatures[i], cws);
@@ -290,7 +299,8 @@ int main(int argc, char *argv[]) {
             nearDupSearch(tidToCW, threshold, results);
         else
             OutterScan(tidToCW, threshold, results);
+        results_amount += results.size();
     }
-    cout << endl;
+    cout << "results text amount: " << results_amount << endl;
     return 0;
 }

@@ -96,7 +96,7 @@ void loadCW(const string &binFileName, vector<vector<vector<CW>>> &cws, pair<int
     ifs.read((char*)&hf, sizeof(pair<int, int>));
     cws.resize(par_num);
     for (int pid = 0; pid < par_num; pid++) {
-        for (int tid = 0; tid < token_num; tid++) {
+        for (int tid = 0; tid <= token_num; tid++) {
             cws[pid].resize(token_num + 1);
             ifs.read((char *)&cw_num, sizeof(int));
             cws[pid][tid].resize(cw_num);
@@ -124,7 +124,7 @@ void loadCW(const string &binFileName, vector<vector<vector<CW>>> &cws, vector<p
     cws.resize(par_num);
     for (int pid = 0; pid < par_num; pid++) {
         for (int tid = 0; tid < token_num; tid++) {
-            cws[pid].resize(token_num + 1);
+            cws[pid].resize(token_num);
             ifs.read((char *)&cw_num, sizeof(int));
             cws[pid][tid].resize(cw_num);
             for (int i = 0; i < cw_num; i++) {
@@ -171,7 +171,7 @@ void saveCW(const string &binFileName, vector<vector<vector<CW>>> &cws, vector<p
     for (int i = 0; i < tmp; i++)
         ofs.write((char*)&hf[i], sizeof(pair<int, int>));
     for (int pid = 0; pid < par_num; pid++) {
-        for (int tid = 0; tid <= token_num; tid++) {
+        for (int tid = 0; tid < token_num; tid++) {
             cw_num = cws[pid][tid].size();
             ofs.write((char *)&cw_num, sizeof(int));
             for (int i = 0; i < cw_num; i++) {

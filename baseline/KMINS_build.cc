@@ -139,17 +139,6 @@ void statistics(vector<vector<vector<CW>>> &cws)
     ofs << total_cws_amount << endl;
 }
 
-void sortCW(vector<vector<vector<CW>>> &cws)
-{
-    for (int pid = 0; pid < k; pid++)
-    {
-        for (int tid = 0; tid <= tokenNum; tid++)
-        {
-            sort(cws[pid][tid].begin(), cws[pid][tid].end());
-        }
-    }
-}
-
 int main(int argc, char *argv[]) {
     int opt;
     while ((opt = getopt(argc, argv, "f:n:k:l:i:o:")) != EOF) {
@@ -209,7 +198,7 @@ int main(int argc, char *argv[]) {
     // Generate Comapct Windows
     timerStart();
     vector<pair<int, int>> hf = generateHF();
-    vector<vector<vector<CW>>> cws(k, vector<vector<CW>>(tokenNum + 1)); //cws[partition][token][]
+    vector<vector<vector<CW>>> cws(k, vector<vector<CW>>(tokenNum)); //cws[partition][token][]
     buildCW(docs, cws, hf);
     ofs << timerCheck() << endl;
     cout << "CW Generation Time: " << timerCheck() << endl;

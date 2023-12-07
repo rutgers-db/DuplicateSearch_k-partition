@@ -21,6 +21,7 @@ string index_file;
 string query_file;
 string out_file;
 ofstream ofs;
+int method = 0;
 
 const int tokenNum = 50257;
 const int p = 998244353;
@@ -97,9 +98,22 @@ void getSignatures(vector<vector<int>> &seqs, vector<vector<int>> &signatures, p
 }
 
 void groupbyTid(unordered_map<int, vector<CW>> &tidToCW, vector<int> &signature, vector<vector<vector<CW>>> &cws) {
+    unordered_map<int, float> cnt;
+    for (int pid = 0; pid < k; pid++) {
+        for (auto cw : cws[pid][signature[pid]]) {
+            if (cw.c == -1) {
+                cnt[cw.T] += threshold;
+            }
+            else {
+                cnt[cw.T] += 1;
+            }
+        }
+    }
     for (int pid = 0; pid < k; pid++) {
         for (auto cw: cws[pid][signature[pid]]) {
-            tidToCW[cw.T].emplace_back(cw);
+            if (cnt[cw.T] > k * threshold - eps) {
+                tidToCW[cw.T].emplace_back(cw);
+            }
         }
     }
 }
@@ -161,9 +175,65 @@ void nearDupSearch(unordered_map<int, vector<CW>> &tidToCW, float threshold, uno
     }
 }
 
+void nearDupSearch_longest(unordered_map<int, vector<CW>> &tidToCW, float threshold, unordered_map<int, vector<tuple<int, int>>> &results) {
+    SegmentTree segtree;
+    for (auto item: tidToCW) {
+        timerStart(); //
+        int tid = item.first;
+        vector<CW>& cws = item.second;
+        vector<Update> updates;
+        for (auto cw: cws) {
+            if (cw.c == -1) {
+                updates.emplace_back(cw.l, cw.l, cw.r, 0, threshold);
+                updates.emplace_back(cw.r + 1, cw.l, cw.r, 0, -threshold);
+            }
+            else {
+                updates.emplace_back(cw.l, cw.c, cw.r, 1, 1.0);
+                updates.emplace_back(cw.c + 1, cw.c, cw.r, 1, -1.0);
+            }
+        }
+        sort(updates.begin(), updates.end());
+
+        ofs << updates.size() / 2 << endl; //
+
+        map<int, int> discret; 
+        vector<int> rev;
+        rev.emplace_back(0);
+        for (auto update: updates) {
+            discret.insert(make_pair(update.l, 0));
+            discret.insert(make_pair(update.r, 0));
+        }
+        int cnt = 0;
+        for (auto &it: discret) {
+            it.second = ++cnt;
+            rev.emplace_back(it.first);
+        }        
+
+        segtree.init(cnt);
+        segtree.build(1, 1, cnt);
+
+        float update_cnt = 0;
+        for (int i = 0; i < updates.size(); i++) {
+            Update update = updates[i];
+            if (i > 0 && updates[i].t != updates[i - 1].t) {
+                if(update_cnt> k * threshold - eps){
+                    int Rlongest = -1;
+                    segtree.queryLongest(1, 1, cnt, k * threshold - eps, Rlongest);
+                    if (Rlongest != -1)
+                        results[tid].emplace_back(make_tuple(updates[i - 1].t, rev[Rlongest]));
+                }
+            }
+            segtree.update(1, 1, cnt, discret[update.l], discret[update.r], update.value);
+            update_cnt = update_cnt + update.value;
+        }
+        ofs << results[tid].size() << endl; //
+        ofs << timerCheck() << endl; //
+    }
+}
+
 int main(int argc, char *argv[]) {
     int opt;
-    while ((opt = getopt(argc, argv, "f:i:t:q:o:")) != EOF) {
+    while ((opt = getopt(argc, argv, "f:i:t:q:m:o:")) != EOF) {
         switch (opt) {
             case 'f':
                 query_file = optarg;
@@ -175,6 +245,9 @@ int main(int argc, char *argv[]) {
                 break;
             case 'q':
                 queryNum = stoi(optarg);
+                break;
+            case 'm':
+                method = stoi(optarg);
                 break;
             case 'o':
                 out_file = optarg;
@@ -215,12 +288,21 @@ int main(int argc, char *argv[]) {
     getSignatures(querySeqs, signatures, hf);
     
     // Do Query
+    int results_amount = 0;
     for (int i = 0; i < queryNum; i++) {
         unordered_map<int, vector<CW>> tidToCW;
         groupbyTid(tidToCW, signatures[i], cws);
-        unordered_map<int, vector<tuple<int, int, int, int>>> results;
-        nearDupSearch(tidToCW, threshold, results);
+        if (method == 0) {
+            unordered_map<int, vector<tuple<int, int, int, int>>> results;
+            nearDupSearch(tidToCW, threshold, results);
+            results_amount += results.size();
+        }
+        else {
+            unordered_map<int, vector<tuple<int, int>>> results;
+            nearDupSearch_longest(tidToCW, threshold, results);
+            results_amount += results.size();
+        }
     }
-    cout << endl;
+    cout << "results text amount: " << results_amount << endl;
     return 0;
 }
