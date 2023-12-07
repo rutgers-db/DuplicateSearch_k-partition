@@ -197,11 +197,69 @@ def t_vs_res(datasets, ktics, thetatics):
                 g.set(output='"' + f'{Out_path}{dataset}_querytime_vs_res_k{k}_theta{theta}.eps' + '"')
                 df = pd.DataFrame(data)
                 g.plot_data(df, 'using 2:3 with lp title "OPH" smooth bezier lc rgb "black" lt 1 dt 1 lw 3', 'using 4:5 with lp title "OPHlongest" smooth bezier lc rgb "black" lt 2 dt 2 lw 3', 'using 6:7 with lp title "KMINS" smooth bezier lc rgb "black" lt 3 dt 3 lw 3', 'using 8:9 with lp title "KMINSintervalscan" smooth bezier lc rgb "black" lt 4 dt 4 lw 3')
+                
+def get_avg_m(file_name):
+    f = open(file_name, 'r')
+    skip_start(file_name, f)
+    sumnum = 0
+    summ = 0
+    while True:
+        collided, results, querytime = get_data(f)
+        if collided == None:
+            break
+        summ += collided
+        sumnum += 1
+    return summ / sumnum
+        
+
+# m vs k
+def m_vs_k(datasets, ktics, thetatics):
+    for dataset in datasets:
+        for theta in thetatics:
+            data = []
+            for k in ktics:
+                tmp = [k]
+                file_name = getfile('OPH', dataset, k, theta, 0)
+                tmp.append(get_avg_m(file_name))
+                file_name = getfile('OPH', dataset, k, theta, 1)
+                tmp.append(get_avg_m(file_name))
+                file_name = getfile('KMINS', dataset, k, theta, 0)
+                tmp.append(get_avg_m(file_name))
+                file_name = getfile('KMINS', dataset, k, theta, 1)
+                tmp.append(get_avg_m(file_name))
+
+                data.append(tmp)
+                
+            g.set(output='"' + f'{Out_path}{dataset}_m_vs_k_theta{theta}.eps' + '"')
+            df = pd.DataFrame(data)
+            g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 5', 'using 4 with lp title "OPHlongest" lc rgb "black" lt 2 dt 2 lw 5', 'using 5 with lp title "KMINS" lc rgb "black" lt 3 dt 3 lw 5', 'using 6 with lp title "KMINSintervalscan" lc rgb "black" lt 4 dt 4 lw 5')
+            
+def m_vs_theta(datasets, ktics, thetatics):
+    for dataset in datasets:
+        for k in ktics:
+            data = []
+            for theta in thetatics:
+                tmp = [theta]
+                file_name = getfile('OPH', dataset, k, theta, 0)
+                tmp.append(get_avg_m(file_name))
+                file_name = getfile('OPH', dataset, k, theta, 1)
+                tmp.append(get_avg_m(file_name))
+                file_name = getfile('KMINS', dataset, k, theta, 0)
+                tmp.append(get_avg_m(file_name))
+                file_name = getfile('KMINS', dataset, k, theta, 1)
+                tmp.append(get_avg_m(file_name))
+                data.append(tmp)
+                
+            g.set(output='"' + f'{Out_path}{dataset}_m_vs_theta_k{k}.eps' + '"')
+            df = pd.DataFrame(data)
+            g.plot_data(df, 'using 3:xtic(2) with lp title "OPH" lc rgb "black" lt 1 dt 1 lw 5', 'using 4 with lp title "OPHlongest" lc rgb "black" lt 2 dt 2 lw 5', 'using 5 with lp title "KMINS" lc rgb "black" lt 3 dt 3 lw 5', 'using 6 with lp title "KMINSintervalscan" lc rgb "black" lt 4 dt 4 lw 5')
             
 if __name__ == '__main__':
     ktics = [16, 32, 64, 128, 256]
     thetatics = [0.5, 0.6, 0.7, 0.8, 0.9, 1]
     t_vs_k(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
-    t_vs_theta(dataset=s['PAN11'], ktics=ktics, thetatics=thetatics)
+    t_vs_theta(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
     t_vs_m(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
     t_vs_res(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
+    m_vs_k(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
+    m_vs_theta(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
