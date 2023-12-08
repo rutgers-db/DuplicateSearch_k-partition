@@ -76,7 +76,7 @@ void sortCW(vector<vector<vector<CW>>> &cws) {
 }
 
 void getQuerySeqs(vector<vector<int>> &querySeqs) {
-    loadSamples(query_file, querySeqs, 0, queryNum);
+    loadBin(query_file, querySeqs, queryNum);
 }
 
 void getSignatures(vector<vector<int>> &seqs, vector<vector<int>> &signatures, pair<int, int> hf) {
@@ -98,17 +98,25 @@ void getSignatures(vector<vector<int>> &seqs, vector<vector<int>> &signatures, p
 }
 
 void groupbyTid(unordered_map<int, vector<CW>> &tidToCW, vector<int> &signature, vector<vector<vector<CW>>> &cws) {
+    // int emt = 0;
+    // int nonemt = 0;
     unordered_map<int, float> cnt;
     for (int pid = 0; pid < k; pid++) {
         for (auto cw : cws[pid][signature[pid]]) {
             if (cw.c == -1) {
                 cnt[cw.T] += threshold;
+                // emt++;
             }
             else {
                 cnt[cw.T] += 1;
+                // nonemt++;
             }
         }
     }
+    // for (int i = 0; i < k; i++)
+    //     printf("%d%c", signature[i], " \n"[i == k-1]);
+    // cout << "empty   : " << emt << endl;
+    // cout << "nonempty: " << nonemt << endl;
     for (int pid = 0; pid < k; pid++) {
         for (auto cw: cws[pid][signature[pid]]) {
             if (cnt[cw.T] > k * threshold - eps) {

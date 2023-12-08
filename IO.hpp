@@ -54,30 +54,6 @@ void loadBin(const string &binFileName, vector<vector<int>> &docs, int docnumLim
     cout << "From Binary File " << binFileName << " read " << docs.size() << " documents" << endl;    
 }
 
-void loadSamples(const string &binFileName, vector<vector<int>> &docs, int sampleSart, int sampleNum) {
-    ifstream ifs(binFileName, ios::binary);
-    if (!ifs) {
-        cout << "Error open bin file" << endl;
-        throw "Error open bin file";
-    }
-    int size;
-    int cur = 0;
-    while (ifs.read((char *)&size, sizeof(int))) {
-        if (cur < sampleSart) {
-            cur++;
-            ifs.seekg(sizeof(int) * size, ios::cur);
-            continue;
-        }
-        vector<int> vec(size);
-        ifs.read((char *)&vec[0], sizeof(int) * size);
-        docs.emplace_back(vec);
-        if (docs.size() == sampleNum)
-           break;
-    }
-    ifs.close();
-    cout << "From Binary File " << binFileName << " read " << docs.size() << " documents" << endl;
-}
-
 void loadCW(const string &binFileName, vector<vector<vector<CW>>> &cws, pair<int, int> &hf) {
     ifstream ifs(binFileName, ios::binary);
     if (!ifs) {

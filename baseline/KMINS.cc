@@ -68,7 +68,7 @@ void statistics(vector<vector<vector<CW>>> &cws)
 }
 
 void getQuerySeqs(vector<vector<int>> &querySeqs) {
-    loadSamples(query_file, querySeqs, 0, queryNum);
+    loadBin(query_file, querySeqs, queryNum);
 }
 
 void getSignatures(vector<vector<int>> &seqs, vector<vector<int>> &signatures, const vector<pair<int, int>> &hf)
