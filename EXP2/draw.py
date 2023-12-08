@@ -19,8 +19,8 @@ g.set(key='autotitle columnheader')
 g.set(key='top horizontal center')
 g.set(key='height -0.3')
 
-Exp_path = '/research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/results/EXP1/'
-Out_path = './EXP1/Figures/'
+Exp_path = '/research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/results/EXP2/'
+Out_path = './EXP2/Figures/'
 
 def getfile(method, dataset, k, theta, m):
     for file_name in os.listdir(Exp_path):
@@ -256,10 +256,10 @@ def m_vs_theta(datasets, ktics, thetatics):
             
 if __name__ == '__main__':
     ktics = [16, 32, 64, 128, 256]
-    thetatics = [0.5, 0.6, 0.7, 0.8, 0.9, 1]
-    t_vs_k(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
-    t_vs_theta(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
-    t_vs_m(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
-    t_vs_res(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
-    m_vs_k(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
-    m_vs_theta(datasets=['PAN11'], ktics=ktics, thetatics=thetatics)
+    thetatics = [0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+    t_vs_k(datasets=['pan11'], ktics=ktics, thetatics=thetatics)
+    t_vs_theta(datasets=['pan11'], ktics=ktics, thetatics=thetatics)
+    t_vs_m(datasets=['pan11'], ktics=ktics, thetatics=thetatics)
+    t_vs_res(datasets=['pan11'], ktics=ktics, thetatics=thetatics)
+    m_vs_k(datasets=['pan11'], ktics=ktics, thetatics=thetatics)
+    m_vs_theta(datasets=['pan11'], ktics=ktics, thetatics=thetatics)
