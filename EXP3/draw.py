@@ -196,7 +196,7 @@ def t_vs_res(datasets, ktics, thetatics):
 
                 g.set(output='"' + f'{Out_path}{dataset}_querytime_vs_res_k{k}_theta{theta}.eps' + '"')
                 df = pd.DataFrame(data)
-                g.plot_data(df, 'using 2:3 with lp title "OPH" smooth bezier lc rgb "black" lt 1 dt 1 lw 3', 'using 4:5 with lp title "OPHlongest" smooth bezier lc rgb "black" lt 2 dt 2 lw 3', 'using 6:7 with lp title "KMINS" smooth bezier lc rgb "black" lt 3 dt 3 lw 3', 'using 8:9 with lp title "KMINSintervalscan" smooth bezier lc rgb "black" lt 4 dt 4 lw 3')
+                g.plot_data(df, 'using 2:3 with lp title "OPH" smooth bezier lc rgb "black" lt 1 dt 1 lw 3', 'using 4:5 with lp title "OPHlongest" smooth bezier lc rgb "black" lt 2 dt 2 lw 3')#'using 6:7 with lp title "KMINS" smooth bezier lc rgb "black" lt 3 dt 3 lw 3', 'using 8:9 with lp title "KMINSintervalscan" smooth bezier lc rgb "black" lt 4 dt 4 lw 3')
                 
 def get_avg_m(file_name):
     f = open(file_name, 'r')
