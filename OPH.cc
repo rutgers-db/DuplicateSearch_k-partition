@@ -3,6 +3,7 @@
 #include <iostream>
 #include <random>
 #include <unordered_map>
+#include <unordered_set>
 #include <map>
 #include <chrono>
 #include <assert.h>
@@ -239,6 +240,159 @@ void nearDupSearch_longest(unordered_map<int, vector<CW>> &tidToCW, float thresh
     }
 }
 
+void InnerScan(vector<CW> &cws, unordered_set<int> &ids, double threshold, vector<pair<int, int>> &Rranges) {
+    vector<Update> updates;
+    for (auto id: ids) {
+        if (cws[id].c == -1) {
+            updates.emplace_back(cws[id].l, 0, 0, id, threshold);
+            updates.emplace_back(cws[id].r + 1, 0, 0, id, -threshold);
+        }
+        else {
+            updates.emplace_back(cws[id].c, 0, 0, id, 1);
+            updates.emplace_back(cws[id].r + 1, 0, 0, id, -1);
+        }
+    }
+    sort(updates.begin(), updates.end());
+    float cnt = 0;
+    for (int i = 0; i < updates.size(); i++) {
+        Update& update = updates[i];
+        if (i > 0 && updates[i].t != updates[i - 1].t) {
+            if (cnt > k * threshold - eps) {
+                Rranges.emplace_back(make_pair(updates[i - 1].t, updates[i].t - 1));
+            }
+        }
+        cnt += update.value;
+    }
+}
+
+
+void OutterScan(unordered_map<int, vector<CW>> &tidToCW, double threshold, unordered_map<int, vector<tuple<int, int, int, int>>> &results)
+{
+    SegmentTree segtree;
+    for (auto item : tidToCW)
+    {
+        timerStart(); //
+        int tid = item.first;
+        vector<CW>& cws = item.second;
+        vector<Update> updates;
+        for (int i = 0; i < cws.size(); i++) {
+            CW& cw = cws[i];
+            if (cw.c == -1) {
+                updates.emplace_back(cw.l, 0, 0, i, threshold);
+                updates.emplace_back(cw.r + 1, 0, 0, i, -threshold);
+            }
+            else {
+                updates.emplace_back(cw.l, 0, 0, i, 1);
+                updates.emplace_back(cw.c + 1, 0, 0, i, -1);
+            }
+        }
+        sort(updates.begin(), updates.end());
+
+        ofs << updates.size() / 2 << endl; //
+        
+        unordered_set<int> ids;
+        float cnt = 0;
+        for (int i = 0; i < updates.size(); i++) {
+            Update& update = updates[i];
+            if (i > 0 && updates[i].t != updates[i - 1].t) {
+                if (cnt > k * threshold - eps) {
+                    vector<pair<int, int>> Rranges;
+                    InnerScan(cws, ids, threshold, Rranges);
+                    for (auto Rrange: Rranges) {
+                        results[tid].emplace_back(make_tuple(updates[i - 1].t, updates[i].t - 1, Rrange.first, Rrange.second));
+                    }
+                }
+            }
+            cnt += update.value;
+            if (update.value > 0) {
+                ids.insert(update.type);
+            }
+            else {
+                ids.erase(update.type);
+            }
+        }
+        ofs << results[tid].size() << endl; //
+        ofs << timerCheck() << endl; //
+    }
+}
+
+
+void InnerScan_longest(vector<CW> &cws, unordered_set<int> &ids, double threshold, int &Rlongest) {
+    vector<Update> updates;
+    for (auto id: ids) {
+        if (cws[id].c == -1) {
+            updates.emplace_back(cws[id].l, 0, 0, id, threshold);
+            updates.emplace_back(cws[id].r + 1, 0, 0, id, -threshold);
+        }
+        else {
+            updates.emplace_back(cws[id].c, 0, 0, id, 1);
+            updates.emplace_back(cws[id].r + 1, 0, 0, id, -1);
+        }
+    }
+    sort(updates.rbegin(), updates.rend());
+    float cnt = 0;
+    for (int i = 0; i < updates.size(); i++) {
+        Update& update = updates[i];
+        if (i > 0 && updates[i].t != updates[i - 1].t) {
+            if (cnt > k * threshold - eps) {
+                Rlongest = updates[i - 1].t;
+                return;
+            }
+        }
+        cnt += update.value;
+    }
+}
+
+void OutterScan_longest(unordered_map<int, vector<CW>> &tidToCW, double threshold, unordered_map<int, vector<tuple<int, int>>> &results)
+{
+    SegmentTree segtree;
+    for (auto item : tidToCW)
+    {
+        timerStart(); //
+        int tid = item.first;
+        vector<CW>& cws = item.second;
+        vector<Update> updates;
+        for (int i = 0; i < cws.size(); i++) {
+            CW& cw = cws[i];
+            if (cw.c == -1) {
+                updates.emplace_back(cw.l, 0, 0, i, threshold);
+                updates.emplace_back(cw.r + 1, 0, 0, i, -threshold);
+            }
+            else {
+                updates.emplace_back(cw.l, 0, 0, i, 1);
+                updates.emplace_back(cw.c + 1, 0, 0, i, -1);
+            }
+        }
+        sort(updates.begin(), updates.end());
+
+        ofs << updates.size() / 2 << endl; //
+        
+        unordered_set<int> ids;
+        float cnt = 0;
+        for (int i = 0; i < updates.size(); i++) {
+            Update& update = updates[i];
+            if (i > 0 && updates[i].t != updates[i - 1].t) {
+                if (cnt > k * threshold - eps) {
+                    int Rlongest = -1;
+                    InnerScan_longest(cws, ids, threshold, Rlongest);
+                    if (Rlongest != -1) {
+                        results[tid].emplace_back(make_tuple(updates[i - 1].t, Rlongest));
+                    }
+                }
+            }
+            cnt += update.value;
+            if (update.value == 1) {
+                ids.insert(update.type);
+            }
+            else {
+                ids.erase(update.type);
+            }
+        }
+        ofs << results[tid].size() << endl; //
+        ofs << timerCheck() << endl; //
+    }
+}
+
 int main(int argc, char *argv[]) {
     int opt;
     while ((opt = getopt(argc, argv, "f:i:t:q:m:o:")) != EOF) {
@@ -305,9 +459,19 @@ int main(int argc, char *argv[]) {
             nearDupSearch(tidToCW, threshold, results);
             results_amount += results.size();
         }
-        else {
+        else if (method == 1) {
+            unordered_map<int, vector<tuple<int, int, int, int>>> results;
+            OutterScan(tidToCW, threshold, results);
+            results_amount += results.size();
+        }
+        else if (method == 2) {
             unordered_map<int, vector<tuple<int, int>>> results;
             nearDupSearch_longest(tidToCW, threshold, results);
+            results_amount += results.size();
+        }
+        else {
+            unordered_map<int, vector<tuple<int, int>>> results;
+            OutterScan_longest(tidToCW, threshold, results);
             results_amount += results.size();
         }
     }

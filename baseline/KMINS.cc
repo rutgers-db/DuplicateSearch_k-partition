@@ -170,6 +170,66 @@ void nearDupSearch(unordered_map<int, vector<CW>> &tidToCW, float threshold, uno
     }
 }
 
+void nearDupSearch_longest(unordered_map<int, vector<CW>> &tidToCW, float threshold, unordered_map<int, vector<tuple<int, int>>> &results)
+{
+    SegmentTree segtree;
+    for (auto item : tidToCW)
+    {
+        timerStart(); //
+        int tid = item.first;
+        vector<CW>& cws = item.second;
+        vector<Update> updates;
+        for (auto cw: cws) {
+            updates.emplace_back(cw.l, cw.c, cw.r, 1, 1.0);
+            updates.emplace_back(cw.c + 1, cw.c, cw.r, 1, -1.0);
+        }
+        sort(updates.begin(), updates.end());
+
+        ofs << updates.size() / 2 << endl; //
+
+        map<int, int> discret;
+        vector<int> rev;
+        rev.emplace_back(0);
+        for (auto update : updates)
+        {
+            discret.insert(make_pair(update.l, 0));
+            discret.insert(make_pair(update.r, 0));
+        }
+        int cnt = 0;
+        for (auto &it : discret)
+        {
+            it.second = ++cnt;
+            rev.emplace_back(it.first);
+        }
+
+        segtree.init(cnt);
+        segtree.build(1, 1, cnt);
+
+        float update_cnt = 0;
+        for (int i = 0; i < updates.size(); i++)
+        {
+            Update update = updates[i];
+            if (i > 0 && updates[i].t != updates[i - 1].t)
+            {   
+                if(update_cnt > k * threshold - eps){
+                    int Rlongest = -1;
+                    segtree.queryLongest(1, 1, cnt, k * threshold - eps, Rlongest);
+                    if (Rlongest != -1)
+                    {
+                        results[tid].emplace_back(make_tuple(updates[i - 1].t, rev[Rlongest]));
+                    }
+                }
+            }
+            
+            segtree.update(1, 1, cnt, discret[update.l], discret[update.r], update.value);
+            update_cnt = update_cnt + update.value;
+            
+        }
+        ofs << results[tid].size() << endl; //
+        ofs << timerCheck() << endl; //
+    }
+}
+
 void InnerScan(vector<CW> &cws, unordered_set<int> &ids, double threshold, vector<pair<int, int>> &Rranges) {
     vector<Update> updates;
     for (auto id: ids) {
@@ -217,6 +277,69 @@ void OutterScan(unordered_map<int, vector<CW>> &tidToCW, double threshold, unord
                     InnerScan(cws, ids, threshold, Rranges);
                     for (auto Rrange: Rranges) {
                         results[tid].emplace_back(make_tuple(updates[i - 1].t, updates[i].t - 1, Rrange.first, Rrange.second));
+                    }
+                }
+            }
+            if (update.value == 1) {
+                ids.insert(update.type);
+            }
+            else {
+                ids.erase(update.type);
+            }
+        }
+        ofs << results[tid].size() << endl; //
+        ofs << timerCheck() << endl; //
+    }
+}
+
+
+void InnerScan_longest(vector<CW> &cws, unordered_set<int> &ids, double threshold, int &Rlongest) {
+    vector<Update> updates;
+    for (auto id: ids) {
+        updates.emplace_back(cws[id].r, 0, 0, id, 1);
+        updates.emplace_back(cws[id].c + 1, 0, 0, id, -1);
+    }
+    sort(updates.rbegin(), updates.rend());
+    int cnt = 0;
+    for (int i = 0; i < updates.size(); i++) {
+        Update& update = updates[i];
+        if (i > 0 && updates[i].t != updates[i - 1].t) {
+            if (cnt > k * threshold - eps) {
+                Rlongest = updates[i - 1].t;
+                return;
+            }
+        }
+        cnt += update.value;
+    }
+}
+
+void OutterScan_longest(unordered_map<int, vector<CW>> &tidToCW, double threshold, unordered_map<int, vector<tuple<int, int>>> &results)
+{
+    SegmentTree segtree;
+    for (auto item : tidToCW)
+    {
+        timerStart(); //
+        int tid = item.first;
+        vector<CW>& cws = item.second;
+        vector<Update> updates;
+        for (int i = 0; i < cws.size(); i++) {
+            CW& cw = cws[i];
+            updates.emplace_back(cw.l, 0, 0, i, 1);
+            updates.emplace_back(cw.c + 1, 0, 0, i, -1); //cw.type == cw.id
+        }
+        sort(updates.begin(), updates.end());
+
+        ofs << updates.size() / 2 << endl; //
+        
+        unordered_set<int> ids;
+        for (int i = 0; i < updates.size(); i++) {
+            Update& update = updates[i];
+            if (i > 0 && updates[i].t != updates[i - 1].t) {
+                if (ids.size() > k * threshold - eps) {
+                    int Rlongest = -1;
+                    InnerScan_longest(cws, ids, threshold, Rlongest);
+                    if (Rlongest != -1) {
+                        results[tid].emplace_back(make_tuple(updates[i - 1].t, Rlongest));
                     }
                 }
             }
@@ -294,12 +417,27 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < queryNum; i++) {
         unordered_map<int, vector<CW>> tidToCW;
         groupbyTid(tidToCW, signatures[i], cws);
-        unordered_map<int, vector<tuple<int, int, int, int>>> results;
-        if (method == 0)
+        if (method == 0) {
+            unordered_map<int, vector<tuple<int, int, int, int>>> results;
             nearDupSearch(tidToCW, threshold, results);
-        else
+            results_amount += results.size();
+        }
+        else if (method == 1) {
+            unordered_map<int, vector<tuple<int, int, int, int>>> results;
             OutterScan(tidToCW, threshold, results);
-        results_amount += results.size();
+            results_amount += results.size();
+        }
+        else if (method == 2) {
+            unordered_map<int, vector<tuple<int, int>>> results;
+            nearDupSearch_longest(tidToCW, threshold, results);
+            results_amount += results.size();
+        }
+        else {
+            unordered_map<int, vector<tuple<int, int>>> results;
+            OutterScan_longest(tidToCW, threshold, results);
+            results_amount += results.size();
+        }
+        
     }
     cout << "results text amount: " << results_amount << endl;
     return 0;
