@@ -1,0 +1,13 @@
+/research/projects/zp128/OPH_Align/Dataset_Construction/Owt/build/build -f /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin -n 100000 -i /research/projects/zp128/OPH_Align/Dataset_Construction/Owt/index/openwebtext_k64Smallindex.bin -k 64 -L 100
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin
+doc_num        : 100000
+k              : 64
+doc_length     : 0
+interval_limit : 100
+------------------------------
+openwebtext_gpt2
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 100000 documents
+Load Time: 1.19354
+CW Generation Time: 38.5525
+Index file Written

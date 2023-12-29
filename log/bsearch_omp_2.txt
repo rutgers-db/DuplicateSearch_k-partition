@@ -1,0 +1,42 @@
+/research/projects/zp128/OPH_Align/Dataset_Construction/Owt/build/main -f /research/projects/zp128/SelfGenerationText/gpt2-medium-540L_50TOPK_400000S.bin -i /research/projects/zp128/OPH_Align/Dataset_Construction/Owt/index/openwebtext_k64fullindex.bin -k 64 -t 0.7 -q 100
+Parameters Summary: 
+bin_file_path  : /research/projects/zp128/SelfGenerationText/gpt2-medium-540L_50TOPK_400000S.bin
+k              : 64
+doc_length     : 0
+threshold      : 0.7
+query_num      : 100
+------------------------------
+gpt2-medium-540L_50TOPK_400000S
+CW Loading Time: 329.833
+From Binary File /research/projects/zp128/SelfGenerationText/gpt2-medium-540L_50TOPK_400000S.bin read 10240 documents
+700
+Hashing Query: 0.59076
+Strart: finding signatures
+82 1 match : [2885016,2895387,]
+82 6 match : [6134043,6104097,5184864,4836249,6158573,5003991,4704365,5531031,4158923,1437313,4428439,4391503,274160,2688902,5066720,2659562,1693673,2178705,2397910,1822238,6534319,4527338,3461277,5331459,3587291,414450,2885016,3670765,8002985,1149427,7941186,2895387,4371889,6273079,1616622,7737575,7577516,3520190,7016852,6388741,6373512,3443114,7766392,3175170,6623821,3624143,3015206,809715,706379,3527582,1431531,760844,611485,929493,4710819,5800479,5651381,2478468,3616704,340686,3186502,3979998,1750773,4372053,3534742,3993948,4094597,971952,4023381,5145934,4260798,]
+41 6 match : [1437313,]
+Traversing 700: 601.52
+Grouping cost: 434.339
+	Command being timed: "/research/projects/zp128/OPH_Align/Dataset_Construction/Owt/build/main -f /research/projects/zp128/SelfGenerationText/gpt2-medium-540L_50TOPK_400000S.bin -i /research/projects/zp128/OPH_Align/Dataset_Construction/Owt/index/openwebtext_k64fullindex.bin -k 64 -t 0.7 -q 100"
+	User time (seconds): 41244.22
+	System time (seconds): 249.03
+	Percent of CPU this job got: 4394%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 15:44.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 165077728
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 13
+	Minor (reclaiming a frame) page faults: 80355310
+	Voluntary context switches: 2126
+	Involuntary context switches: 1111289
+	Swaps: 0
+	File system inputs: 329893208
+	File system outputs: 3408
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

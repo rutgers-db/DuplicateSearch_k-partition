@@ -1,0 +1,3347 @@
+Query 0
+total cost: 7.45873
+Query 1
+total cost: 7.94796
+Query 2
+total cost: 0.000744
+Query 3
+total cost: 6.31071
+Query 4
+total cost: 0.000873
+Query 5
+total cost: 6.27394
+Query 6
+total cost: 7.63836
+Query 7
+total cost: 7.99406
+Query 8
+total cost: 3.90281
+Query 9
+total cost: 5.36947
+Query 10
+total cost: 8.49312
+Query 11
+total cost: 0.001289
+Query 12
+total cost: 6.44212
+Query 13
+total cost: 5.85231
+Query 14
+total cost: 13.031
+Query 15
+total cost: 0.000659
+Query 16
+total cost: 8.07205
+Query 17
+total cost: 0.000488
+Query 18
+total cost: 0.000536
+Query 19
+total cost: 9.64669
+Query 20
+total cost: 6.89462
+Query 21
+total cost: 11.0697
+Query 22
+total cost: 8.5661
+Query 23
+total cost: 8.79426
+Query 24
+total cost: 7.95132
+Query 25
+total cost: 7.96063
+Query 26
+total cost: 11.16
+Query 27
+total cost: 8.14818
+Query 28
+total cost: 8.11659
+Query 29
+total cost: 6.8968
+Query 30
+total cost: 8.4912
+Query 31
+total cost: 0.001229
+Query 32
+total cost: 4.58793
+Query 33
+total cost: 0.000935
+Query 34
+total cost: 0.000627
+Query 35
+total cost: 0.00082
+Query 36
+total cost: 7.32683
+Query 37
+total cost: 0.000742
+Query 38
+total cost: 5.91289
+Query 39
+total cost: 0.000782
+Query 40
+total cost: 5.6473
+Query 41
+total cost: 0.010123
+Query 42
+total cost: 6.99386
+Query 43
+total cost: 0.001168
+Query 44
+total cost: 0.000754
+Query 45
+total cost: 5.50185
+Query 46
+total cost: 5.53583
+Query 47
+total cost: 0.000459
+Query 48
+total cost: 10.0096
+Query 49
+total cost: 0.001005
+Query 50
+total cost: 9.19918
+Query 51
+total cost: 0.000517
+Query 52
+total cost: 9.92945
+Query 53
+total cost: 8.79895
+Query 54
+total cost: 0.00095
+Query 55
+total cost: 10.086
+Query 56
+total cost: 10.5539
+Query 57
+total cost: 0.000794
+Query 58
+total cost: 9.09225
+Query 59
+total cost: 0.001342
+Query 60
+total cost: 8.54739
+Query 61
+total cost: 11.1706
+Query 62
+total cost: 0.00074
+Query 63
+total cost: 0.000619
+Query 64
+total cost: 0.000476
+Query 65
+total cost: 7.6076
+Query 66
+total cost: 5.47087
+Query 67
+total cost: 0.000985
+Query 68
+total cost: 0.000432
+Query 69
+total cost: 0.00073
+Query 70
+total cost: 9.88583
+Query 71
+total cost: 12.328
+Query 72
+total cost: 0.000813
+Query 73
+total cost: 7.08339
+Query 74
+total cost: 4.88153
+Query 75
+total cost: 7.35732
+Query 76
+total cost: 7.78705
+Query 77
+total cost: 0.000353
+Query 78
+total cost: 10.0419
+Query 79
+total cost: 7.68592
+Query 80
+total cost: 0.002685
+Query 81
+total cost: 6.79714
+Query 82
+total cost: 0.016409
+Query 83
+total cost: 0.00073
+Query 84
+total cost: 8.2567
+Query 85
+total cost: 6.10197
+Query 86
+total cost: 0.001389
+Query 87
+total cost: 0.000331
+Query 88
+total cost: 6.83935
+Query 89
+total cost: 7.02127
+Query 90
+total cost: 6.98167
+Query 91
+total cost: 6.66993
+Query 92
+total cost: 0.000465
+Query 93
+total cost: 0.000708
+Query 94
+total cost: 7.28375
+Query 95
+total cost: 6.65271
+Query 96
+total cost: 0.000468
+Query 97
+total cost: 0.000914
+Query 98
+total cost: 7.6639
+Query 99
+total cost: 0.000476
+Query 100
+total cost: 0.000629
+Query 101
+total cost: 7.80384
+Query 102
+total cost: 6.94357
+Query 103
+total cost: 7.72848
+Query 104
+total cost: 9.36011
+Query 105
+total cost: 7.84002
+Query 106
+total cost: 0.000895
+Query 107
+total cost: 0.000722
+Query 108
+total cost: 5.78311
+Query 109
+total cost: 7.37381
+Query 110
+total cost: 7.63099
+Query 111
+total cost: 10.1039
+Query 112
+total cost: 5.10325
+Query 113
+total cost: 11.8898
+Query 114
+total cost: 0.000959
+Query 115
+total cost: 0.00085
+Query 116
+total cost: 7.27549
+Query 117
+total cost: 6.54459
+Query 118
+total cost: 7.71566
+Query 119
+total cost: 7.94745
+Query 120
+total cost: 4.46795
+Query 121
+total cost: 0.000563
+Query 122
+total cost: 5.67857
+Query 123
+total cost: 7.69462
+Query 124
+total cost: 8.12589
+Query 125
+total cost: 5.90992
+Query 126
+total cost: 8.53102
+Query 127
+total cost: 0.000392
+Query 128
+total cost: 7.89949
+Query 129
+total cost: 5.71256
+Query 130
+total cost: 0.000566
+Query 131
+total cost: 9.57748
+Query 132
+total cost: 7.22717
+Query 133
+total cost: 0.000654
+Query 134
+total cost: 8.28912
+Query 135
+total cost: 10.0598
+Query 136
+total cost: 7.06309
+Query 137
+total cost: 0.000757
+Query 138
+total cost: 0.000625
+Query 139
+total cost: 10.2629
+Query 140
+total cost: 8.0182
+Query 141
+total cost: 6.49656
+Query 142
+total cost: 6.23411
+Query 143
+total cost: 0.000751
+Query 144
+total cost: 0.000854
+Query 145
+total cost: 0.000415
+Query 146
+total cost: 5.27301
+Query 147
+total cost: 7.87042
+Query 148
+total cost: 0.000769
+Query 149
+total cost: 0.013463
+Query 150
+total cost: 6.71739
+Query 151
+total cost: 8.05429
+Query 152
+total cost: 10.5507
+Query 153
+total cost: 8.13502
+Query 154
+total cost: 0.000896
+Query 155
+total cost: 7.48132
+Query 156
+total cost: 7.01063
+Query 157
+total cost: 9.0103
+Query 158
+total cost: 6.61751
+Query 159
+total cost: 6.37124
+Query 160
+total cost: 0.000946
+Query 161
+total cost: 6.47624
+Query 162
+total cost: 0.000958
+Query 163
+total cost: 0.000927
+Query 164
+total cost: 9.24659
+Query 165
+total cost: 0.001366
+Query 166
+total cost: 8.83442
+Query 167
+total cost: 10.4734
+Query 168
+total cost: 7.582
+Query 169
+total cost: 0.000786
+Query 170
+total cost: 7.48308
+Query 171
+total cost: 0.000869
+Query 172
+total cost: 8.23608
+Query 173
+total cost: 0.000623
+Query 174
+total cost: 0.001272
+Query 175
+total cost: 5.05004
+Query 176
+total cost: 0.00094
+Query 177
+total cost: 0.000459
+Query 178
+total cost: 0.000464
+Query 179
+total cost: 0.000951
+Query 180
+total cost: 8.64017
+Query 181
+total cost: 0.000534
+Query 182
+total cost: 7.59087
+Query 183
+total cost: 0.000592
+Query 184
+total cost: 6.26479
+Query 185
+total cost: 7.60465
+Query 186
+total cost: 0.000517
+Query 187
+total cost: 0.000772
+Query 188
+total cost: 4.72213
+Query 189
+total cost: 0.00064
+Query 190
+total cost: 0.000618
+Query 191
+total cost: 7.47026
+Query 192
+total cost: 7.23619
+Query 193
+total cost: 0.001108
+Query 194
+total cost: 7.5299
+Query 195
+total cost: 9.79672
+Query 196
+total cost: 0.000621
+Query 197
+total cost: 6.62905
+Query 198
+total cost: 0.000869
+Query 199
+total cost: 5.87105
+Query 200
+total cost: 9.20142
+Query 201
+total cost: 7.16829
+Query 202
+total cost: 10.162
+Query 203
+total cost: 10.4922
+Query 204
+total cost: 0.000692
+Query 205
+total cost: 8.17985
+Query 206
+total cost: 0.002629
+Query 207
+total cost: 0.000829
+Query 208
+total cost: 6.35303
+Query 209
+total cost: 9.58917
+Query 210
+total cost: 6.6303
+Query 211
+total cost: 8.21401
+Query 212
+total cost: 10.0083
+Query 213
+total cost: 7.69298
+Query 214
+total cost: 0.00113
+Query 215
+total cost: 0.00084
+Query 216
+total cost: 0.002692
+Query 217
+total cost: 7.54312
+Query 218
+total cost: 0.00065
+Query 219
+total cost: 7.86374
+Query 220
+total cost: 0.000691
+Query 221
+total cost: 0.000699
+Query 222
+total cost: 6.32165
+Query 223
+total cost: 7.32996
+Query 224
+total cost: 8.82775
+Query 225
+total cost: 0.000738
+Query 226
+total cost: 0.000669
+Query 227
+total cost: 0.000874
+Query 228
+total cost: 7.32445
+Query 229
+total cost: 5.45298
+Query 230
+total cost: 9.46034
+Query 231
+total cost: 10.1466
+Query 232
+total cost: 0.000482
+Query 233
+total cost: 8.99743
+Query 234
+total cost: 4.40184
+Query 235
+total cost: 0.000654
+Query 236
+total cost: 0.000633
+Query 237
+total cost: 7.49946
+Query 238
+total cost: 0.000526
+Query 239
+total cost: 5.07968
+Query 240
+total cost: 0.00153
+Query 241
+total cost: 8.06341
+Query 242
+total cost: 0.000939
+Query 243
+total cost: 9.11073
+Query 244
+total cost: 0.000873
+Query 245
+total cost: 0.000772
+Query 246
+total cost: 9.40911
+Query 247
+total cost: 6.04914
+Query 248
+total cost: 6.43924
+Query 249
+total cost: 8.6726
+Query 250
+total cost: 5.14234
+Query 251
+total cost: 6.07321
+Query 252
+total cost: 0.000784
+Query 253
+total cost: 0.000641
+Query 254
+total cost: 4.8803
+Query 255
+total cost: 8.74808
+Query 256
+total cost: 0.00157
+Query 257
+total cost: 0.00077
+Query 258
+total cost: 9.29945
+Query 259
+total cost: 9.29355
+Query 260
+total cost: 10.5572
+Query 261
+total cost: 0.001077
+Query 262
+total cost: 0.000986
+Query 263
+total cost: 8.47966
+Query 264
+total cost: 0.000992
+Query 265
+total cost: 0.000471
+Query 266
+total cost: 10.2214
+Query 267
+total cost: 5.72083
+Query 268
+total cost: 0.000789
+Query 269
+total cost: 0.000424
+Query 270
+total cost: 0.000918
+Query 271
+total cost: 0.000982
+Query 272
+total cost: 7.31831
+Query 273
+total cost: 7.14421
+Query 274
+total cost: 0.000514
+Query 275
+total cost: 6.92914
+Query 276
+total cost: 0.000783
+Query 277
+total cost: 0.000932
+Query 278
+total cost: 7.47886
+Query 279
+total cost: 0.000681
+Query 280
+total cost: 7.79701
+Query 281
+total cost: 0.000738
+Query 282
+total cost: 8.3882
+Query 283
+total cost: 0.000392
+Query 284
+total cost: 7.24771
+Query 285
+total cost: 7.07347
+Query 286
+total cost: 9.12608
+Query 287
+total cost: 8.65516
+Query 288
+total cost: 8.87189
+Query 289
+total cost: 8.29244
+Query 290
+total cost: 7.07127
+Query 291
+total cost: 0.001015
+Query 292
+total cost: 7.87279
+Query 293
+total cost: 7.37694
+Query 294
+total cost: 5.61021
+Query 295
+total cost: 0.000687
+Query 296
+total cost: 7.13751
+Query 297
+total cost: 6.15904
+Query 298
+total cost: 0.021076
+Query 299
+total cost: 7.82247
+Query 300
+total cost: 3.27443
+Query 301
+total cost: 5.28991
+Query 302
+total cost: 0.000444
+Query 303
+total cost: 0.000901
+Query 304
+total cost: 6.19478
+Query 305
+total cost: 5.91306
+Query 306
+total cost: 9.11162
+Query 307
+total cost: 10.8471
+Query 308
+total cost: 0.00079
+Query 309
+total cost: 0.000887
+Query 310
+total cost: 0.000328
+Query 311
+total cost: 6.64848
+Query 312
+total cost: 8.55864
+Query 313
+total cost: 0.000662
+Query 314
+total cost: 7.49572
+Query 315
+total cost: 0.000483
+Query 316
+total cost: 5.75852
+Query 317
+total cost: 0.000852
+Query 318
+total cost: 4.81537
+Query 319
+total cost: 0.001073
+Query 320
+total cost: 0.000617
+Query 321
+total cost: 0.000631
+Query 322
+total cost: 0.000917
+Query 323
+total cost: 7.29901
+Query 324
+total cost: 0.000946
+Query 325
+total cost: 0.001693
+Query 326
+total cost: 8.86104
+Query 327
+total cost: 7.59126
+Query 328
+total cost: 0.00085
+Query 329
+total cost: 0.000973
+Query 330
+total cost: 8.56268
+Query 331
+total cost: 5.99126
+Query 332
+total cost: 7.54827
+Query 333
+total cost: 8.23796
+Query 334
+total cost: 0.000988
+Query 335
+total cost: 10.5452
+Query 336
+total cost: 0.00139
+Query 337
+total cost: 9.42649
+Query 338
+total cost: 7.72154
+Query 339
+total cost: 0.001673
+Query 340
+total cost: 11.562
+Query 341
+total cost: 9.19853
+Query 342
+total cost: 9.92334
+Query 343
+total cost: 0.000917
+Query 344
+total cost: 7.65895
+Query 345
+total cost: 0.000894
+Query 346
+total cost: 0.000507
+Query 347
+total cost: 8.87963
+Query 348
+total cost: 6.92738
+Query 349
+total cost: 0.000374
+Query 350
+total cost: 0.000717
+Query 351
+total cost: 0.000997
+Query 352
+total cost: 8.34291
+Query 353
+total cost: 7.12547
+Query 354
+total cost: 0.000846
+Query 355
+total cost: 0.00068
+Query 356
+total cost: 0.003796
+Query 357
+total cost: 0.000592
+Query 358
+total cost: 6.54593
+Query 359
+total cost: 6.68989
+Query 360
+total cost: 0.000851
+Query 361
+total cost: 6.92183
+Query 362
+total cost: 5.85131
+Query 363
+total cost: 7.91789
+Query 364
+total cost: 0.000856
+Query 365
+total cost: 7.02257
+Query 366
+total cost: 0.001379
+Query 367
+total cost: 0.000725
+Query 368
+total cost: 0.00125
+Query 369
+total cost: 9.54941
+Query 370
+total cost: 8.14596
+Query 371
+total cost: 0.000638
+Query 372
+total cost: 4.68483
+Query 373
+total cost: 7.26229
+Query 374
+total cost: 0.000723
+Query 375
+total cost: 0.000832
+Query 376
+total cost: 7.95065
+Query 377
+total cost: 8.66567
+Query 378
+total cost: 6.0104
+Query 379
+total cost: 8.03049
+Query 380
+total cost: 6.27736
+Query 381
+total cost: 0.00063
+Query 382
+total cost: 0.000786
+Query 383
+total cost: 8.02879
+Query 384
+total cost: 7.42234
+Query 385
+total cost: 6.20939
+Query 386
+total cost: 9.42038
+Query 387
+total cost: 0.00102
+Query 388
+total cost: 8.33
+Query 389
+total cost: 12.2604
+Query 390
+total cost: 9.69806
+Query 391
+total cost: 0.001442
+Query 392
+total cost: 5.44116
+Query 393
+total cost: 0.001843
+Query 394
+total cost: 0.000961
+Query 395
+total cost: 0.00033
+Query 396
+total cost: 8.82942
+Query 397
+total cost: 7.10991
+Query 398
+total cost: 0.000373
+Query 399
+total cost: 8.73553
+Query 400
+total cost: 8.61411
+Query 401
+total cost: 8.52314
+Query 402
+total cost: 6.69394
+Query 403
+total cost: 6.10987
+Query 404
+total cost: 6.44078
+Query 405
+total cost: 0.001054
+Query 406
+total cost: 6.68705
+Query 407
+total cost: 9.40573
+Query 408
+total cost: 7.54798
+Query 409
+total cost: 6.63192
+Query 410
+total cost: 8.72717
+Query 411
+total cost: 6.73656
+Query 412
+total cost: 8.46586
+Query 413
+total cost: 7.96024
+Query 414
+total cost: 0.000941
+Query 415
+total cost: 8.34651
+Query 416
+total cost: 9.21909
+Query 417
+total cost: 0.001135
+Query 418
+total cost: 5.11183
+Query 419
+total cost: 0.001411
+Query 420
+total cost: 0.001348
+Query 421
+total cost: 0.000731
+Query 422
+total cost: 0.000579
+Query 423
+total cost: 0.000761
+Query 424
+total cost: 6.45849
+Query 425
+total cost: 0.000789
+Query 426
+total cost: 0.000896
+Query 427
+total cost: 8.26477
+Query 428
+total cost: 6.95267
+Query 429
+total cost: 0.000978
+Query 430
+total cost: 0.000537
+Query 431
+total cost: 6.61591
+Query 432
+total cost: 0.000884
+Query 433
+total cost: 0.000791
+Query 434
+total cost: 8.54057
+Query 435
+total cost: 11.5559
+Query 436
+total cost: 0.000572
+Query 437
+total cost: 0.000797
+Query 438
+total cost: 9.376
+Query 439
+total cost: 8.58138
+Query 440
+total cost: 0.000946
+Query 441
+total cost: 0.000685
+Query 442
+total cost: 6.39314
+Query 443
+total cost: 8.68875
+Query 444
+total cost: 5.01741
+Query 445
+total cost: 6.92541
+Query 446
+total cost: 0.000715
+Query 447
+total cost: 0.000528
+Query 448
+total cost: 6.95616
+Query 449
+total cost: 0.000949
+Query 450
+total cost: 8.4202
+Query 451
+total cost: 0.001036
+Query 452
+total cost: 0.000919
+Query 453
+total cost: 8.65312
+Query 454
+total cost: 0.001097
+Query 455
+total cost: 3.46542
+Query 456
+total cost: 5.88606
+Query 457
+total cost: 8.52579
+Query 458
+total cost: 0.000788
+Query 459
+total cost: 6.6273
+Query 460
+total cost: 0.001101
+Query 461
+total cost: 6.45466
+Query 462
+total cost: 0.000865
+Query 463
+total cost: 7.61165
+Query 464
+total cost: 5.23599
+Query 465
+total cost: 9.40473
+Query 466
+total cost: 7.44639
+Query 467
+total cost: 7.60407
+Query 468
+total cost: 9.62795
+Query 469
+total cost: 7.07605
+Query 470
+total cost: 7.1872
+Query 471
+total cost: 0.000782
+Query 472
+total cost: 8.34856
+Query 473
+total cost: 0.001296
+Query 474
+total cost: 0.000615
+Query 475
+total cost: 8.80693
+Query 476
+total cost: 5.86137
+Query 477
+total cost: 5.47752
+Query 478
+total cost: 0.000475
+Query 479
+total cost: 0.000594
+Query 480
+total cost: 4.62445
+Query 481
+total cost: 5.52379
+Query 482
+total cost: 0.000686
+Query 483
+total cost: 0.001381
+Query 484
+total cost: 0.000714
+Query 485
+total cost: 0.000881
+Query 486
+total cost: 5.60907
+Query 487
+total cost: 7.51317
+Query 488
+total cost: 3.72206
+Query 489
+total cost: 0.000723
+Query 490
+total cost: 7.53816
+Query 491
+total cost: 6.17588
+Query 492
+total cost: 4.93801
+Query 493
+total cost: 7.05221
+Query 494
+total cost: 6.32651
+Query 495
+total cost: 0.000865
+Query 496
+total cost: 6.41799
+Query 497
+total cost: 0.000982
+Query 498
+total cost: 5.44455
+Query 499
+total cost: 8.25038
+Query 500
+total cost: 8.0534
+Query 501
+total cost: 12.2682
+Query 502
+total cost: 0.000608
+Query 503
+total cost: 0.000693
+Query 504
+total cost: 0.000526
+Query 505
+total cost: 0.000895
+Query 506
+total cost: 8.42347
+Query 507
+total cost: 4.25635
+Query 508
+total cost: 6.86368
+Query 509
+total cost: 0.000469
+Query 510
+total cost: 11.7299
+Query 511
+total cost: 7.04791
+Query 512
+total cost: 11.2179
+Query 513
+total cost: 0.000898
+Query 514
+total cost: 0.000686
+Query 515
+total cost: 0.000629
+Query 516
+total cost: 8.33571
+Query 517
+total cost: 0.000981
+Query 518
+total cost: 7.86929
+Query 519
+total cost: 8.60404
+Query 520
+total cost: 5.41271
+Query 521
+total cost: 10.8705
+Query 522
+total cost: 0.001178
+Query 523
+total cost: 9.55705
+Query 524
+total cost: 8.03026
+Query 525
+total cost: 0.000445
+Query 526
+total cost: 0.000593
+Query 527
+total cost: 0.000648
+Query 528
+total cost: 0.00075
+Query 529
+total cost: 5.82869
+Query 530
+total cost: 8.4617
+Query 531
+total cost: 5.97913
+Query 532
+total cost: 0.00101
+Query 533
+total cost: 0.000573
+Query 534
+total cost: 0.000725
+Query 535
+total cost: 0.000635
+Query 536
+total cost: 0.00073
+Query 537
+total cost: 0.000728
+Query 538
+total cost: 0.001381
+Query 539
+total cost: 0.000702
+Query 540
+total cost: 0.001887
+Query 541
+total cost: 6.90774
+Query 542
+total cost: 0.001264
+Query 543
+total cost: 6.26566
+Query 544
+total cost: 6.61883
+Query 545
+total cost: 8.85368
+Query 546
+total cost: 8.4902
+Query 547
+total cost: 0.000957
+Query 548
+total cost: 0.001126
+Query 549
+total cost: 0.00055
+Query 550
+total cost: 10.1013
+Query 551
+total cost: 0.001326
+Query 552
+total cost: 0.000769
+Query 553
+total cost: 0.000921
+Query 554
+total cost: 0.000482
+Query 555
+total cost: 9.95313
+Query 556
+total cost: 0.000781
+Query 557
+total cost: 0.000469
+Query 558
+total cost: 0.000428
+Query 559
+total cost: 7.53131
+Query 560
+total cost: 0.0006
+Query 561
+total cost: 9.25389
+Query 562
+total cost: 8.31677
+Query 563
+total cost: 6.48768
+Query 564
+total cost: 6.00185
+Query 565
+total cost: 8.89133
+Query 566
+total cost: 0.000675
+Query 567
+total cost: 7.34842
+Query 568
+total cost: 8.82516
+Query 569
+total cost: 3.87501
+Query 570
+total cost: 5.56865
+Query 571
+total cost: 0.00089
+Query 572
+total cost: 7.62161
+Query 573
+total cost: 5.18228
+Query 574
+total cost: 0.000666
+Query 575
+total cost: 4.02601
+Query 576
+total cost: 7.73848
+Query 577
+total cost: 8.20704
+Query 578
+total cost: 0.00064
+Query 579
+total cost: 0.002188
+Query 580
+total cost: 7.99627
+Query 581
+total cost: 5.79584
+Query 582
+total cost: 0.000703
+Query 583
+total cost: 0.001289
+Query 584
+total cost: 7.44589
+Query 585
+total cost: 0.000689
+Query 586
+total cost: 8.16679
+Query 587
+total cost: 8.45442
+Query 588
+total cost: 3.35263
+Query 589
+total cost: 0.001118
+Query 590
+total cost: 0.000743
+Query 591
+total cost: 10.0336
+Query 592
+total cost: 0.000632
+Query 593
+total cost: 5.91682
+Query 594
+total cost: 4.56581
+Query 595
+total cost: 7.18883
+Query 596
+total cost: 0.000639
+Query 597
+total cost: 7.50558
+Query 598
+total cost: 6.97491
+Query 599
+total cost: 0.00046
+Query 600
+total cost: 0.001032
+Query 601
+total cost: 7.65503
+Query 602
+total cost: 0.001438
+Query 603
+total cost: 6.43893
+Query 604
+total cost: 8.59177
+Query 605
+total cost: 0.002118
+Query 606
+total cost: 8.0734
+Query 607
+total cost: 7.15173
+Query 608
+total cost: 10.471
+Query 609
+total cost: 4.78365
+Query 610
+total cost: 0.00069
+Query 611
+total cost: 0.000701
+Query 612
+total cost: 0.000714
+Query 613
+total cost: 0.001073
+Query 614
+total cost: 6.91552
+Query 615
+total cost: 7.58197
+Query 616
+total cost: 0.001307
+Query 617
+total cost: 0.00057
+Query 618
+total cost: 8.53948
+Query 619
+total cost: 0.000921
+Query 620
+total cost: 0.000603
+Query 621
+total cost: 0.001002
+Query 622
+total cost: 0.000526
+Query 623
+total cost: 0.004583
+Query 624
+total cost: 0.017223
+Query 625
+total cost: 6.34985
+Query 626
+total cost: 5.07901
+Query 627
+total cost: 6.99466
+Query 628
+total cost: 0.000662
+Query 629
+total cost: 0.000706
+Query 630
+total cost: 0.001039
+Query 631
+total cost: 0.00133
+Query 632
+total cost: 0.000963
+Query 633
+total cost: 7.48331
+Query 634
+total cost: 8.9443
+Query 635
+total cost: 8.45356
+Query 636
+total cost: 0.001037
+Query 637
+total cost: 8.78576
+Query 638
+total cost: 5.91726
+Query 639
+total cost: 7.02817
+Query 640
+total cost: 8.59052
+Query 641
+total cost: 6.89094
+Query 642
+total cost: 7.79774
+Query 643
+total cost: 7.06936
+Query 644
+total cost: 5.62368
+Query 645
+total cost: 0.000973
+Query 646
+total cost: 8.24332
+Query 647
+total cost: 8.33061
+Query 648
+total cost: 0.000748
+Query 649
+total cost: 0.000555
+Query 650
+total cost: 0.000436
+Query 651
+total cost: 0.00124
+Query 652
+total cost: 7.11723
+Query 653
+total cost: 7.61493
+Query 654
+total cost: 0.001099
+Query 655
+total cost: 11.3413
+Query 656
+total cost: 5.08568
+Query 657
+total cost: 0.0005
+Query 658
+total cost: 0.000921
+Query 659
+total cost: 10.1821
+Query 660
+total cost: 8.88081
+Query 661
+total cost: 7.75755
+Query 662
+total cost: 0.00093
+Query 663
+total cost: 7.06592
+Query 664
+total cost: 6.36524
+Query 665
+total cost: 0.000527
+Query 666
+total cost: 0.00059
+Query 667
+total cost: 5.52382
+Query 668
+total cost: 7.34391
+Query 669
+total cost: 7.30793
+Query 670
+total cost: 0.000645
+Query 671
+total cost: 7.73838
+Query 672
+total cost: 6.45958
+Query 673
+total cost: 10.0359
+Query 674
+total cost: 4.65393
+Query 675
+total cost: 0.001042
+Query 676
+total cost: 0.000708
+Query 677
+total cost: 7.00016
+Query 678
+total cost: 9.41823
+Query 679
+total cost: 4.95246
+Query 680
+total cost: 0.00044
+Query 681
+total cost: 5.21049
+Query 682
+total cost: 0.00059
+Query 683
+total cost: 0.000418
+Query 684
+total cost: 6.18803
+Query 685
+total cost: 8.09819
+Query 686
+total cost: 0.000931
+Query 687
+total cost: 0.000457
+Query 688
+total cost: 0.000431
+Query 689
+total cost: 0.001476
+Query 690
+total cost: 5.90418
+Query 691
+total cost: 5.97872
+Query 692
+total cost: 5.11838
+Query 693
+total cost: 0.000687
+Query 694
+total cost: 8.01029
+Query 695
+total cost: 7.60921
+Query 696
+total cost: 6.33398
+Query 697
+total cost: 0.000861
+Query 698
+total cost: 10.4193
+Query 699
+total cost: 1.77888
+Query 700
+total cost: 5.36085
+Query 701
+total cost: 9.35304
+Query 702
+total cost: 0.000921
+Query 703
+total cost: 9.9738
+Query 704
+total cost: 0.000685
+Query 705
+total cost: 0.000835
+Query 706
+total cost: 6.74753
+Query 707
+total cost: 7.65799
+Query 708
+total cost: 10.589
+Query 709
+total cost: 7.38373
+Query 710
+total cost: 9.1187
+Query 711
+total cost: 7.61031
+Query 712
+total cost: 0.000757
+Query 713
+total cost: 0.000882
+Query 714
+total cost: 6.57038
+Query 715
+total cost: 0.000816
+Query 716
+total cost: 8.11556
+Query 717
+total cost: 0.000289
+Query 718
+total cost: 0.000807
+Query 719
+total cost: 8.4776
+Query 720
+total cost: 2.12157
+Query 721
+total cost: 8.28275
+Query 722
+total cost: 6.15942
+Query 723
+total cost: 0.000988
+Query 724
+total cost: 0.000772
+Query 725
+total cost: 0.001169
+Query 726
+total cost: 0.000527
+Query 727
+total cost: 6.33453
+Query 728
+total cost: 6.21605
+Query 729
+total cost: 6.88128
+Query 730
+total cost: 0.000609
+Query 731
+total cost: 0.000754
+Query 732
+total cost: 0.000832
+Query 733
+total cost: 6.5089
+Query 734
+total cost: 0.000673
+Query 735
+total cost: 5.71219
+Query 736
+total cost: 5.87657
+Query 737
+total cost: 0.000561
+Query 738
+total cost: 7.02195
+Query 739
+total cost: 6.57857
+Query 740
+total cost: 0.000676
+Query 741
+total cost: 7.05553
+Query 742
+total cost: 0.000381
+Query 743
+total cost: 6.83894
+Query 744
+total cost: 0.000848
+Query 745
+total cost: 0.000771
+Query 746
+total cost: 0.001173
+Query 747
+total cost: 7.58954
+Query 748
+total cost: 6.75131
+Query 749
+total cost: 5.7075
+Query 750
+total cost: 0.000441
+Query 751
+total cost: 8.40526
+Query 752
+total cost: 8.96229
+Query 753
+total cost: 8.1658
+Query 754
+total cost: 7.92841
+Query 755
+total cost: 8.86255
+Query 756
+total cost: 8.07587
+Query 757
+total cost: 7.14214
+Query 758
+total cost: 0.00051
+Query 759
+total cost: 6.76243
+Query 760
+total cost: 8.7047
+Query 761
+total cost: 8.20507
+Query 762
+total cost: 0.000613
+Query 763
+total cost: 6.67651
+Query 764
+total cost: 0.000463
+Query 765
+total cost: 7.69181
+Query 766
+total cost: 7.57173
+Query 767
+total cost: 0.00071
+Query 768
+total cost: 0.001008
+Query 769
+total cost: 0.000825
+Query 770
+total cost: 7.93086
+Query 771
+total cost: 0.00099
+Query 772
+total cost: 0.000703
+Query 773
+total cost: 0.000519
+Query 774
+total cost: 6.84795
+Query 775
+total cost: 0.000634
+Query 776
+total cost: 0.001166
+Query 777
+total cost: 10.3978
+Query 778
+total cost: 8.15745
+Query 779
+total cost: 4.05974
+Query 780
+total cost: 0.000684
+Query 781
+total cost: 7.44833
+Query 782
+total cost: 0.001238
+Query 783
+total cost: 0.000577
+Query 784
+total cost: 0.001066
+Query 785
+total cost: 8.89837
+Query 786
+total cost: 7.75666
+Query 787
+total cost: 6.11017
+Query 788
+total cost: 0.000601
+Query 789
+total cost: 0.001415
+Query 790
+total cost: 6.4029
+Query 791
+total cost: 0.001554
+Query 792
+total cost: 0.001082
+Query 793
+total cost: 0.001597
+Query 794
+total cost: 10.3493
+Query 795
+total cost: 0.000568
+Query 796
+total cost: 7.92143
+Query 797
+total cost: 0.000347
+Query 798
+total cost: 0.001534
+Query 799
+total cost: 10.1077
+Query 800
+total cost: 5.77426
+Query 801
+total cost: 0.000842
+Query 802
+total cost: 0.001
+Query 803
+total cost: 7.97667
+Query 804
+total cost: 9.57068
+Query 805
+total cost: 4.97727
+Query 806
+total cost: 7.9892
+Query 807
+total cost: 0.000772
+Query 808
+total cost: 0.000933
+Query 809
+total cost: 0.000367
+Query 810
+total cost: 0.000819
+Query 811
+total cost: 8.40772
+Query 812
+total cost: 0.000257
+Query 813
+total cost: 0.000502
+Query 814
+total cost: 6.62713
+Query 815
+total cost: 7.53283
+Query 816
+total cost: 0.00067
+Query 817
+total cost: 0.000747
+Query 818
+total cost: 4.61192
+Query 819
+total cost: 0.000811
+Query 820
+total cost: 6.12129
+Query 821
+total cost: 0.00094
+Query 822
+total cost: 0.000962
+Query 823
+total cost: 0.000579
+Query 824
+total cost: 7.99424
+Query 825
+total cost: 0.001021
+Query 826
+total cost: 0.000923
+Query 827
+total cost: 0.001503
+Query 828
+total cost: 0.004362
+Query 829
+total cost: 10.0918
+Query 830
+total cost: 0.000757
+Query 831
+total cost: 0.001027
+Query 832
+total cost: 0.000925
+Query 833
+total cost: 0.000656
+Query 834
+total cost: 5.01879
+Query 835
+total cost: 0.000702
+Query 836
+total cost: 6.58278
+Query 837
+total cost: 9.6579
+Query 838
+total cost: 7.71763
+Query 839
+total cost: 7.66426
+Query 840
+total cost: 0.00139
+Query 841
+total cost: 6.22149
+Query 842
+total cost: 9.88427
+Query 843
+total cost: 8.45011
+Query 844
+total cost: 0.000955
+Query 845
+total cost: 0.000652
+Query 846
+total cost: 10.5666
+Query 847
+total cost: 8.30531
+Query 848
+total cost: 9.10575
+Query 849
+total cost: 7.70452
+Query 850
+total cost: 8.80755
+Query 851
+total cost: 6.99187
+Query 852
+total cost: 0.001026
+Query 853
+total cost: 6.07959
+Query 854
+total cost: 0.001217
+Query 855
+total cost: 0.000801
+Query 856
+total cost: 6.73048
+Query 857
+total cost: 4.00497
+Query 858
+total cost: 0.001529
+Query 859
+total cost: 7.45249
+Query 860
+total cost: 6.33242
+Query 861
+total cost: 6.63355
+Query 862
+total cost: 7.1638
+Query 863
+total cost: 0.00139
+Query 864
+total cost: 6.23563
+Query 865
+total cost: 0.000545
+Query 866
+total cost: 6.45814
+Query 867
+total cost: 8.6419
+Query 868
+total cost: 6.92759
+Query 869
+total cost: 0.000723
+Query 870
+total cost: 6.66213
+Query 871
+total cost: 0.000931
+Query 872
+total cost: 7.10316
+Query 873
+total cost: 8.67851
+Query 874
+total cost: 0.001056
+Query 875
+total cost: 9.13928
+Query 876
+total cost: 4.82853
+Query 877
+total cost: 9.73204
+Query 878
+total cost: 0.000849
+Query 879
+total cost: 9.24524
+Query 880
+total cost: 7.3455
+Query 881
+total cost: 0.000708
+Query 882
+total cost: 0.000927
+Query 883
+total cost: 7.50542
+Query 884
+total cost: 0.000817
+Query 885
+total cost: 9.57907
+Query 886
+total cost: 8.06958
+Query 887
+total cost: 7.20557
+Query 888
+total cost: 7.97595
+Query 889
+total cost: 6.52693
+Query 890
+total cost: 7.98435
+Query 891
+total cost: 0.00052
+Query 892
+total cost: 9.2524
+Query 893
+total cost: 5.64024
+Query 894
+total cost: 7.19595
+Query 895
+total cost: 0.000817
+Query 896
+total cost: 0.000523
+Query 897
+total cost: 0.000984
+Query 898
+total cost: 0.000492
+Query 899
+total cost: 0.00081
+Query 900
+total cost: 0.000591
+Query 901
+total cost: 0.00154
+Query 902
+total cost: 0.001398
+Query 903
+total cost: 0.000594
+Query 904
+total cost: 6.56119
+Query 905
+total cost: 6.26361
+Query 906
+total cost: 8.39695
+Query 907
+total cost: 0.00079
+Query 908
+total cost: 0.00101
+Query 909
+total cost: 6.15888
+Query 910
+total cost: 7.02128
+Query 911
+total cost: 0.000666
+Query 912
+total cost: 0.000615
+Query 913
+total cost: 6.75694
+Query 914
+total cost: 8.14133
+Query 915
+total cost: 8.52239
+Query 916
+total cost: 9.9296
+Query 917
+total cost: 0.001593
+Query 918
+total cost: 6.67287
+Query 919
+total cost: 0.000677
+Query 920
+total cost: 7.32792
+Query 921
+total cost: 9.39949
+Query 922
+total cost: 9.26494
+Query 923
+total cost: 8.96327
+Query 924
+total cost: 9.39047
+Query 925
+total cost: 0.001187
+Query 926
+total cost: 0.001601
+Query 927
+total cost: 0.001069
+Query 928
+total cost: 0.000771
+Query 929
+total cost: 0.000745
+Query 930
+total cost: 0.000821
+Query 931
+total cost: 9.28647
+Query 932
+total cost: 10.994
+Query 933
+total cost: 9.90097
+Query 934
+total cost: 7.99121
+Query 935
+total cost: 9.01849
+Query 936
+total cost: 0.000872
+Query 937
+total cost: 0.00081
+Query 938
+total cost: 6.31719
+Query 939
+total cost: 5.61508
+Query 940
+total cost: 7.31403
+Query 941
+total cost: 0.000472
+Query 942
+total cost: 0.001176
+Query 943
+total cost: 5.83477
+Query 944
+total cost: 0.000695
+Query 945
+total cost: 7.48842
+Query 946
+total cost: 8.38518
+Query 947
+total cost: 6.14462
+Query 948
+total cost: 9.63029
+Query 949
+total cost: 0.000551
+Query 950
+total cost: 8.59103
+Query 951
+total cost: 6.15563
+Query 952
+total cost: 7.1087
+Query 953
+total cost: 0.000611
+Query 954
+total cost: 0.000591
+Query 955
+total cost: 7.48698
+Query 956
+total cost: 9.34731
+Query 957
+total cost: 7.70372
+Query 958
+total cost: 7.64716
+Query 959
+total cost: 7.63896
+Query 960
+total cost: 0.001089
+Query 961
+total cost: 0.000943
+Query 962
+total cost: 5.93071
+Query 963
+total cost: 0.00094
+Query 964
+total cost: 0.000621
+Query 965
+total cost: 0.001168
+Query 966
+total cost: 10.1639
+Query 967
+total cost: 5.80364
+Query 968
+total cost: 7.99678
+Query 969
+total cost: 9.16384
+Query 970
+total cost: 8.29255
+Query 971
+total cost: 6.93457
+Query 972
+total cost: 6.80145
+Query 973
+total cost: 8.33474
+Query 974
+total cost: 8.37639
+Query 975
+total cost: 0.00062
+Query 976
+total cost: 8.98561
+Query 977
+total cost: 7.08738
+Query 978
+total cost: 0.000758
+Query 979
+total cost: 7.53136
+Query 980
+total cost: 0.000975
+Query 981
+total cost: 7.0439
+Query 982
+total cost: 9.64397
+Query 983
+total cost: 0.000577
+Query 984
+total cost: 0.000952
+Query 985
+total cost: 4.2173
+Query 986
+total cost: 0.000474
+Query 987
+total cost: 10.3075
+Query 988
+total cost: 0.000702
+Query 989
+total cost: 6.20449
+Query 990
+total cost: 9.16604
+Query 991
+total cost: 0.000658
+Query 992
+total cost: 0.001005
+Query 993
+total cost: 6.84764
+Query 994
+total cost: 0.00071
+Query 995
+total cost: 6.50441
+Query 996
+total cost: 7.19344
+Query 997
+total cost: 5.35442
+Query 998
+total cost: 0.000577
+Query 999
+total cost: 8.43583
+Query 1000
+total cost: 7.77618
+Query 1001
+total cost: 6.88067
+Query 1002
+total cost: 8.56136
+Query 1003
+total cost: 4.47978
+Query 1004
+total cost: 8.08503
+Query 1005
+total cost: 0.000775
+Query 1006
+total cost: 6.84917
+Query 1007
+total cost: 0.000642
+Query 1008
+total cost: 0.003088
+Query 1009
+total cost: 0.000702
+Query 1010
+total cost: 5.92786
+Query 1011
+total cost: 0.00089
+Query 1012
+total cost: 10.5373
+Query 1013
+total cost: 8.33707
+Query 1014
+total cost: 13.0157
+Query 1015
+total cost: 0.001416
+Query 1016
+total cost: 0.000523
+Query 1017
+total cost: 8.46972
+Query 1018
+total cost: 9.27473
+Query 1019
+total cost: 0.004287
+Query 1020
+total cost: 3.85604
+Query 1021
+total cost: 7.99862
+Query 1022
+total cost: 6.82695
+Query 1023
+total cost: 4.42231
+Query 1024
+total cost: 5.85236
+Query 1025
+total cost: 13.7154
+Query 1026
+total cost: 0.001164
+Query 1027
+total cost: 0.00081
+Query 1028
+total cost: 0.000524
+Query 1029
+total cost: 4.40618
+Query 1030
+total cost: 5.49698
+Query 1031
+total cost: 0.000828
+Query 1032
+total cost: 8.12447
+Query 1033
+total cost: 7.36426
+Query 1034
+total cost: 6.14045
+Query 1035
+total cost: 8.28839
+Query 1036
+total cost: 4.52906
+Query 1037
+total cost: 8.05165
+Query 1038
+total cost: 5.9819
+Query 1039
+total cost: 6.00103
+Query 1040
+total cost: 6.95407
+Query 1041
+total cost: 0.000758
+Query 1042
+total cost: 0.000308
+Query 1043
+total cost: 5.40251
+Query 1044
+total cost: 10.5708
+Query 1045
+total cost: 0.000588
+Query 1046
+total cost: 9.68981
+Query 1047
+total cost: 0.00076
+Query 1048
+total cost: 6.8846
+Query 1049
+total cost: 7.82588
+Query 1050
+total cost: 6.49993
+Query 1051
+total cost: 8.19919
+Query 1052
+total cost: 6.08921
+Query 1053
+total cost: 0.000663
+Query 1054
+total cost: 7.03592
+Query 1055
+total cost: 0.000864
+Query 1056
+total cost: 0.000908
+Query 1057
+total cost: 0.000694
+Query 1058
+total cost: 0.000357
+Query 1059
+total cost: 8.51934
+Query 1060
+total cost: 10.3164
+Query 1061
+total cost: 0.000897
+Query 1062
+total cost: 5.80964
+Query 1063
+total cost: 0.002316
+Query 1064
+total cost: 4.11246
+Query 1065
+total cost: 6.29204
+Query 1066
+total cost: 10.7403
+Query 1067
+total cost: 6.98228
+Query 1068
+total cost: 6.3178
+Query 1069
+total cost: 0.000708
+Query 1070
+total cost: 8.77264
+Query 1071
+total cost: 5.99108
+Query 1072
+total cost: 6.01306
+Query 1073
+total cost: 8.68124
+Query 1074
+total cost: 0.001049
+Query 1075
+total cost: 7.39024
+Query 1076
+total cost: 0.00077
+Query 1077
+total cost: 0.000401
+Query 1078
+total cost: 7.31098
+Query 1079
+total cost: 0.000617
+Query 1080
+total cost: 6.06816
+Query 1081
+total cost: 0.00063
+Query 1082
+total cost: 10.0307
+Query 1083
+total cost: 0.000663
+Query 1084
+total cost: 7.74484
+Query 1085
+total cost: 0.000828
+Query 1086
+total cost: 7.677
+Query 1087
+total cost: 0.000755
+Query 1088
+total cost: 0.000585
+Query 1089
+total cost: 5.93712
+Query 1090
+total cost: 5.4861
+Query 1091
+total cost: 0.000576
+Query 1092
+total cost: 0.000634
+Query 1093
+total cost: 10.0777
+Query 1094
+total cost: 8.64276
+Query 1095
+total cost: 7.72809
+Query 1096
+total cost: 10.093
+Query 1097
+total cost: 0.000568
+Query 1098
+total cost: 0.000704
+Query 1099
+total cost: 13.2429
+Query 1100
+total cost: 0.000662
+Query 1101
+total cost: 5.51408
+Query 1102
+total cost: 15.0717
+Query 1103
+total cost: 8.57006
+Query 1104
+total cost: 5.65792
+Query 1105
+total cost: 0.00075
+Query 1106
+total cost: 10.1048
+Query 1107
+total cost: 7.25756
+Query 1108
+total cost: 7.15174
+Query 1109
+total cost: 0.000268
+Query 1110
+total cost: 8.5914
+Query 1111
+total cost: 9.7443
+Query 1112
+total cost: 7.42842
+Query 1113
+total cost: 7.26092
+Query 1114
+total cost: 0.00077
+Query 1115
+total cost: 0.000802
+Query 1116
+total cost: 4.8139
+Query 1117
+total cost: 8.08186
+Query 1118
+total cost: 9.24284
+Query 1119
+total cost: 9.96238
+Query 1120
+total cost: 6.83622
+Query 1121
+total cost: 6.56831
+Query 1122
+total cost: 6.95272
+Query 1123
+total cost: 8.17338
+Query 1124
+total cost: 7.66725
+Query 1125
+total cost: 0.00024
+Query 1126
+total cost: 0.00078
+Query 1127
+total cost: 6.14863
+Query 1128
+total cost: 5.45152
+Query 1129
+total cost: 6.8909
+Query 1130
+total cost: 0.000715
+Query 1131
+total cost: 0.000688
+Query 1132
+total cost: 8.11989
+Query 1133
+total cost: 0.000653
+Query 1134
+total cost: 8.98254
+Query 1135
+total cost: 9.04271
+Query 1136
+total cost: 8.78133
+Query 1137
+total cost: 7.54813
+Query 1138
+total cost: 0.001183
+Query 1139
+total cost: 8.64424
+Query 1140
+total cost: 6.52555
+Query 1141
+total cost: 11.7095
+Query 1142
+total cost: 9.07493
+Query 1143
+total cost: 0.000668
+Query 1144
+total cost: 7.69964
+Query 1145
+total cost: 0.000957
+Query 1146
+total cost: 0.000828
+Query 1147
+total cost: 8.33137
+Query 1148
+total cost: 6.49659
+Query 1149
+total cost: 5.6079
+Query 1150
+total cost: 11.7254
+Query 1151
+total cost: 0.000367
+Query 1152
+total cost: 0.000524
+Query 1153
+total cost: 0.001043
+Query 1154
+total cost: 0.000774
+Query 1155
+total cost: 9.12016
+Query 1156
+total cost: 4.33337
+Query 1157
+total cost: 0.001261
+Query 1158
+total cost: 7.67142
+Query 1159
+total cost: 0.000903
+Query 1160
+total cost: 0.001018
+Query 1161
+total cost: 7.26759
+Query 1162
+total cost: 0.000787
+Query 1163
+total cost: 4.79001
+Query 1164
+total cost: 0.001084
+Query 1165
+total cost: 7.22161
+Query 1166
+total cost: 0.000381
+Query 1167
+total cost: 10.006
+Query 1168
+total cost: 10.3735
+Query 1169
+total cost: 8.14873
+Query 1170
+total cost: 6.49719
+Query 1171
+total cost: 0.000449
+Query 1172
+total cost: 10.028
+Query 1173
+total cost: 7.05703
+Query 1174
+total cost: 0.0013
+Query 1175
+total cost: 0.000523
+Query 1176
+total cost: 0.000556
+Query 1177
+total cost: 0.000778
+Query 1178
+total cost: 6.67706
+Query 1179
+total cost: 0.000653
+Query 1180
+total cost: 7.96901
+Query 1181
+total cost: 8.29073
+Query 1182
+total cost: 10.3359
+Query 1183
+total cost: 8.0163
+Query 1184
+total cost: 0.000939
+Query 1185
+total cost: 8.10692
+Query 1186
+total cost: 8.86386
+Query 1187
+total cost: 6.15705
+Query 1188
+total cost: 0.001342
+Query 1189
+total cost: 6.88716
+Query 1190
+total cost: 9.63051
+Query 1191
+total cost: 9.60958
+Query 1192
+total cost: 8.06691
+Query 1193
+total cost: 4.44561
+Query 1194
+total cost: 0.000732
+Query 1195
+total cost: 0.000755
+Query 1196
+total cost: 14.1108
+Query 1197
+total cost: 9.74057
+Query 1198
+total cost: 0.000752
+Query 1199
+total cost: 9.30256
+Query 1200
+total cost: 8.6101
+Query 1201
+total cost: 7.06202
+Query 1202
+total cost: 0.000564
+Query 1203
+total cost: 5.01382
+Query 1204
+total cost: 7.1341
+Query 1205
+total cost: 0.000704
+Query 1206
+total cost: 0.000556
+Query 1207
+total cost: 0.000859
+Query 1208
+total cost: 0.00064
+Query 1209
+total cost: 7.71549
+Query 1210
+total cost: 0.000641
+Query 1211
+total cost: 0.010355
+Query 1212
+total cost: 0.0007
+Query 1213
+total cost: 5.82411
+Query 1214
+total cost: 1.85394
+Query 1215
+total cost: 7.43269
+Query 1216
+total cost: 8.3294
+Query 1217
+total cost: 0.000333
+Query 1218
+total cost: 0.000525
+Query 1219
+total cost: 5.47548
+Query 1220
+total cost: 0.000809
+Query 1221
+total cost: 7.24599
+Query 1222
+total cost: 6.30704
+Query 1223
+total cost: 10.2057
+Query 1224
+total cost: 8.47658
+Query 1225
+total cost: 7.74362
+Query 1226
+total cost: 0.001743
+Query 1227
+total cost: 3.15157
+Query 1228
+total cost: 0.001098
+Query 1229
+total cost: 0.000556
+Query 1230
+total cost: 8.15411
+Query 1231
+total cost: 8.63523
+Query 1232
+total cost: 0.000886
+Query 1233
+total cost: 6.37402
+Query 1234
+total cost: 7.99522
+Query 1235
+total cost: 7.95067
+Query 1236
+total cost: 0.000756
+Query 1237
+total cost: 7.03306
+Query 1238
+total cost: 10.3205
+Query 1239
+total cost: 10.7458
+Query 1240
+total cost: 7.23306
+Query 1241
+total cost: 0.000847
+Query 1242
+total cost: 0.000494
+Query 1243
+total cost: 7.0077
+Query 1244
+total cost: 0.001546
+Query 1245
+total cost: 7.47174
+Query 1246
+total cost: 6.23758
+Query 1247
+total cost: 6.63065
+Query 1248
+total cost: 0.000841
+Query 1249
+total cost: 6.3851
+Query 1250
+total cost: 4.81585
+Query 1251
+total cost: 9.2275
+Query 1252
+total cost: 0.000412
+Query 1253
+total cost: 7.06733
+Query 1254
+total cost: 6.7877
+Query 1255
+total cost: 0.000554
+Query 1256
+total cost: 7.83849
+Query 1257
+total cost: 0.000709
+Query 1258
+total cost: 6.79945
+Query 1259
+total cost: 0.000672
+Query 1260
+total cost: 6.19532
+Query 1261
+total cost: 0.000895
+Query 1262
+total cost: 7.60656
+Query 1263
+total cost: 0.000551
+Query 1264
+total cost: 9.2087
+Query 1265
+total cost: 0.001295
+Query 1266
+total cost: 9.07631
+Query 1267
+total cost: 0.00099
+Query 1268
+total cost: 0.000816
+Query 1269
+total cost: 0.000994
+Query 1270
+total cost: 0.000651
+Query 1271
+total cost: 6.67588
+Query 1272
+total cost: 0.00121
+Query 1273
+total cost: 8.25328
+Query 1274
+total cost: 6.17464
+Query 1275
+total cost: 7.12359
+Query 1276
+total cost: 6.14898
+Query 1277
+total cost: 0.000424
+Query 1278
+total cost: 9.48337
+Query 1279
+total cost: 0.000556
+Query 1280
+total cost: 5.30527
+Query 1281
+total cost: 8.69434
+Query 1282
+total cost: 10.7444
+Query 1283
+total cost: 9.19292
+Query 1284
+total cost: 8.01707
+Query 1285
+total cost: 9.71594
+Query 1286
+total cost: 0.000372
+Query 1287
+total cost: 0.000618
+Query 1288
+total cost: 0.000748
+Query 1289
+total cost: 7.4869
+Query 1290
+total cost: 8.02113
+Query 1291
+total cost: 0.002944
+Query 1292
+total cost: 12.4324
+Query 1293
+total cost: 8.85837
+Query 1294
+total cost: 9.50083
+Query 1295
+total cost: 9.24519
+Query 1296
+total cost: 9.68433
+Query 1297
+total cost: 7.24078
+Query 1298
+total cost: 4.23449
+Query 1299
+total cost: 5.7214
+Query 1300
+total cost: 4.17735
+Query 1301
+total cost: 5.42977
+Query 1302
+total cost: 9.2434
+Query 1303
+total cost: 8.91598
+Query 1304
+total cost: 3.93843
+Query 1305
+total cost: 0.000594
+Query 1306
+total cost: 7.93788
+Query 1307
+total cost: 5.89912
+Query 1308
+total cost: 4.47414
+Query 1309
+total cost: 6.47144
+Query 1310
+total cost: 7.9284
+Query 1311
+total cost: 6.46938
+Query 1312
+total cost: 0.000438
+Query 1313
+total cost: 4.82233
+Query 1314
+total cost: 0.000699
+Query 1315
+total cost: 5.33496
+Query 1316
+total cost: 7.95771
+Query 1317
+total cost: 7.19712
+Query 1318
+total cost: 0.000623
+Query 1319
+total cost: 10.3854
+Query 1320
+total cost: 0.000645
+Query 1321
+total cost: 8.98626
+Query 1322
+total cost: 0.000753
+Query 1323
+total cost: 7.60251
+Query 1324
+total cost: 8.18826
+Query 1325
+total cost: 0.00053
+Query 1326
+total cost: 11.5254
+Query 1327
+total cost: 5.11352
+Query 1328
+total cost: 7.97872
+Query 1329
+total cost: 8.51893
+Query 1330
+total cost: 0.001431
+Query 1331
+total cost: 7.26459
+Query 1332
+total cost: 0.00059
+Query 1333
+total cost: 0.000888
+Query 1334
+total cost: 9.02612
+Query 1335
+total cost: 0.000421
+Query 1336
+total cost: 10.9474
+Query 1337
+total cost: 7.87462
+Query 1338
+total cost: 0.001694
+Query 1339
+total cost: 0.000615
+Query 1340
+total cost: 8.31865
+Query 1341
+total cost: 0.000758
+Query 1342
+total cost: 0.000897
+Query 1343
+total cost: 7.6109
+Query 1344
+total cost: 0.000708
+Query 1345
+total cost: 0.00125
+Query 1346
+total cost: 5.76408
+Query 1347
+total cost: 6.31586
+Query 1348
+total cost: 6.53036
+Query 1349
+total cost: 7.19228
+Query 1350
+total cost: 7.3532
+Query 1351
+total cost: 7.59388
+Query 1352
+total cost: 6.74201
+Query 1353
+total cost: 6.90085
+Query 1354
+total cost: 7.4822
+Query 1355
+total cost: 8.36919
+Query 1356
+total cost: 0.000968
+Query 1357
+total cost: 0.000718
+Query 1358
+total cost: 0.004165
+Query 1359
+total cost: 0.00035
+Query 1360
+total cost: 7.87171
+Query 1361
+total cost: 6.27806
+Query 1362
+total cost: 7.94675
+Query 1363
+total cost: 6.58538
+Query 1364
+total cost: 0.001024
+Query 1365
+total cost: 7.29807
+Query 1366
+total cost: 0.001056
+Query 1367
+total cost: 10.7433
+Query 1368
+total cost: 0.000524
+Query 1369
+total cost: 5.89371
+Query 1370
+total cost: 10.3227
+Query 1371
+total cost: 7.58932
+Query 1372
+total cost: 0.000803
+Query 1373
+total cost: 8.01067
+Query 1374
+total cost: 8.72192
+Query 1375
+total cost: 6.91587
+Query 1376
+total cost: 9.39075
+Query 1377
+total cost: 8.05493
+Query 1378
+total cost: 0.000741
+Query 1379
+total cost: 8.39354
+Query 1380
+total cost: 0.000438
+Query 1381
+total cost: 8.65552
+Query 1382
+total cost: 0.000949
+Query 1383
+total cost: 8.48556
+Query 1384
+total cost: 0.001019
+Query 1385
+total cost: 2.45081
+Query 1386
+total cost: 0.00078
+Query 1387
+total cost: 7.52191
+Query 1388
+total cost: 0.000745
+Query 1389
+total cost: 0.000537
+Query 1390
+total cost: 8.59915
+Query 1391
+total cost: 0.000885
+Query 1392
+total cost: 0.01867
+Query 1393
+total cost: 0.000658
+Query 1394
+total cost: 0.000463
+Query 1395
+total cost: 10.1089
+Query 1396
+total cost: 0.000884
+Query 1397
+total cost: 5.89449
+Query 1398
+total cost: 8.40486
+Query 1399
+total cost: 0.000468
+Query 1400
+total cost: 0.000509
+Query 1401
+total cost: 8.09441
+Query 1402
+total cost: 6.11509
+Query 1403
+total cost: 8.41403
+Query 1404
+total cost: 0.000618
+Query 1405
+total cost: 10.7446
+Query 1406
+total cost: 7.19401
+Query 1407
+total cost: 5.76451
+Query 1408
+total cost: 9.74951
+Query 1409
+total cost: 8.05189
+Query 1410
+total cost: 0.000424
+Query 1411
+total cost: 0.000936
+Query 1412
+total cost: 0.000705
+Query 1413
+total cost: 0.000488
+Query 1414
+total cost: 7.59904
+Query 1415
+total cost: 0.001275
+Query 1416
+total cost: 0.000558
+Query 1417
+total cost: 7.91954
+Query 1418
+total cost: 9.54903
+Query 1419
+total cost: 0.000548
+Query 1420
+total cost: 0.000623
+Query 1421
+total cost: 7.65537
+Query 1422
+total cost: 0.000616
+Query 1423
+total cost: 0.000972
+Query 1424
+total cost: 9.29793
+Query 1425
+total cost: 7.37726
+Query 1426
+total cost: 0.000827
+Query 1427
+total cost: 0.000481
+Query 1428
+total cost: 8.01333
+Query 1429
+total cost: 6.61958
+Query 1430
+total cost: 8.83897
+Query 1431
+total cost: 0.000704
+Query 1432
+total cost: 7.87366
+Query 1433
+total cost: 6.90809
+Query 1434
+total cost: 0.00055
+Query 1435
+total cost: 0.002216
+Query 1436
+total cost: 6.95171
+Query 1437
+total cost: 0.001138
+Query 1438
+total cost: 0.000873
+Query 1439
+total cost: 6.72155
+Query 1440
+total cost: 0.001258
+Query 1441
+total cost: 6.75981
+Query 1442
+total cost: 0.000641
+Query 1443
+total cost: 8.11742
+Query 1444
+total cost: 0.000641
+Query 1445
+total cost: 8.50614
+Query 1446
+total cost: 4.75214
+Query 1447
+total cost: 0.000353
+Query 1448
+total cost: 8.85411
+Query 1449
+total cost: 8.72753
+Query 1450
+total cost: 5.34198
+Query 1451
+total cost: 7.52135
+Query 1452
+total cost: 8.48432
+Query 1453
+total cost: 0.015842
+Query 1454
+total cost: 6.06222
+Query 1455
+total cost: 8.72821
+Query 1456
+total cost: 5.8332
+Query 1457
+total cost: 3.89334
+Query 1458
+total cost: 0.000521
+Query 1459
+total cost: 0.000812
+Query 1460
+total cost: 11.0143
+Query 1461
+total cost: 6.16351
+Query 1462
+total cost: 9.96586
+Query 1463
+total cost: 0.00093
+Query 1464
+total cost: 7.75746
+Query 1465
+total cost: 8.83392
+Query 1466
+total cost: 7.48359
+Query 1467
+total cost: 8.07754
+Query 1468
+total cost: 7.64366
+Query 1469
+total cost: 5.3768
+Query 1470
+total cost: 10.6172
+Query 1471
+total cost: 10.1983
+Query 1472
+total cost: 0.000928
+Query 1473
+total cost: 6.01702
+Query 1474
+total cost: 8.32889
+Query 1475
+total cost: 9.97026
+Query 1476
+total cost: 7.13569
+Query 1477
+total cost: 7.51056
+Query 1478
+total cost: 4.53706
+Query 1479
+total cost: 0.000795
+Query 1480
+total cost: 0.000537
+Query 1481
+total cost: 5.31572
+Query 1482
+total cost: 0.000613
+Query 1483
+total cost: 8.5138
+Query 1484
+total cost: 0.000875
+Query 1485
+total cost: 4.57814
+Query 1486
+total cost: 6.86133
+Query 1487
+total cost: 10.5401
+Query 1488
+total cost: 0.000556
+Query 1489
+total cost: 0.000514
+Query 1490
+total cost: 0.000494
+Query 1491
+total cost: 6.15483
+Query 1492
+total cost: 9.12306
+Query 1493
+total cost: 7.32243
+Query 1494
+total cost: 0.00059
+Query 1495
+total cost: 6.65847
+Query 1496
+total cost: 7.16415
+Query 1497
+total cost: 5.4235
+Query 1498
+total cost: 5.05601
+Query 1499
+total cost: 0.000627
+Query 1500
+total cost: 0.000899
+Query 1501
+total cost: 7.6597
+Query 1502
+total cost: 0.000664
+Query 1503
+total cost: 6.26891
+Query 1504
+total cost: 6.68054
+Query 1505
+total cost: 0.000735
+Query 1506
+total cost: 4.95189
+Query 1507
+total cost: 0.001457
+Query 1508
+total cost: 9.29123
+Query 1509
+total cost: 0.00089
+Query 1510
+total cost: 5.93656
+Query 1511
+total cost: 10.258
+Query 1512
+total cost: 8.63733
+Query 1513
+total cost: 11.3116
+Query 1514
+total cost: 5.83146
+Query 1515
+total cost: 6.94998
+Query 1516
+total cost: 11.0231
+Query 1517
+total cost: 8.80846
+Query 1518
+total cost: 6.24738
+Query 1519
+total cost: 0.00077
+Query 1520
+total cost: 0.000931
+Query 1521
+total cost: 8.31491
+Query 1522
+total cost: 0.001366
+Query 1523
+total cost: 11.4245
+Query 1524
+total cost: 0.001135
+Query 1525
+total cost: 9.04635
+Query 1526
+total cost: 8.38001
+Query 1527
+total cost: 0.000755
+Query 1528
+total cost: 0.000426
+Query 1529
+total cost: 0.000865
+Query 1530
+total cost: 7.32042
+Query 1531
+total cost: 5.51199
+Query 1532
+total cost: 5.97056
+Query 1533
+total cost: 0.000882
+Query 1534
+total cost: 5.29692
+Query 1535
+total cost: 5.45129
+Query 1536
+total cost: 7.30514
+Query 1537
+total cost: 6.69122
+Query 1538
+total cost: 7.15484
+Query 1539
+total cost: 0.000615
+Query 1540
+total cost: 4.54492
+Query 1541
+total cost: 4.94948
+Query 1542
+total cost: 0.00144
+Query 1543
+total cost: 6.45449
+Query 1544
+total cost: 8.84266
+Query 1545
+total cost: 0.000625
+Query 1546
+total cost: 0.00084
+Query 1547
+total cost: 7.34789
+Query 1548
+total cost: 8.30715
+Query 1549
+total cost: 6.21971
+Query 1550
+total cost: 0.001274
+Query 1551
+total cost: 6.42443
+Query 1552
+total cost: 7.94935
+Query 1553
+total cost: 7.8093
+Query 1554
+total cost: 7.74478
+Query 1555
+total cost: 6.2479
+Query 1556
+total cost: 0.000738
+Query 1557
+total cost: 11.6095
+Query 1558
+total cost: 0.000964
+Query 1559
+total cost: 6.19995
+Query 1560
+total cost: 0.000647
+Query 1561
+total cost: 8.62844
+Query 1562
+total cost: 0.000497
+Query 1563
+total cost: 8.3167
+Query 1564
+total cost: 8.77239
+Query 1565
+total cost: 0.000897
+Query 1566
+total cost: 7.07128
+Query 1567
+total cost: 13.0677
+Query 1568
+total cost: 10.0033
+Query 1569
+total cost: 9.42489
+Query 1570
+total cost: 0.000472
+Query 1571
+total cost: 7.62461
+Query 1572
+total cost: 0.0005
+Query 1573
+total cost: 0.001675
+Query 1574
+total cost: 9.7036
+Query 1575
+total cost: 6.70349
+Query 1576
+total cost: 0.004091
+Query 1577
+total cost: 8.0365
+Query 1578
+total cost: 9.52291
+Query 1579
+total cost: 0.003175
+Query 1580
+total cost: 3.81399
+Query 1581
+total cost: 0.001321
+Query 1582
+total cost: 5.6222
+Query 1583
+total cost: 0.01016
+Query 1584
+total cost: 2.3771
+Query 1585
+total cost: 0.000949
+Query 1586
+total cost: 0.000684
+Query 1587
+total cost: 5.73058
+Query 1588
+total cost: 6.40512
+Query 1589
+total cost: 6.80524
+Query 1590
+total cost: 0.000642
+Query 1591
+total cost: 5.99879
+Query 1592
+total cost: 0.00063
+Query 1593
+total cost: 0.0021
+Query 1594
+total cost: 8.36161
+Query 1595
+total cost: 6.91658
+Query 1596
+total cost: 0.001399
+Query 1597
+total cost: 7.76577
+Query 1598
+total cost: 5.78952
+Query 1599
+total cost: 4.8064
+Query 1600
+total cost: 10.1118
+Query 1601
+total cost: 7.08681
+Query 1602
+total cost: 6.56269
+Query 1603
+total cost: 6.72888
+Query 1604
+total cost: 6.4396
+Query 1605
+total cost: 9.24698
+Query 1606
+total cost: 0.000772
+Query 1607
+total cost: 6.88674
+Query 1608
+total cost: 0.000354
+Query 1609
+total cost: 0.000799
+Query 1610
+total cost: 0.000512
+Query 1611
+total cost: 7.26256
+Query 1612
+total cost: 8.35167
+Query 1613
+total cost: 8.18716
+Query 1614
+total cost: 10.6625
+Query 1615
+total cost: 7.30347
+Query 1616
+total cost: 0.001728
+Query 1617
+total cost: 0.000832
+Query 1618
+total cost: 5.33509
+Query 1619
+total cost: 0.001887
+Query 1620
+total cost: 3.93999
+Query 1621
+total cost: 8.60974
+Query 1622
+total cost: 5.47506
+Query 1623
+total cost: 9.74936
+Query 1624
+total cost: 9.03259
+Query 1625
+total cost: 9.08964
+Query 1626
+total cost: 7.1045
+Query 1627
+total cost: 7.00892
+Query 1628
+total cost: 6.61369
+Query 1629
+total cost: 5.94267
+Query 1630
+total cost: 7.00066
+Query 1631
+total cost: 10.6082
+Query 1632
+total cost: 7.31209
+Query 1633
+total cost: 0.000599
+Query 1634
+total cost: 0.000523
+Query 1635
+total cost: 0.00063
+Query 1636
+total cost: 0.000605
+Query 1637
+total cost: 4.95749
+Query 1638
+total cost: 0.000818
+Query 1639
+total cost: 0.000922
+Query 1640
+total cost: 5.74138
+Query 1641
+total cost: 10.0233
+Query 1642
+total cost: 2.79479
+Query 1643
+total cost: 0.000869
+Query 1644
+total cost: 5.11828
+Query 1645
+total cost: 7.25263
+Query 1646
+total cost: 7.27935
+Query 1647
+total cost: 8.21909
+Query 1648
+total cost: 6.56828
+Query 1649
+total cost: 6.0245
+Query 1650
+total cost: 8.33282
+Query 1651
+total cost: 0.000984
+Query 1652
+total cost: 8.19049
+Query 1653
+total cost: 0.000589
+Query 1654
+total cost: 0.001251
+Query 1655
+total cost: 6.57254
+Query 1656
+total cost: 7.7737
+Query 1657
+total cost: 8.54541
+Query 1658
+total cost: 0.000765
+Query 1659
+total cost: 0.001081
+Query 1660
+total cost: 8.96781
+Query 1661
+total cost: 0.001254
+Query 1662
+total cost: 7.398
+Query 1663
+total cost: 6.36842
+Query 1664
+total cost: 7.47198
+Query 1665
+total cost: 0.000668
+Query 1666
+total cost: 7.50826
+Query 1667
+total cost: 0.000693
+Query 1668
+total cost: 0.000721
+Query 1669
+total cost: 0.001099
+Query 1670
+total cost: 7.65298
+Query 1671
+total cost: 0.000453
+Query 1672
+total cost: 9.11479
+Query 1673
