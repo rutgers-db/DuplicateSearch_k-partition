@@ -18,7 +18,7 @@ plot './EXP9/data/openwebtext_querytime_vs_theta_k64.txt' using 2:xtic(1) with l
 
 # set logscale y
 # set format y "10^{%L}"
-# plot './EXP9/data/openwebtext_querytime_vs_k_theta0.7.txt' using 2:xtic(1) with lp title "OPH arbitrarily" lc rgb "black" lt 1 dt 1 lw 5, \
+# plot './EXP9/data/openwebtext_querytime_vs_k_theta0_7.txt' using 2:xtic(1) with lp title "OPH arbitrarily" lc rgb "black" lt 1 dt 1 lw 5, \
 #      '' using 3 with lp title "KMINS arbitrarily" lc rgb "black" lt 2 dt 2 lw 5, \
 #      '' using 4 with lp title "OPH byposition" lc rgb "black" lt 3 dt 3 lw 5, \
 #      '' using 5 with lp title "KMINS byposition" lc rgb "black" lt 4 dt 4 lw 5
