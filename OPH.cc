@@ -78,6 +78,8 @@ void sortCW(vector<vector<vector<CW>>> &cws) {
 
 void getQuerySeqs(vector<vector<int>> &querySeqs) {
     loadBin(query_file, querySeqs, queryNum);
+    // loadBin(query_file, querySeqs, queryNum + 100);
+    // querySeqs.erase(querySeqs.begin(), querySeqs.begin() + 100);
 }
 
 void getSignatures(vector<vector<int>> &seqs, vector<vector<int>> &signatures, pair<int, int> hf) {
@@ -120,9 +122,9 @@ void groupbyTid(unordered_map<int, vector<CW>> &tidToCW, vector<int> &signature,
     // cout << "nonempty: " << nonemt << endl;
     for (int pid = 0; pid < k; pid++) {
         for (auto cw: cws[pid][signature[pid]]) {
-            if (cnt[cw.T] > k * threshold - eps) {
+            // if (cnt[cw.T] > k * threshold - eps) {
                 tidToCW[cw.T].emplace_back(cw);
-            }
+            // }
         }
     }
 }
@@ -321,12 +323,12 @@ void InnerScan_longest(vector<CW> &cws, unordered_set<int> &ids, double threshol
     vector<Update> updates;
     for (auto id: ids) {
         if (cws[id].c == -1) {
-            updates.emplace_back(cws[id].l, 0, 0, id, threshold);
-            updates.emplace_back(cws[id].r + 1, 0, 0, id, -threshold);
+            updates.emplace_back(cws[id].r, 0, 0, id, threshold);
+            updates.emplace_back(cws[id].l - 1, 0, 0, id, -threshold);
         }
         else {
-            updates.emplace_back(cws[id].c, 0, 0, id, 1);
-            updates.emplace_back(cws[id].r + 1, 0, 0, id, -1);
+            updates.emplace_back(cws[id].r, 0, 0, id, 1);
+            updates.emplace_back(cws[id].c - 1, 0, 0, id, -1);
         }
     }
     sort(updates.rbegin(), updates.rend());
