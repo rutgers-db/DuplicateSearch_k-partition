@@ -6,45 +6,101 @@ set key top left width 0
 set xlabel "k, Sketch Size"  font "Helvetica, 40" #font "Times-Roman, 32"
 set x2label offset -1.7 "Avg. Query Time (s)"  font "Helvetica, 40" #font "Times-Roman, 32"
 
-set key font ",28"
+set key font ",24"
 
+# Arbitrarily VS by Position
 set xtics ("16" 0, "32" 1, "64" 2, "128" 3, "256" 4)
+set ytics 10
+set logscale y
+set format y "10^{%L}"
 
 set yrange[0.001:5000]
-set ytics 10
-set logscale y
-set format y "10^{%L}"
+set output "../figure/pan_avg_time_vary_k_Arbitrarily_VS_by_Position.eps"
+plot "../data/pan_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Arb",\
+     "../data/pan_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Arb",\
+     "../data/pan_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Pos",\
+     "../data/pan_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Pos",\
 
-# set output "owt_avg_time_vary_k.eps"
-# plot "owt_avg_time_vary_k.txt" u ($1-0.15):($3):(0.3)  w boxes fs pattern 7   t "OPH",\
-#      "owt_avg_time_vary_k.txt" u ($1+0.15):($4):(0.3) w boxes fs pattern 9   t "KMS"
+set yrange[0.00005:1]
+set output "../figure/wiki_avg_time_vary_k_Arbitrarily_VS_by_Position.eps"
+plot "../data/wiki_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Arb",\
+     "../data/wiki_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Arb",\
+     "../data/wiki_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Pos",\
+     "../data/wiki_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Pos",\
 
-set output "../figure/pan_avg_time_vary_k(Arbitrarily_VS_by_Position).eps"
-plot "../data/pan_avg_time_vary_k.txt" u 1:3 w linespoints pt 1 lw 3  t "KMS-Arb",\
-     "../data/pan_avg_time_vary_k.txt" u 1:4 w linespoints pt 2 lw 3  t "OPH-Arb",\
-     "../data/pan_avg_time_vary_k.txt" u 1:5 w linespoints pt 3 lw 3  t "KMS-Pos",\
-     "../data/pan_avg_time_vary_k.txt" u 1:6 w linespoints pt 4 lw 3  t "OPH-Pos",\
+set yrange[0.00001:1]
+set output "../figure/owt_avg_time_vary_k_Arbitrarily_VS_by_Position.eps"
+plot "../data/owt_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Arb",\
+     "../data/owt_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Arb",\
+     "../data/owt_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Pos",\
+     "../data/owt_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Pos",\
 
-# set output "wiki_avg_time_vary_k.eps"
-# plot "wiki_avg_time_vary_k.txt" u ($1-0.15):($3):(0.3)  w boxes fs pattern 7   t "OPH",\
-#      "wiki_avg_time_vary_k.txt" u ($1+0.15):($4):(0.3) w boxes fs pattern 9   t "KMS"
-
-set yrange[0.001:4]
-set ytics auto
+# All VS Longest
+set ytics 1
 set format y
 unset logscale y
-set output "../figure/pan_avg_time_vary_k(All_VS_Longest).eps"
-plot "../data/pan_avg_time_vary_k.txt" u 1:7 w linespoints pt 1 lw 3  t "KMS-All",\
-     "../data/pan_avg_time_vary_k.txt" u 1:8 w linespoints pt 2 lw 3  t "OPH-All",\
-     "../data/pan_avg_time_vary_k.txt" u 1:9 w linespoints pt 3 lw 3  t "KMS-Longest",\
-     "../data/pan_avg_time_vary_k.txt" u 1:10 w linespoints pt 4 lw 3  t "OPH-Longest",\
 
-set yrange[0.001:10]
+set yrange[0.001:4]
+set output "../figure/pan_avg_time_vary_k_All_VS_Longest.eps"
+plot "../data/pan_avg_time_vary_k_All_VS_Longest.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-All",\
+     "../data/pan_avg_time_vary_k_All_VS_Longest.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-All",\
+     "../data/pan_avg_time_vary_k_All_VS_Longest.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Longest",\
+     "../data/pan_avg_time_vary_k_All_VS_Longest.txt" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Longest",\
+
+set ytics 0.1
+set yrange[0.0001:0.2]
+set output "../figure/wiki_avg_time_vary_k_All_VS_Longest.eps"
+plot "../data/wiki_avg_time_vary_k_All_VS_Longest.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-All",\
+     "../data/wiki_avg_time_vary_k_All_VS_Longest.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-All",\
+     "../data/wiki_avg_time_vary_k_All_VS_Longest.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Longest",\
+     "../data/wiki_avg_time_vary_k_All_VS_Longest.txt" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Longest",\
+
+set output "../figure/owt_avg_time_vary_k_All_VS_Longest.eps"
+plot "../data/owt_avg_time_vary_k_All_VS_Longest.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-All",\
+     "../data/owt_avg_time_vary_k_All_VS_Longest.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-All",\
+     "../data/owt_avg_time_vary_k_All_VS_Longest.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Longest",\
+     "../data/owt_avg_time_vary_k_All_VS_Longest.txt" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Longest",\
+
+# Interval scan VS Segment tree
 set ytics 10
 set logscale y
 set format y "10^{%L}"
-set output "../figure/pan_avg_time_vary_k(Interval_Scan_VS_Segment_Tree).eps"
-plot "../data/pan_avg_time_vary_k.txt" u 1:5 w linespoints pt 1 lw 3  t "KMS-Int",\
-     "../data/pan_avg_time_vary_k.txt" u 1:6 w linespoints pt 2 lw 3  t "OPH-Int",\
-     "../data/pan_avg_time_vary_k.txt" u 1:11 w linespoints pt 3 lw 3  t "KMS-Seg",\
-     "../data/pan_avg_time_vary_k.txt" u 1:12 w linespoints pt 4 lw 3  t "OPH-Seg",\
+
+set yrange[0.001:10]
+set output "../figure/pan_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.eps"
+plot "../data/pan_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Int",\
+     "../data/pan_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Int",\
+     "../data/pan_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Seg",\
+     "../data/pan_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Seg",\
+
+set yrange[0.00005:0.01]
+set output "../figure/wiki_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.eps"
+plot "../data/wiki_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Int",\
+     "../data/wiki_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Int",\
+     "../data/wiki_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Seg",\
+     "../data/wiki_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Seg",\
+
+set yrange[0.00005:10]
+set output "../figure/owt_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.eps"
+plot "../data/owt_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Int",\
+     "../data/owt_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Int",\
+     "../data/owt_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Seg",\
+     "../data/owt_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Seg",\
+
+# Filter
+set yrange[0.2:20]
+set output "../figure/pan_avg_time_vary_k_filter.eps"
+plot "../data/pan_avg_time_vary_k_filter.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "None",\
+     "../data/pan_avg_time_vary_k_filter.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "Filter 1",\
+     "../data/pan_avg_time_vary_k_filter.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "Filter 1+2",\
+
+set yrange[0.0000001:50]
+set output "../figure/wiki_avg_time_vary_k_filter.eps"
+plot "../data/wiki_avg_time_vary_k_filter.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "None",\
+     "../data/wiki_avg_time_vary_k_filter.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "Filter 1",\
+     "../data/wiki_avg_time_vary_k_filter.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "Filter 1+2",\
+
+set output "../figure/owt_avg_time_vary_k_filter.eps"
+plot "../data/owt_avg_time_vary_k_filter.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "None",\
+     "../data/owt_avg_time_vary_k_filter.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "Filter 1",\
+     "../data/owt_avg_time_vary_k_filter.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "Filter 1+2",\
