@@ -6,7 +6,7 @@ set key top left width 0
 set xlabel "k, Sketch Size"  font "Helvetica, 40" #font "Times-Roman, 32"
 set x2label offset -1.7 "Avg. Query Time (s)"  font "Helvetica, 40" #font "Times-Roman, 32"
 
-set key font ",24"
+set key font ",28"
 
 set xtics ("16" 0, "32" 1, "64" 2, "128" 3, "256" 4)
 
