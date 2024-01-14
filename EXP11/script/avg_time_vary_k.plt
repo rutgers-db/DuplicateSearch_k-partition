@@ -80,7 +80,7 @@ plot "../data/wiki_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" every ::1 
      "../data/wiki_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" every ::1 u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Seg",\
      "../data/wiki_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" every ::1 u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Seg",\
 
-set yrange[0.00005:10]
+set yrange[0.00005:50]
 set output "../figure/owt_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.eps"
 plot "../data/owt_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" every ::1 u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Int",\
      "../data/owt_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" every ::1 u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Int",\
