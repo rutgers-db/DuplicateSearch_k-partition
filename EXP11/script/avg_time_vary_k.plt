@@ -90,17 +90,17 @@ plot "../data/owt_avg_time_vary_k_Interval_Scan_VS_Segment_Tree.txt" every ::1 u
 # Filter
 set yrange[0.2:20]
 set output "../figure/pan_avg_time_vary_k_filter.eps"
-plot "../data/pan_avg_time_vary_k_filter.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "None",\
-     "../data/pan_avg_time_vary_k_filter.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "Filter 1",\
-     "../data/pan_avg_time_vary_k_filter.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "Filter 1+2",\
+plot "../data/pan_avg_time_vary_k_filter.txt" every ::1 u 1:3 w linespoints pt 1 ps 2 lw 3  t "None",\
+     "../data/pan_avg_time_vary_k_filter.txt" every ::1 u 1:4 w linespoints pt 2 ps 2 lw 3  t "Filter 1",\
+     "../data/pan_avg_time_vary_k_filter.txt" every ::1 u 1:5 w linespoints pt 3 ps 2 lw 3  t "Filter 1+2",\
 
 set yrange[0.0000001:50]
 set output "../figure/wiki_avg_time_vary_k_filter.eps"
-plot "../data/wiki_avg_time_vary_k_filter.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "None",\
-     "../data/wiki_avg_time_vary_k_filter.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "Filter 1",\
-     "../data/wiki_avg_time_vary_k_filter.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "Filter 1+2",\
+plot "../data/wiki_avg_time_vary_k_filter.txt" every ::1 u 1:3 w linespoints pt 1 ps 2 lw 3  t "None",\
+     "../data/wiki_avg_time_vary_k_filter.txt" every ::1 u 1:4 w linespoints pt 2 ps 2 lw 3  t "Filter 1",\
+     "../data/wiki_avg_time_vary_k_filter.txt" every ::1 u 1:5 w linespoints pt 3 ps 2 lw 3  t "Filter 1+2",\
 
 set output "../figure/owt_avg_time_vary_k_filter.eps"
-plot "../data/owt_avg_time_vary_k_filter.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "None",\
-     "../data/owt_avg_time_vary_k_filter.txt" u 1:4 w linespoints pt 2 ps 2 lw 3  t "Filter 1",\
-     "../data/owt_avg_time_vary_k_filter.txt" u 1:5 w linespoints pt 3 ps 2 lw 3  t "Filter 1+2",\
+plot "../data/owt_avg_time_vary_k_filter.txt" every ::1 u 1:3 w linespoints pt 1 ps 2 lw 3  t "None",\
+     "../data/owt_avg_time_vary_k_filter.txt" every ::1 u 1:4 w linespoints pt 2 ps 2 lw 3  t "Filter 1",\
+     "../data/owt_avg_time_vary_k_filter.txt" every ::1 u 1:5 w linespoints pt 3 ps 2 lw 3  t "Filter 1+2",\
