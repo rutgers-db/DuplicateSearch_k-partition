@@ -3,7 +3,7 @@ set key top right width 0
 
 #set ylabel "average time (s)" offset 1 font "Helvetica, 40"
 #set xlabel "k, sketch size" offset 0 font "Helvetica, 40"
-set xlabel "\theta, sim threshold"  font "Helvetica, 40" #font "Times-Roman, 32"
+set xlabel "{/Symbol q}, Sim Threshold"  font "Helvetica, 40" #font "Times-Roman, 32"
 set x2label offset -1.7 "Avg. Query Time (s)"  font "Helvetica, 40" #font "Times-Roman, 32"
 
 set key font ",24"
