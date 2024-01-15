@@ -42,7 +42,7 @@ plot "filtered_data.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Arb",\
 
 
 set ytics 0.1
-set format y
+set format y "%.1f"
 unset logscale y
 
 set yrange[0.001:0.3]
@@ -54,6 +54,7 @@ plot "filtered_data.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-All",\
      "" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Longest",\
      "" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Longest",\
 
+set format y "%.2f"
 set ytics 0.01
 set yrange[0.00001:0.02]
 system("awk 'NR==1 || NR==2 || NR==4 || NR==8' ../data/wiki_avg_time_vary_theta_All_VS_Longest.txt > filtered_data2.txt")
