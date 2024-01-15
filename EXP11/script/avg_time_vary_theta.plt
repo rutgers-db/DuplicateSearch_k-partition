@@ -3,7 +3,7 @@ set key top right width 0
 
 #set ylabel "average time (s)" offset 1 font "Helvetica, 40"
 #set xlabel "k, sketch size" offset 0 font "Helvetica, 40"
-set xlabel "Theta"  font "Helvetica, 40" #font "Times-Roman, 32"
+set xlabel "\theta, sim threshold"  font "Helvetica, 40" #font "Times-Roman, 32"
 set x2label offset -1.7 "Avg. Query Time (s)"  font "Helvetica, 40" #font "Times-Roman, 32"
 
 set key font ",24"
@@ -49,10 +49,10 @@ set yrange[0.001:0.3]
 system("awk 'NR==1 || NR==2 || NR==4 || NR==8' ../data/pan_avg_time_vary_theta_All_VS_Longest.txt > filtered_data2.txt")
 system("awk '{ $1=NR-1; print }' filtered_data2.txt > filtered_data.txt")
 set output "../figure/pan_avg_time_vary_theta_All_VS_Longest.eps"
-plot "filtered_data.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-All",\
-     "" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-All",\
-     "" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Longest",\
-     "" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Longest",\
+plot "filtered_data.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Pos",\
+     "" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Pos",\
+     "" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Int",\
+     "" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Int",\
 
 set format y "%.2f"
 set ytics 0.01
@@ -60,19 +60,19 @@ set yrange[0.00001:0.02]
 system("awk 'NR==1 || NR==2 || NR==4 || NR==8' ../data/wiki_avg_time_vary_theta_All_VS_Longest.txt > filtered_data2.txt")
 system("awk '{ $1=NR-1; print }' filtered_data2.txt > filtered_data.txt")
 set output "../figure/wiki_avg_time_vary_theta_All_VS_Longest.eps"
-plot "filtered_data.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-All",\
-     "" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-All",\
-     "" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Longest",\
-     "" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Longest",\
+plot "filtered_data.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Pos",\
+     "" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Pos",\
+     "" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Int",\
+     "" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Int",\
 
 set yrange[0.00001:0.03]
 system("awk 'NR==1 || NR==2 || NR==4 || NR==8' ../data/owt_avg_time_vary_theta_All_VS_Longest.txt > filtered_data2.txt")
 system("awk '{ $1=NR-1; print }' filtered_data2.txt > filtered_data.txt")
 set output "../figure/owt_avg_time_vary_theta_All_VS_Longest.eps"
-plot "filtered_data.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-All",\
-     "" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-All",\
-     "" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Longest",\
-     "" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Longest",\
+plot "filtered_data.txt" u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Pos",\
+     "" u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Pos",\
+     "" u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Int",\
+     "" u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Int",\
 
 
 set ytics 10
