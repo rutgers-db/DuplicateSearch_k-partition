@@ -1,4 +1,4 @@
-set terminal postscript eps color enhanced "Helvetica" 32
+set terminal postscript eps color enhanced "Helvetica" 32 
 set key top left width 0
 
 #set ylabel "average time (s)" offset 1 font "Helvetica, 40"
