@@ -7,7 +7,7 @@ set xlabel "Number of Documents"  font "Helvetica, 40" #font "Times-Roman, 32"
 set x2label offset -1.7 "Index Size (GB)"  font "Helvetica, 40" #font "Times-Roman, 32"
 
 set key font ",24"
-
+set offset 0.3, 0.3, 0, 0
 
 set ytics 10
 set logscale y
