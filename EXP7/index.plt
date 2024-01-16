@@ -30,7 +30,7 @@ plot "wiki_avg_time_vary_k.txt" u ($1-0.15):($3):(0.3)  w boxes fs pattern 7   t
 
 set xtics ("100" 0, "1000" 1, "10000" 2, "100000" 3)
 set xrange[-0.6:3.6]
-set xlabel "n, Text Length"  font "Helvetica, 40" #font "Times-Roman, 32"
+set xlabel "n, Sequence Length"  font "Helvetica, 40" #font "Times-Roman, 32"
 set yrange[0.00001:1]
 set output "owt_avg_time_vary_n.eps"
 plot "owt_avg_time_vary_n.txt" u ($1-0.15):($3):(0.3)  w boxes fs pattern 7   t "OPH",\
@@ -72,7 +72,7 @@ plot "wiki_avg_num_vary_k.txt" u ($1-0.15):($3):(0.3)  w boxes fs pattern 7   t 
 
 set xtics ("100" 0, "1000" 1, "10000" 2, "100000" 3)
 set xrange[-0.6:3.6]
-set xlabel "n, Text Length"  font "Helvetica, 40" #font "Times-Roman, 32"
+set xlabel "n, Sequence Length"  font "Helvetica, 40" #font "Times-Roman, 32"
 set yrange[100:10000000]
 set output "owt_avg_num_vary_n.eps"
 plot "owt_avg_num_vary_n.txt" u ($1-0.15):($3):(0.3)  w boxes fs pattern 7   t "OPH",\
