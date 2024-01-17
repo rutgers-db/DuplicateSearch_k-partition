@@ -40,21 +40,22 @@ set ytics 1
 set format y
 unset logscale y
 
-set yrange[0.001:4]
+set yrange[0:2]
 set output "../figure/pan_avg_time_vary_k_All_VS_Longest.eps"
 plot "../data/pan_avg_time_vary_k_All_VS_Longest.txt" every ::1 u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Pos",\
      "../data/pan_avg_time_vary_k_All_VS_Longest.txt" every ::1 u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Pos",\
      "../data/pan_avg_time_vary_k_All_VS_Longest.txt" every ::1 u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Int",\
      "../data/pan_avg_time_vary_k_All_VS_Longest.txt" every ::1 u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Int",\
 
-set ytics 0.1
-set yrange[0.0001:0.2]
+set ytics 0.001
+set yrange[0:0.006]
 set output "../figure/wiki_avg_time_vary_k_All_VS_Longest.eps"
 plot "../data/wiki_avg_time_vary_k_All_VS_Longest.txt" every ::1 u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Pos",\
      "../data/wiki_avg_time_vary_k_All_VS_Longest.txt" every ::1 u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Pos",\
      "../data/wiki_avg_time_vary_k_All_VS_Longest.txt" every ::1 u 1:5 w linespoints pt 3 ps 2 lw 3  t "KMS-Int",\
      "../data/wiki_avg_time_vary_k_All_VS_Longest.txt" every ::1 u 1:6 w linespoints pt 4 ps 2 lw 3  t "OPH-Int",\
 
+set yrange[0:0.004]
 set output "../figure/owt_avg_time_vary_k_All_VS_Longest.eps"
 plot "../data/owt_avg_time_vary_k_All_VS_Longest.txt" every ::1 u 1:3 w linespoints pt 1 ps 2 lw 3  t "KMS-Pos",\
      "../data/owt_avg_time_vary_k_All_VS_Longest.txt" every ::1 u 1:4 w linespoints pt 2 ps 2 lw 3  t "OPH-Pos",\
