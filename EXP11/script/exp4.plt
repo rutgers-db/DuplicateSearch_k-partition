@@ -39,9 +39,9 @@ set x2label offset -5.3 "Avg. Query Time (s)"  font "Helvetica, 40" #font "Times
 
 set xtics ("1M" 0, "2M" 1, "4M" 2, "8M" 3)
 set output "../figure2/owt_query_time_vary_docsnum.eps"
-plot "../data/owt_query_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 2 lw 3 t "Filter 1+2",\
+plot "../data/owt_query_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 2 lw 3 t "OPH+Filter",\
 
 
 set xtics ("0.36M" 0, "0.73M" 1, "1.46M" 2, "2.92M" 3)
 set output "../figure2/wiki_query_time_vary_docsnum.eps"
-plot "../data/wiki_query_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 2 lw 3 t "Filter 1+2",\
+plot "../data/wiki_query_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 2 lw 3 t "OPH+Filter",\
