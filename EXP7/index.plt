@@ -4,7 +4,7 @@ set key top left width 0
 #set ylabel "average time (s)" offset 1 font "Helvetica, 40"
 #set xlabel "k, sketch size" offset 0 font "Helvetica, 40"
 set xlabel "k, Sketch Size"  font "Helvetica, 40" #font "Times-Roman, 32"
-set x2label offset -1.7 "Avg. Generation Time (s)"  font "Helvetica, 40" #font "Times-Roman, 32"
+set x2label offset -1 "Avg. Generation Time (s)"  font "Helvetica, 40" #font "Times-Roman, 32"
 
 set key font ",36"
 
@@ -46,7 +46,7 @@ plot "wiki_avg_time_vary_n.txt" u ($1-0.15):($3):(0.3)  w boxes fs pattern 7   t
 
 
 set xlabel "k, Sketch Size"  font "Helvetica, 40" #font "Times-Roman, 32"
-set x2label offset -1 "Avg. \# of Compact Windows"  font "Helvetica, 40" #font "Times-Roman, 32"
+set x2label offset -0.5 "Avg. # of Compact Windows"  font "Helvetica, 40" #font "Times-Roman, 32"
 
 set key font ",36"
 
@@ -70,7 +70,7 @@ plot "wiki_avg_num_vary_k.txt" u ($1-0.15):($3):(0.3)  w boxes fs pattern 7   t 
      "wiki_avg_num_vary_k.txt" u ($1+0.15):($4):(0.3) w boxes fs pattern 9   t "KMS"
 
 
-set xtics ("100" 0, "1000" 1, "10000" 2, "100000" 3)
+set xtics ("10^2" 0, "10^3" 1, "10^4" 2, "10^5" 3)
 set xrange[-0.6:3.6]
 set xlabel "n, Sequence Length"  font "Helvetica, 40" #font "Times-Roman, 32"
 set yrange[100:10000000]
