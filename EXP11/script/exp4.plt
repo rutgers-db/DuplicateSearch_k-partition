@@ -9,11 +9,11 @@ set x2label offset -5 "Avg. Index Size (GB)"  font "Helvetica, 40" #font "Times-
 set key font ",30"
 set offset 0.3, 0.3, 0, 0
 
-set ytics 10
+set ytics 10 font "Helvetica, 36"
 set logscale y
 set format y "10^{%L}"
 
-set xtics ("1M" 0, "2M" 1, "4M" 2, "8M" 3)
+set xtics ("1M" 0, "2M" 1, "4M" 2, "8M" 3) font "Helvetica, 36"
 set output "../figure2/owt_index_size_vary_docsnum.eps"
 plot "../data/owt_index_size_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 2 lw 3 t "OPH",\
 
