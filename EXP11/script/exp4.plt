@@ -20,28 +20,28 @@ plot "../data/owt_index_size_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 3.5 l
 
 set xtics ("0.36M" 0, "0.73M" 1, "1.46M" 2, "2.92M" 3)
 set output "../figure2/wiki_index_size_vary_docsnum.eps"
-plot "../data/wiki_index_size_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 2 lw 5 t "OPH",\
+plot "../data/wiki_index_size_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 3.5 lw 5 t "OPH",\
 
 
 set x2label offset -5.5 "Index Time (s)"  font "Helvetica, 52" #font "Times-Roman, 32"
 
 set xtics ("1M" 0, "2M" 1, "4M" 2, "8M" 3)
 set output "../figure2/owt_index_time_vary_docsnum.eps"
-plot "../data/owt_index_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 2 lw 5 t "OPH",\
+plot "../data/owt_index_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 3.5 lw 5 t "OPH",\
 
 
 set xtics ("0.36M" 0, "0.73M" 1, "1.46M" 2, "2.92M" 3)
 set output "../figure2/wiki_index_time_vary_docsnum.eps"
-plot "../data/wiki_index_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 2 lw 5 t "OPH",\
+plot "../data/wiki_index_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 3.5 lw 5 t "OPH",\
 
 
 set x2label offset -5.3 "Avg. Query Time (s)"  font "Helvetica, 52" #font "Times-Roman, 32"
 
 set xtics ("1M" 0, "2M" 1, "4M" 2, "8M" 3)
 set output "../figure2/owt_query_time_vary_docsnum.eps"
-plot "../data/owt_query_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 2 lw 5 t "OPH+Filter",\
+plot "../data/owt_query_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 3.5 lw 5 t "OPH-filter",\
 
 
 set xtics ("0.36M" 0, "0.73M" 1, "1.46M" 2, "2.92M" 3)
 set output "../figure2/wiki_query_time_vary_docsnum.eps"
-plot "../data/wiki_query_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 2 lw 5 t "OPH+Filter",\
+plot "../data/wiki_query_time_vary_docsnum.txt" u 1:3 w linespoints pt 1 ps 3.5 lw 5 t "OPH-filter",\

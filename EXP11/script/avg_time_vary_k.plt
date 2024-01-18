@@ -40,7 +40,7 @@ plot "../data/owt_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" every ::1 u 1:
      "../data/owt_avg_time_vary_k_Arbitrarily_VS_by_Position.txt" every ::1 u 1:6 w linespoints pt 4 ps 3.5 lw 5  t "OPH-pos",\
 
 # All VS Longest
-set x2label offset 0 "Avg. # of near-duplicates"  font "Helvetica, 52" #font "Times-Roman, 32"
+set x2label offset -3.5 "Avg. # of Results"  font "Helvetica, 52" #font "Times-Roman, 32"
 set ytics 10
 # set format y
 # unset logscale y
@@ -104,18 +104,15 @@ set yrange[1:10000000]
 set output "../figure/pan_avg_time_vary_k_filter.eps"
 plot "../data/pan_avg_time_vary_k_filter.txt" u 1:3 w linespoints pt 1 ps 3.5 lw 5  t "KMS-vanilla",\
      "../data/pan_avg_time_vary_k_filter.txt" u 1:4 w linespoints pt 2 ps 3.5 lw 5  t "OPH-seg",\
-     "../data/pan_avg_time_vary_k_filter.txt" u 1:5 w linespoints pt 6 ps 3.5 lw 5  t "OPH-filter",\
 
 set ytics 0.1, 100
 set yrange[0.1:1000000]
 set output "../figure/wiki_avg_time_vary_k_filter.eps"
 plot "../data/wiki_avg_time_vary_k_filter.txt" u 1:3 w linespoints pt 1 ps 3.5 lw 5  t "KMS-vanilla",\
      "../data/wiki_avg_time_vary_k_filter.txt" u 1:4 w linespoints pt 2 ps 3.5 lw 5  t "OPH-seg",\
-     "../data/wiki_avg_time_vary_k_filter.txt" u 1:5 w linespoints pt 6 ps 3.5 lw 5  t "OPH-filter",\
 
 set ytics 0.1, 100
 set yrange[0.1:1000000]
 set output "../figure/owt_avg_time_vary_k_filter.eps"
 plot "../data/owt_avg_time_vary_k_filter.txt" u 1:3 w linespoints pt 1 ps 3.5 lw 5  t "KMS-vanilla",\
      "../data/owt_avg_time_vary_k_filter.txt" u 1:4 w linespoints pt 2 ps 3.5 lw 5  t "OPH-seg",\
-     "../data/owt_avg_time_vary_k_filter.txt" u 1:5 w linespoints pt 6 ps 3.5 lw 5  t "OPH-filter",\

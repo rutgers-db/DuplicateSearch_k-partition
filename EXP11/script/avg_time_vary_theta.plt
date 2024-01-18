@@ -120,16 +120,13 @@ set yrange[10:10000000]
 set output "../figure/pan_avg_time_vary_theta_filter.eps"
 plot "../data/pan_avg_time_vary_theta_filter.txt" u 1:3 w linespoints pt 1 ps 3.5 lw 5  t "KMS-vanilla",\
      "../data/pan_avg_time_vary_theta_filter.txt" u 1:4 w linespoints pt 2 ps 3.5 lw 5  t "OPH-seg",\
-     "../data/pan_avg_time_vary_theta_filter.txt" u 1:5 w linespoints pt 6 ps 3.5 lw 5  t "OPH-filter",\
 
 set ytics 1, 100
 set yrange[1:1000000]
 set output "../figure/wiki_avg_time_vary_theta_filter.eps"
 plot "../data/wiki_avg_time_vary_theta_filter.txt" u 1:3 w linespoints pt 1 ps 3.5 lw 5  t "KMS-vanilla",\
      "../data/wiki_avg_time_vary_theta_filter.txt" u 1:4 w linespoints pt 2 ps 3.5 lw 5  t "OPH-seg",\
-     "../data/wiki_avg_time_vary_theta_filter.txt" u 1:5 w linespoints pt 6 ps 3.5 lw 5  t "OPH-filter",\
 
 set output "../figure/owt_avg_time_vary_theta_filter.eps"
 plot "../data/owt_avg_time_vary_theta_filter.txt" u 1:3 w linespoints pt 1 ps 3.5 lw 5  t "KMS-vanilla",\
      "../data/owt_avg_time_vary_theta_filter.txt" u 1:4 w linespoints pt 2 ps 3.5 lw 5  t "OPH-seg",\
-     "../data/owt_avg_time_vary_theta_filter.txt" u 1:5 w linespoints pt 6 ps 3.5 lw 5  t "OPH-filter",\
