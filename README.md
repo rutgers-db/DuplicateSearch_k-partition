@@ -28,7 +28,9 @@ Once you have built the project and compiled all the executables, you can start 
 ### Building an Index
 To build an index of Minhash (KMINS or OPH), you can use the following command for KMINS(or OPH) index as an example:
 
+```bash
 ./build/KMINS_build -f /path/to/dataset.bin -i /path/to/index_file.data -k 2 -l 0 -o /path/to/output.txt
+```
 
 Command Line Arguments
 The program accepts the following command line arguments:
