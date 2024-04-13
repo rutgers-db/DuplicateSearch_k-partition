@@ -68,3 +68,6 @@ Example usage:
 ```bash
 ./build/main -f bin_file_path -k k [-l longest] -t threshold -q query_num [-o KMINSorOPH] [-m method]
 ```
+### Baselines
+
+We also implemented 3 baselines(including bruteforce) with OPH and KMS methods in `baseline` folder. It focus on the caculation of each Pair of Source Document and Query Sequence.
