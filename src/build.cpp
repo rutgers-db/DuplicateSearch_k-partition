@@ -30,7 +30,7 @@ string index_file;
 const int tokenNum = 50257;
 
 const double eps = 1e-10;
-const string stpwords_path = "/research/projects/zp128/SearchDuplicate/filtered_tokens.bin";
+const string stpwords_path = "path/to/your/stopwords_tokens.bin";
 StopwordsFilter filter(stpwords_path);
 
 void partition(int doc_id, vector<int> &doc, vector<pair<int, int>> &seg, const int &n, int l, int r, vector<vector<CW>> &cws)

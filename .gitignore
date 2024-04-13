@@ -3,8 +3,8 @@ index
 *.o
 .vscode
 *.out
-
-
+build
+log
 
 
 
