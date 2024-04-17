@@ -23,9 +23,9 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    const string pair_file_path = "/research/projects/zp128/OPH_Align/Dataset_Construction/PAN11/data/sample_source_sus_pairs.txt";
-    const string source_file_path = "/research/projects/zp128/OPH_Align/Dataset_Construction/PAN11/data/all_source_with_plagiarism.bin";
-    const string query_file_path = "/research/projects/zp128/OPH_Align/Dataset_Construction/PAN11/data/all_suspicious_seqs_pan11.bin";
+    const string pair_file_path = "/path/to/your/sample_source_sus_pairs.txt";
+    const string source_file_path = "/path/to/your/all_source_with_plagiarism.bin";
+    const string query_file_path = "/path/to/your/all_suspicious_seqs_pan11.bin";
 
     // the pair is <source_id, suspicious id>
     auto pairs = read_pairs_from_file(pair_file_path);

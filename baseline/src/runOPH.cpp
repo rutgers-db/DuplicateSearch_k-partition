@@ -47,24 +47,21 @@ int main(int argc, char *argv[])
     string pair_file_path, source_file_path, query_file_path;
     if (dataset == "PAN")
     {
-        pair_file_path = "/research/projects/zp128/OPH_Align/Dataset_Construction/PAN11/data/sample_source_sus_pairs.txt";
-        source_file_path = "/research/projects/zp128/OPH_Align/Dataset_Construction/PAN11/data/all_source_with_plagiarism.bin";
-        query_file_path = "/research/projects/zp128/OPH_Align/Dataset_Construction/PAN11/data/all_suspicious_seqs_pan11.bin";
+        pair_file_path = "/path/to/your/sample_source_sus_pairs.txt";
+        source_file_path = "/path/to/your/all_source_with_plagiarism.bin";
+        query_file_path = "/path/to/your/all_suspicious_seqs_pan11.bin";
     }
     if (dataset == "OWT")
     {
-        // pair_file_path = "/research/projects/zp128/OPH_Align/Dataset_Construction/Owt/query/OWT_memorized_seqs/mapped_matched_pairs.txt";
-        // source_file_path = "/research/projects/zp128/OPH_Align/Dataset_Construction/Owt/query/OWT_memorized_seqs/matched_docs.bin";
-        // query_file_path = "/research/projects/zp128/OPH_Align/Dataset_Construction/Owt/query/OWT_memorized_seqs/memorized_seqs.bin";
-        pair_file_path = "/research/projects/zp128/OPH_Align/SeedExtension_Baseline/sample_pairs/OWT/random_pairs.txt";
-        source_file_path = "/research/projects/zp128/OPH_Align/SeedExtension_Baseline/sample_pairs/OWT/sample_OWT_200.bin";
-        query_file_path = "/research/projects/zp128/OPH_Align/SeedExtension_Baseline/sample_pairs/OWT/OWT_sampleWins_200.bin";
+        pair_file_path = "/path/to/your/OWT/random_pairs.txt";
+        source_file_path = "/path/to/your/OWT/sample_OWT_200.bin";
+        query_file_path = "/path/to/your/OWT/OWT_sampleWins_200.bin";
     }
     if (dataset == "WIKI")
     {
-        pair_file_path = "/research/projects/zp128/OPH_Align/SeedExtension_Baseline/sample_pairs/WIKI/random_pairs.txt";
-        source_file_path = "/research/projects/zp128/OPH_Align/SeedExtension_Baseline/sample_pairs/WIKI/sample_wiki_200.bin";
-        query_file_path = "/research/projects/zp128/OPH_Align/SeedExtension_Baseline/sample_pairs/WIKI/Wiki_sampleWins_200.bin";
+        pair_file_path = "/path/to/your/WIKI/random_pairs.txt";
+        source_file_path = "/path/to/your/WIKI/sample_wiki_200.bin";
+        query_file_path = "/path/to/your/WIKI/Wiki_sampleWins_200.bin";
     }
 
 #ifdef ARIBITRARY_GEN
