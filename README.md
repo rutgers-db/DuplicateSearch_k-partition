@@ -71,3 +71,7 @@ Example usage:
 ### Baselines
 
 We also implemented 3 baselines(including bruteforce) with OPH and KMS methods in `baseline` folder. It focus on the caculation of each Pair of Source Document and Query Sequence.
+
+### Simulation
+
+We also analyze the estimation accuracy of k-mins and OPH in `simulation` folder. It include how we draw the k-mins curve and simulate the OPH probability distribution.
