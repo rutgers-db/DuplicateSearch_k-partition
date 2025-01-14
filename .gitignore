@@ -1,13 +1,12 @@
-# data
 index
 *.bin
 *.o
 .vscode
+build
 *.out
-KMINS
-KMINS_INTERVAL_SCAN
-KMINS_INTERVAL_SCAN_filter
-OPH
-OPH_longest
-OPH_longest_filter
-test.*
+
+
+
+
+
+

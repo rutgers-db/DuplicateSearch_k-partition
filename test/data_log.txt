@@ -1,0 +1,12 @@
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/openwebtext_gpt2.bin read 8013769 documents
+Total number of tokens: 8773924283
+Number of documents: 8013769
+Average number of tokens per document: 1094.86
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/PAN11_external_source.bin read 11093 documents
+Total number of tokens: 642380109
+Number of documents: 11093
+Average number of tokens per document: 57908.6
+From Binary File /research/projects/zp128/dataset_tokenizedGbt2/tokenized_bin/wiki40b_en_train_gpt2.bin read 2926536 documents
+Total number of tokens: 2172725598
+Number of documents: 2926536
+Average number of tokens per document: 742.422
