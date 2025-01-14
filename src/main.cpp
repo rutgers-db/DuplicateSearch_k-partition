@@ -34,7 +34,7 @@ const double eps = 1e-10;
 
 double group_cost[128] = {0};
 
-const string stpwords_path = "/research/projects/zp128/SearchDuplicate/filtered_tokens.bin";
+const string stpwords_path = "path/to/your/stopwords_tokens.bin";
 StopwordsFilter filter(stpwords_path);
 
 void getQuerySeqs(vector<vector<int>> &querySeqs, string query_bin_file)
@@ -162,68 +162,6 @@ void groupbyTid(unordered_map<int, vector<CW>> &tidToCW, const vector<int> &sign
     auto tid = omp_get_thread_num();
     auto st = timerStart();
 
-    // unordered_map<int, int> cnt;
-    // unsigned int collision_thres = ceil(k * threshold - eps);
-    // for (int pid = 0; pid < k; pid++)
-    // {
-    //     int cur_T = -1;
-    //     for (auto cw : cws[pid][signature[pid]])
-    //     {
-    //         if (cw.T != cur_T)
-    //         {
-    //             cnt[cw.T] += 1;
-    //             cur_T = cw.T;
-    //         }
-    //     }
-    // }
-
-    // // Second filter
-    // unordered_map<int, vector<CW>> second_filter;
-    // for (int pid = 0; pid < k; pid++)
-    // {
-    //     int cur_T = -1;
-    //     for (auto cw : cws[pid][signature[pid]])
-    //     {
-    //         if (cw.T != cur_T)
-    //         {
-    //             if (cnt[cw.T] >= collision_thres)
-    //             {
-    //                 // the first cw is the longest one in its T
-    //                 second_filter[cw.T].emplace_back(cw);
-    //             }
-    //             cur_T = cw.T;
-    //         }
-    //     }
-    // }
-
-    
-
-    // for (auto &pair : second_filter)
-    // {
-    //     auto &T = pair.first;
-    //     auto &first_cws = pair.second;
-    //     if (lineSweep(first_cws, collision_thres))
-    //     {
-    //         cnt[T] = numeric_limits<int>::max();
-    //     }
-    // }
-    // // release second_filter
-    // unordered_map<int, vector<CW>>().swap(second_filter);
-
-    // // push the cw
-    // for (int pid = 0; pid < k; pid++)
-    // {
-    //     for (auto cw : cws[pid][signature[pid]])
-    //     {
-    //         if (cnt[cw.T] == numeric_limits<int>::max())
-    //         // if (cnt[cw.T] >= collision_thres)
-    //         {
-    //             tidToCW[cw.T].emplace_back(cw);
-    //         }
-    //     }
-    // }
-
-
     HeapGroup heapGroup;
     heapGroup.init(cws, signature, threshold);
     heapGroup.run(tidToCW);
@@ -297,12 +235,6 @@ void nearDupSearch(unordered_map<int, vector<CW>> &tidToCW, double threshold, un
                 ids.erase(update.type);
             }
         }
-        // if (results[tid].size() != 0)
-        // {
-        //     cout << results[tid].size() << endl; //
-        //     cout << timerCheck(time_st) << endl; //
-        //     cout << "find " << query_info.first << " " << query_info.second << " in " << tid << endl;
-        // }
     }
 }
 
