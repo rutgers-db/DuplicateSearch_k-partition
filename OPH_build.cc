@@ -14,7 +14,7 @@
 
 using namespace std;
 
-int doc_num;
+int doc_num = 0;
 int doc_length = 0;
 int INTERVAL_LIMIT = 0;
 int k = 64;
@@ -200,10 +200,17 @@ int main(int argc, char *argv[]) {
     // Load documents
     timerStart();
     vector<vector<int>> docs;
-    if (doc_length == 0)
-        loadBin(src_file, docs, doc_num);
+    if (doc_num == 0)
+    {
+        loadBin(src_file, docs);
+    }
     else
-        loadBin(src_file, docs, doc_num, doc_length);
+    {
+        if (doc_length == 0)
+            loadBin(src_file, docs, doc_num);
+        else
+            loadBin(src_file, docs, doc_num, doc_length);
+    }
     cout << "Load Time: " << timerCheck() << endl;
 
     // Generate Comapct Windows

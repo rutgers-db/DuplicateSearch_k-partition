@@ -6,6 +6,22 @@
 
 using namespace std;
 
+void loadBin(const string &binFileName, vector<vector<int>> &docs) {
+    ifstream ifs(binFileName, ios::binary);
+    if (!ifs) {
+        cout << "Error open bin file" << endl;
+        throw "Error open bin file";
+    }
+    int size;
+    while (ifs.read((char *)&size, sizeof(int))) {
+        vector<int> vec(size);
+        ifs.read((char *)&vec[0], sizeof(int) * size);
+        docs.emplace_back(vec);
+    }
+    ifs.close();
+    cout << "From Binary File " << binFileName << " read " << docs.size() << " documents" << endl;    
+}
+
 void loadBin(const string &binFileName, vector<vector<int>> &docs, int docnumLimit) {
     ifstream ifs(binFileName, ios::binary);
     if (!ifs) {
