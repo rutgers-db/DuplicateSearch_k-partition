@@ -1,11 +1,10 @@
+log
 index
 *.bin
 *.o
 .vscode
 *.out
 build
-log
-*.txt
 
 
 
