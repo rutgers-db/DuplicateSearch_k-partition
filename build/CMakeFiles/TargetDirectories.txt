@@ -1,4 +1,0 @@
-/research/projects/zp128/OPH_Align/Dataset_Construction/Owt/build/CMakeFiles/build.dir
-/research/projects/zp128/OPH_Align/Dataset_Construction/Owt/build/CMakeFiles/main.dir
-/research/projects/zp128/OPH_Align/Dataset_Construction/Owt/build/CMakeFiles/edit_cache.dir
-/research/projects/zp128/OPH_Align/Dataset_Construction/Owt/build/CMakeFiles/rebuild_cache.dir

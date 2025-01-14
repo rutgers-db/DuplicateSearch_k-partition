@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/build.dir/src/build.cpp.o -o build  /usr/lib/gcc/x86_64-linux-gnu/11/libgomp.so /usr/lib/x86_64-linux-gnu/libpthread.a 
