@@ -5,7 +5,7 @@ index
 *.out
 build
 log
-
+*.txt
 
 
 
