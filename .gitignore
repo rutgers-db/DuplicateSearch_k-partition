@@ -1,11 +1,10 @@
+build/
 log
 index
 *.bin
 *.o
 .vscode
-build
 *.out
-build
 
 
 
