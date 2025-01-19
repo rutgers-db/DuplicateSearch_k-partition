@@ -75,3 +75,7 @@ We also implemented 3 baselines(including bruteforce) with OPH and KMS methods i
 ### Simulation
 
 We also analyze the estimation accuracy of k-mins and OPH in `simulation` folder. It include how we draw the k-mins curve and simulate the OPH probability distribution.
+
+### Datasets Tokenization
+
+If you want to download and tokenize the datasets (i.e. openwebtext) we used in the paper, please refer to [this repository](https://github.com/rutgers-db/TokenizeDataset).
